@@ -2,380 +2,316 @@
   "meta": {
     "en": {
       "title": "50 Labs — Custom AI Agents for Your Business",
-      "description": "We design, build and operate AI agents that answer your customers, qualify your leads and run your back office. First agent live in under 30 days — no engineers needed on your side."
+      "description": "AI agents that answer customers, qualify leads and run your back office. Live in under 30 days."
     },
     "es": {
       "title": "50 Labs — Agentes de IA a medida para tu negocio",
-      "description": "Diseñamos, construimos y operamos agentes de IA que atienden a tus clientes, cualifican tus leads y mueven tu back office. Primer agente en producción en menos de 30 días, sin ingenieros por tu parte."
+      "description": "Agentes de IA que atienden clientes, cualifican leads y mueven tu back office. En producción en menos de 30 días."
     }
   },
   "en": {
     "nav": {
-      "items": [
-        {
-          "label": "Services",
-          "href": "#services"
-        },
-        {
-          "label": "Process",
-          "href": "#process"
-        },
-        {
-          "label": "Case studies",
-          "href": "#cases"
-        },
-        {
-          "label": "Pricing",
-          "href": "#pricing"
-        },
-        {
-          "label": "FAQ",
-          "href": "#faq"
-        },
-        {
-          "label": "Contact",
-          "href": "#contact"
-        }
-      ],
+      "services": "Services",
+      "process": "Process",
+      "cases": "Cases",
+      "pricing": "Pricing",
+      "faq": "FAQ",
+      "contact": "Contact",
       "cta": "Book a call"
     },
     "hero": {
-      "eyebrow": "AI agents, built and operated for you",
+      "eyebrow": "AI agents, built for you",
       "headline": "Agents that do the work. {{You keep the margin.}}",
-      "subheadline": "We build AI agents that answer every message, qualify every lead and handle the repetitive work your team hates. You keep the decisions. They do the grind.",
-      "primaryCta": "Get a free ops audit",
-      "secondaryCta": "See how it works",
+      "sub": "They answer, qualify and follow up. You decide; they do the grind.",
+      "cta1": "Get a free audit",
+      "cta2": "See how it works",
       "stats": [
         {
           "value": "30+ h",
-          "label": "saved per team, every week"
+          "label": "saved weekly per team"
         },
         {
           "value": "< 60 s",
-          "label": "response to any lead, 24/7"
+          "label": "to answer any lead"
         },
         {
           "value": "< 30 days",
-          "label": "from kickoff to live agent"
+          "label": "from kickoff to live"
         }
       ]
     },
-    "problem": {
-      "heading": "Manual ops are eating your margin",
-      "intro": "Most teams lose deals not because their product is worse — because they answer late, follow up twice instead of five times, and drown in admin. Here is what changes.",
+    "shift": {
+      "heading": "Manual ops eat margin",
+      "beforeLabel": "Before",
+      "afterLabel": "With agents",
       "before": [
-        "New enquiries sit unanswered until someone finds a gap in their day",
-        "Follow-ups depend on someone remembering",
-        "Support answers the same 20 questions on loop",
-        "Data lives in inboxes, not in your CRM"
+        "Leads wait hours for replies",
+        "Follow-ups depend on memory",
+        "Same 20 questions on loop",
+        "Data stuck in inboxes"
       ],
       "after": [
-        "Every lead gets a useful answer in under a minute",
-        "Follow-up sequences run themselves, every time",
-        "Agents resolve routine tickets; humans take the hard ones",
-        "Every interaction logged, tagged and synced automatically"
+        "Every lead answered in seconds",
+        "Follow-ups run themselves",
+        "Routine tickets solved solo",
+        "Everything synced to your CRM"
       ]
     },
     "services": {
-      "heading": "Six agents. One goal: hours back.",
-      "intro": "Every agent learns from your real conversations and sounds like your team from day one — not a generic chatbot with your logo on it.",
+      "heading": "Six agents. Hours back.",
+      "sub": "Trained on your real conversations. They sound like your team.",
       "agents": [
         {
           "name": "Scout",
-          "tagline": "Outbound sales agent",
-          "description": "Scout finds prospects that match your best customers and opens conversations at scale. Personalized outreach, not spray-and-pray.",
-          "bullets": [
-            "Researches and enriches prospect lists",
-            "Writes personalized first touches and follow-ups",
-            "Books meetings straight into your calendar"
+          "tag": "Outbound sales",
+          "chips": [
+            "Prospect lists",
+            "Personal outreach",
+            "Meetings booked"
           ]
         },
         {
           "name": "Sift",
-          "tagline": "Lead qualification agent",
-          "description": "Sift talks to every inbound lead the moment it arrives and scores it against your criteria. Your sales team only sees the ones worth their time.",
-          "bullets": [
-            "Instant reply on web, WhatsApp and email",
-            "Asks your qualifying questions, scores answers",
-            "Hands hot leads to your team with the whole conversation attached"
+          "tag": "Lead qualification",
+          "chips": [
+            "Instant replies",
+            "Scores leads",
+            "Hot handoffs"
           ]
         },
         {
           "name": "Resolve",
-          "tagline": "Customer support agent",
-          "description": "Resolve answers the questions your team repeats all day — orders, returns, invoices, how-tos. It escalates anything sensitive with the full thread attached.",
-          "bullets": [
-            "Trained on your docs, policies and history",
-            "Handles 60-80% of tickets end to end",
-            "Knows when a case needs a person, and passes it on at the right moment"
+          "tag": "Customer support",
+          "chips": [
+            "Knows your docs",
+            "80% of tickets",
+            "Smart escalation"
           ]
         },
         {
           "name": "Concierge",
-          "tagline": "Reception & booking agent",
-          "description": "Concierge picks up every call and message, books appointments and chases no-shows. No more voicemail, no more empty slots.",
-          "bullets": [
-            "Answers calls and WhatsApp 24/7",
-            "Books, reschedules and confirms appointments",
-            "Sends reminders that actually cut no-shows"
+          "tag": "Reception & bookings",
+          "chips": [
+            "Answers 24/7",
+            "Books appointments",
+            "Cuts no-shows"
           ]
         },
         {
           "name": "Quill",
-          "tagline": "Content agent",
-          "description": "Quill turns your expertise into a steady stream of posts, newsletters and product copy in your voice. You approve; it publishes.",
-          "bullets": [
-            "Drafts social posts, emails and articles on brand",
-            "Repurposes one idea across every channel",
-            "Keeps a publishing calendar running weekly"
+          "tag": "Content in your voice",
+          "chips": [
+            "Posts & emails",
+            "One idea, everywhere",
+            "Weekly calendar"
           ]
         },
         {
           "name": "Ledger",
-          "tagline": "Operations & back-office agent",
-          "description": "Ledger does the invisible work: data entry, invoice chasing, report building, CRM hygiene. The stuff nobody wants to own — owned.",
-          "bullets": [
-            "Moves data between your tools without errors",
-            "Chases unpaid invoices and missing documents",
-            "Builds weekly reports from live data, automatically"
+          "tag": "Back office",
+          "chips": [
+            "Data entry",
+            "Invoice chasing",
+            "Auto reports"
           ]
         }
       ]
     },
     "process": {
-      "heading": "From audit to live agent in under 30 days",
-      "intro": "No six-month consulting projects. We find the highest-leverage process, automate it, and prove the numbers.",
+      "heading": "Live in under 30 days",
       "steps": [
         {
-          "title": "1. Audit",
-          "description": "We map your workflows and find where hours and leads are leaking. You get a prioritized list of what to automate first — free, no strings."
+          "title": "Audit",
+          "line": "We find your biggest leak. Free."
         },
         {
-          "title": "2. Design & build",
-          "description": "We train the agent on real examples from your business and stress-test it against months of past conversations before it ever talks to a customer."
+          "title": "Build",
+          "line": "Trained on your real conversations, stress-tested."
         },
         {
-          "title": "3. Deploy",
-          "description": "The agent goes live connected to your channels and CRM, with human handoff rules and guardrails set from day one. Most agents ship in under a month."
+          "title": "Deploy",
+          "line": "Connected to your tools, guardrails on."
         },
         {
-          "title": "4. Measure & optimize",
-          "description": "You get a dashboard with hard numbers: conversations, conversions, hours saved. We review it with you monthly and keep tuning."
+          "title": "Optimize",
+          "line": "Monthly numbers, monthly tuning."
         }
       ]
     },
     "integrations": {
-      "heading": "Built to fit your stack",
-      "intro": "No rip-and-replace. Your agents work inside your current stack from day one.",
-      "tools": [
-        "WhatsApp",
-        "Gmail",
-        "Slack",
-        "HubSpot",
-        "Salesforce",
-        "Shopify",
-        "Stripe",
-        "Google Calendar",
-        "Notion",
-        "Airtable",
-        "Instagram",
-        "LinkedIn",
-        "Zapier",
-        "Make",
-        "Google Sheets",
-        "Outlook"
-      ],
-      "closing": "and many more"
+      "heading": "Fits your stack",
+      "sub": "WhatsApp, Gmail, HubSpot, Shopify and 100+ more."
     },
     "cases": {
-      "heading": "Real teams, measurable results",
-      "intro": "Different sectors, same pattern: fewer missed conversations, more closed business.",
+      "heading": "Real results",
       "studies": [
         {
           "company": "Denta Nova Group",
-          "sector": "Dental clinics · 4 locations",
-          "challenge": "Reception missed roughly a third of incoming calls at peak hours, and no-shows were leaving chairs empty every day.",
-          "solution": "A reception & booking agent answering calls and WhatsApp 24/7, plus an automated reminder and rebooking flow.",
-          "results": [
+          "sector": "Dental clinics",
+          "heroValue": "−37%",
+          "heroLabel": "no-shows in one quarter",
+          "minis": [
             {
               "value": "97%",
-              "label": "of calls and messages answered"
-            },
-            {
-              "value": "−37%",
-              "label": "no-shows in the first quarter"
+              "label": "calls & messages answered"
             },
             {
               "value": "19 h/wk",
-              "label": "of front-desk time recovered"
+              "label": "front-desk time saved"
             }
-          ]
+          ],
+          "line": "24/7 reception agent on calls and WhatsApp, plus automated reminders."
         },
         {
           "company": "Llobregat Homes",
-          "sector": "Real-estate agency",
-          "challenge": "Portal leads arrived around the clock but agents replied the next morning — and a buyer who waits overnight has usually moved on.",
-          "solution": "A lead qualification agent that replies in seconds, qualifies budget and timeline, and books viewings directly into agents' calendars.",
-          "results": [
-            {
-              "value": "+34%",
-              "label": "viewings booked per month"
-            },
+          "sector": "Real estate",
+          "heroValue": "+34%",
+          "heroLabel": "viewings booked monthly",
+          "minis": [
             {
               "value": "2.6×",
-              "label": "more qualified leads per agent"
+              "label": "qualified leads per agent"
             },
             {
               "value": "4 h → 45 s",
-              "label": "average first-response time"
+              "label": "first-response time"
             }
-          ]
+          ],
+          "line": "Qualification agent that replies in seconds and books viewings itself."
         },
         {
           "company": "Vela Studio",
-          "sector": "Online fashion retail",
-          "challenge": "A two-person support team was buried under order, sizing and returns questions, with response times stretching past 24 hours in sales season.",
-          "solution": "A support agent trained on their catalog and policies, handling routine tickets end to end and escalating edge cases to the team with the full history attached.",
-          "results": [
-            {
-              "value": "73%",
-              "label": "of tickets resolved without a human"
-            },
+          "sector": "Online fashion",
+          "heroValue": "73%",
+          "heroLabel": "tickets resolved, no human",
+          "minis": [
             {
               "value": "< 3 min",
               "label": "median response time"
             },
             {
               "value": "4.7/5",
-              "label": "post-resolution satisfaction"
+              "label": "customer satisfaction"
             }
-          ]
+          ],
+          "line": "Support agent trained on their catalog; edge cases escalate with context."
         }
       ]
     },
     "pricing": {
-      "heading": "Simple pricing. Serious ROI.",
-      "intro": "One monthly fee covers build, hosting, monitoring and iteration. If an agent doesn't pay for itself, we've built the wrong agent.",
+      "heading": "Simple pricing",
+      "sub": "One fee covers build, hosting and iteration.",
       "tiers": [
         {
           "name": "Starter",
           "price": "€890",
-          "period": "/month",
-          "setupNote": "One-time build fee from €1,200",
-          "description": "One agent, one high-impact process. The fastest way to prove what AI can do for you.",
+          "period": "/mo",
+          "setup": "€1,200 setup",
           "features": [
-            "1 custom AI agent",
-            "Up to 3 tool integrations",
-            "Human handoff rules included",
-            "Monthly performance report",
-            "Email support, 24 h response",
-            "Live in 2–3 weeks"
+            "1 custom agent",
+            "3 integrations",
+            "Human handoff",
+            "Monthly report"
           ],
-          "cta": "Start with one agent",
+          "cta": "Start",
           "highlighted": "false"
         },
         {
           "name": "Growth",
           "price": "€2,100",
-          "period": "/month",
-          "setupNote": "One-time setup from €3,000",
-          "description": "Up to three agents working together across sales, support and operations. Our most popular plan.",
+          "period": "/mo",
+          "setup": "€3,000 setup",
           "features": [
-            "Up to 3 AI agents",
-            "Unlimited tool integrations",
-            "Shared memory across agents",
-            "Live dashboard + monthly strategy call",
-            "Priority support, 4 h response",
-            "Continuous optimization included"
+            "Up to 3 agents",
+            "Unlimited integrations",
+            "Shared memory",
+            "Monthly strategy call"
           ],
-          "cta": "Scale with Growth",
+          "cta": "Scale up",
           "highlighted": "true"
         },
         {
           "name": "Enterprise",
-          "price": "Let's talk",
+          "price": "Custom",
           "period": "",
-          "setupNote": "Custom scoping and SLA",
-          "description": "Agent fleets, custom infrastructure, on-premise or EU-dedicated hosting, and a dedicated engineer.",
+          "setup": "Custom scope & SLA",
           "features": [
-            "Unlimited agents and workflows",
-            "Dedicated solutions engineer",
-            "Custom SLAs and uptime guarantees",
-            "Advanced security and compliance review",
-            "On-premise or private-cloud deployment",
-            "Quarterly executive reviews"
+            "Unlimited agents",
+            "Dedicated engineer",
+            "Custom SLAs",
+            "On-premise option"
           ],
           "cta": "Talk to us",
           "highlighted": "false"
         }
       ],
-      "footnote": "No permanence. Cancel any month. Setup fee covers discovery, build and testing — quoted before we start, never after."
+      "footnote": "No lock-in — cancel any month. Setup quoted upfront."
     },
     "faq": {
-      "heading": "Questions, answered straight",
+      "heading": "Quick answers",
       "items": [
         {
-          "q": "What exactly is an AI agent?",
-          "a": "Software that does a job, not just answers a prompt. An agent reads context, makes decisions within rules you set, and takes action across your tools — replying to a lead, booking a meeting, updating your CRM. Think of it as a digital teammate with a narrow, well-defined role."
+          "q": "What is an AI agent?",
+          "a": "Software that does a job, not just answers. It acts across your tools, within rules you set."
         },
         {
-          "q": "How long until it's live?",
-          "a": "Most agents go live in under 30 days. Week one is discovery and data access, weeks two and three are build and testing against real historical conversations, then we deploy with guardrails on. Complex multi-agent setups can take 6 to 8 weeks."
+          "q": "How fast is it live?",
+          "a": "Most agents launch in under 30 days. Complex setups take 6–8 weeks."
         },
         {
-          "q": "What do you need from my team?",
-          "a": "Nothing technical. The stack is ours end to end — we build it, host it, watch it and improve it. From you we need the person who knows the process best: two or three hours during setup, then a short review once a month."
+          "q": "What do you need from us?",
+          "a": "Nothing technical. Just a few hours from whoever knows the process best."
         },
         {
-          "q": "What if the agent makes a mistake?",
-          "a": "Every agent ships with confidence thresholds and escalation rules: anything ambiguous, sensitive or high-value goes to a human with the full conversation attached. We also review transcripts weekly during the first month and tune the agent before edge cases become patterns."
+          "q": "What if it makes a mistake?",
+          "a": "Anything ambiguous or sensitive goes to a human, full conversation attached."
         },
         {
-          "q": "How do you handle data security and GDPR?",
-          "a": "Everything is processed and stored inside the EU with end-to-end encryption. We sign a DPA with every client, collect only what each workflow strictly needs, and your data never feeds anyone else's models. Dedicated EU model hosting is available on request."
+          "q": "GDPR and data security?",
+          "a": "Everything stays in the EU, encrypted. We sign a DPA with every client."
         },
         {
-          "q": "Which tools does it work with?",
-          "a": "Anything with an API — and that covers almost everything: WhatsApp, Gmail, Outlook, Slack, HubSpot, Salesforce, Shopify, Stripe, Notion, Airtable, Google Sheets and hundreds more. If a tool has no API, we can usually bridge it through Make or Zapier."
+          "q": "Does it work with my tools?",
+          "a": "Anything with an API — that's almost everything. No API? We bridge it."
         },
         {
           "q": "What happens after launch?",
-          "a": "Launch is the start, not the end. Your plan includes monitoring, error handling, model updates and continuous tuning based on real conversations. You get a monthly report with hard numbers and a call to decide what the agent should learn next."
+          "a": "Monitoring, tuning and a monthly report with hard numbers. Launch is the start."
         }
       ]
     },
     "finalCta": {
-      "heading": "Find out what 30 hours a week feels like",
-      "subheading": "Book a free ops audit. In 45 minutes we'll show you exactly which process to automate first — and what it's costing you not to.",
+      "heading": "Find out what 30 hours back feels like",
+      "sub": "Free 45-minute audit. We show you what to automate first.",
       "cta": "Book my free audit"
     },
     "contact": {
-      "heading": "Tell us what's eating your week",
-      "intro": "Fill this in and we'll reply within one business day with honest first thoughts — not a sales script.",
+      "heading": "Tell us what hurts",
+      "sub": "We reply within one business day. No sales script.",
       "form": {
-        "name": "Your name",
+        "name": "Name",
         "email": "Work email",
         "company": "Company",
         "interest": "What do you want to automate?",
         "interestOptions": [
-          "Sales & lead generation",
+          "Sales & leads",
           "Customer support",
           "Reception & bookings",
           "Content & marketing",
           "Something else"
         ],
-        "message": "Tell us about your process (optional)",
-        "submit": "Send message",
+        "message": "Your process (optional)",
+        "submit": "Send",
         "sending": "Sending..."
       },
       "successTitle": "Got it!",
-      "successMessage": "Thanks — we've received your message and will get back to you within one business day.",
-      "errorMessage": "Something went wrong sending your message. Please try again or email us directly.",
-      "privacyNote": "We use your data only to reply to you — no lists, no spam. Questions? ralcaraz.canals@gmail.com"
+      "successMessage": "Thanks — we'll get back to you within one business day.",
+      "errorMessage": "Something went wrong. Try again or email us.",
+      "privacyNote": "Your data is only used to reply. Questions? ralcaraz.canals@gmail.com"
     },
     "footer": {
-      "blurb": "50 Labs designs, builds and operates custom AI agents that give businesses their hours back.",
-      "directEmailLabel": "Prefer email? Write to us directly:",
+      "line": "Custom AI agents, built and operated.",
+      "emailLabel": "Prefer email?",
       "email": "ralcaraz.canals@gmail.com",
       "rights": "© 2026 50 Labs",
       "madeIn": "Barcelona · Remote worldwide"
@@ -383,374 +319,310 @@
   },
   "es": {
     "nav": {
-      "items": [
-        {
-          "label": "Servicios",
-          "href": "#services"
-        },
-        {
-          "label": "Proceso",
-          "href": "#process"
-        },
-        {
-          "label": "Casos",
-          "href": "#cases"
-        },
-        {
-          "label": "Precios",
-          "href": "#pricing"
-        },
-        {
-          "label": "FAQ",
-          "href": "#faq"
-        },
-        {
-          "label": "Contacto",
-          "href": "#contact"
-        }
-      ],
+      "services": "Servicios",
+      "process": "Proceso",
+      "cases": "Casos",
+      "pricing": "Precios",
+      "faq": "FAQ",
+      "contact": "Contacto",
       "cta": "Reserva una llamada"
     },
     "hero": {
-      "eyebrow": "Agentes de IA construidos y operados para ti",
+      "eyebrow": "Agentes de IA, hechos para ti",
       "headline": "Agentes que hacen el trabajo. {{Tú te quedas el margen.}}",
-      "subheadline": "Construimos agentes de IA que responden cada mensaje, cualifican cada lead y hacen el trabajo repetitivo que tu equipo odia. Tú decides. Ellos ejecutan.",
-      "primaryCta": "Pide tu auditoría gratuita",
-      "secondaryCta": "Mira cómo funciona",
+      "sub": "Responden, cualifican y hacen el seguimiento. Tú decides; ellos ejecutan.",
+      "cta1": "Pide tu auditoría gratis",
+      "cta2": "Mira cómo funciona",
       "stats": [
         {
           "value": "+30 h",
-          "label": "ahorradas por equipo cada semana"
+          "label": "ahorradas por equipo y semana"
         },
         {
           "value": "< 60 s",
-          "label": "de respuesta a cualquier lead, 24/7"
+          "label": "de respuesta a cada lead"
         },
         {
           "value": "< 30 días",
-          "label": "del kickoff al agente en producción"
+          "label": "del kickoff a producción"
         }
       ]
     },
-    "problem": {
-      "heading": "La operativa manual se está comiendo tu margen",
-      "intro": "La mayoría de equipos no pierde ventas por tener peor producto, sino por responder tarde, hacer dos seguimientos en vez de cinco y ahogarse en tareas administrativas. Esto es lo que cambia.",
+    "shift": {
+      "heading": "Lo manual se come tu margen",
+      "beforeLabel": "Antes",
+      "afterLabel": "Con agentes",
       "before": [
-        "Las consultas nuevas se quedan sin responder hasta que alguien encuentra un hueco",
-        "El seguimiento depende de que alguien se acuerde",
-        "Soporte responde las mismas 20 preguntas en bucle",
-        "Los datos viven en bandejas de entrada, no en tu CRM"
+        "Leads esperando horas",
+        "Seguimiento a base de memoria",
+        "Las mismas 20 preguntas",
+        "Datos atrapados en el email"
       ],
       "after": [
-        "Cada lead recibe una respuesta útil en menos de un minuto",
-        "Las secuencias de seguimiento se ejecutan solas, siempre",
-        "Los agentes resuelven lo rutinario; las personas, lo difícil",
-        "Cada interacción queda registrada, etiquetada y sincronizada"
+        "Cada lead respondido en segundos",
+        "Seguimientos en piloto automático",
+        "Tickets rutinarios resueltos solos",
+        "Todo sincronizado en tu CRM"
       ]
     },
     "services": {
-      "heading": "Seis agentes. Un objetivo: devolverte horas.",
-      "intro": "Cada agente aprende de tus conversaciones reales y suena como tu equipo desde el primer día. Nada de chatbots genéricos con tu logo encima.",
+      "heading": "Seis agentes. Horas devueltas.",
+      "sub": "Entrenados con tus conversaciones reales. Suenan como tu equipo.",
       "agents": [
         {
           "name": "Cazador",
-          "tagline": "Agente de ventas outbound",
-          "description": "Cazador encuentra prospectos que se parecen a tus mejores clientes y abre conversaciones a escala. Prospección personalizada, no spam masivo.",
-          "bullets": [
-            "Investiga y enriquece listas de prospectos",
-            "Redacta primeros contactos y seguimientos personalizados",
-            "Agenda reuniones directamente en tu calendario"
+          "tag": "Ventas outbound",
+          "chips": [
+            "Listas de prospectos",
+            "Contacto personalizado",
+            "Reuniones agendadas"
           ]
         },
         {
           "name": "Criba",
-          "tagline": "Agente de cualificación de leads",
-          "description": "Criba habla con cada lead entrante en el momento en que llega y lo puntúa según tus criterios. Tu equipo comercial solo ve los que merecen su tiempo.",
-          "bullets": [
-            "Respuesta instantánea en web, WhatsApp y email",
-            "Hace tus preguntas de cualificación y puntúa las respuestas",
-            "Entrega los leads calientes a tu equipo con toda la conversación adjunta"
+          "tag": "Cualificación de leads",
+          "chips": [
+            "Respuesta instantánea",
+            "Puntúa leads",
+            "Traspaso en caliente"
           ]
         },
         {
           "name": "Resuelve",
-          "tagline": "Agente de atención al cliente",
-          "description": "Resuelve contesta las preguntas que tu equipo repite todo el día: pedidos, devoluciones, facturas, dudas de uso. Lo delicado lo escala con el hilo completo adjunto.",
-          "bullets": [
-            "Entrenado con tu documentación, políticas e histórico",
-            "Gestiona el 60-80% de los tickets de principio a fin",
-            "Sabe cuándo un caso necesita a una persona y lo pasa en el momento justo"
+          "tag": "Atención al cliente",
+          "chips": [
+            "Conoce tu documentación",
+            "80% de tickets",
+            "Escalado inteligente"
           ]
         },
         {
           "name": "Conserje",
-          "tagline": "Agente de recepción y citas",
-          "description": "Conserje descuelga cada llamada y mensaje, reserva citas y persigue las ausencias. Se acabaron el buzón de voz y los huecos vacíos.",
-          "bullets": [
-            "Atiende llamadas y WhatsApp 24/7",
-            "Agenda, reprograma y confirma citas",
-            "Envía recordatorios que de verdad reducen las ausencias"
+          "tag": "Recepción y citas",
+          "chips": [
+            "Atiende 24/7",
+            "Agenda citas",
+            "Menos ausencias"
           ]
         },
         {
           "name": "Pluma",
-          "tagline": "Agente de contenido",
-          "description": "Pluma convierte tu conocimiento en un flujo constante de posts, newsletters y textos de producto con tu voz. Tú apruebas; él publica.",
-          "bullets": [
-            "Redacta posts, emails y artículos con tu marca",
-            "Reutiliza una idea en todos los canales",
-            "Mantiene el calendario de publicación en marcha cada semana"
+          "tag": "Contenido con tu voz",
+          "chips": [
+            "Posts y emails",
+            "Una idea, mil canales",
+            "Calendario semanal"
           ]
         },
         {
           "name": "Engranaje",
-          "tagline": "Agente de operaciones y back office",
-          "description": "Engranaje hace el trabajo invisible: entrada de datos, reclamación de facturas, informes, limpieza del CRM. Lo que nadie quiere asumir, asumido.",
-          "bullets": [
-            "Mueve datos entre tus herramientas sin errores",
-            "Reclama facturas impagadas y documentación pendiente",
-            "Genera informes semanales con datos en vivo, en automático"
+          "tag": "Back office",
+          "chips": [
+            "Entrada de datos",
+            "Reclama facturas",
+            "Informes automáticos"
           ]
         }
       ]
     },
     "process": {
-      "heading": "De la auditoría al agente en producción en menos de 30 días",
-      "intro": "Nada de proyectos de consultoría de seis meses. Encontramos el proceso con más palanca, lo automatizamos y lo demostramos con números.",
+      "heading": "En producción en menos de 30 días",
       "steps": [
         {
-          "title": "1. Auditoría",
-          "description": "Mapeamos tus flujos de trabajo y encontramos por dónde se te escapan horas y leads. Te llevas una lista priorizada de qué automatizar primero — gratis y sin compromiso."
+          "title": "Auditoría",
+          "line": "Encontramos tu mayor fuga. Gratis."
         },
         {
-          "title": "2. Diseño y construcción",
-          "description": "Entrenamos el agente con ejemplos reales de tu negocio y lo sometemos a meses de conversaciones pasadas antes de que hable con un solo cliente."
+          "title": "Construcción",
+          "line": "Entrenado con tus conversaciones reales y puesto a prueba."
         },
         {
-          "title": "3. Despliegue",
-          "description": "El agente sale a producción conectado a tus canales y a tu CRM, con reglas de traspaso a personas y salvaguardas desde el primer día. La mayoría sale en menos de un mes."
+          "title": "Despliegue",
+          "line": "Conectado a tus herramientas, con salvaguardas."
         },
         {
-          "title": "4. Medición y optimización",
-          "description": "Tienes un panel con números de verdad: conversaciones, conversiones, horas ahorradas. Lo revisamos contigo cada mes y seguimos afinando."
+          "title": "Optimización",
+          "line": "Números cada mes, ajuste cada mes."
         }
       ]
     },
     "integrations": {
-      "heading": "Hecho para encajar en tu stack",
-      "intro": "No hay que cambiar nada. Tus agentes trabajan dentro de tu stack actual desde el primer día.",
-      "tools": [
-        "WhatsApp",
-        "Gmail",
-        "Slack",
-        "HubSpot",
-        "Salesforce",
-        "Shopify",
-        "Stripe",
-        "Google Calendar",
-        "Notion",
-        "Airtable",
-        "Instagram",
-        "LinkedIn",
-        "Zapier",
-        "Make",
-        "Google Sheets",
-        "Outlook"
-      ],
-      "closing": "y muchas más"
+      "heading": "Encaja en tu stack",
+      "sub": "WhatsApp, Gmail, HubSpot, Shopify y 100+ más."
     },
     "cases": {
-      "heading": "Equipos reales, resultados medibles",
-      "intro": "Sectores distintos, mismo patrón: menos conversaciones perdidas, más negocio cerrado.",
+      "heading": "Resultados reales",
       "studies": [
         {
           "company": "Grupo Denta Nova",
-          "sector": "Clínicas dentales · 4 centros",
-          "challenge": "Recepción perdía cerca de un tercio de las llamadas en horas punta, y las ausencias dejaban sillones vacíos todos los días.",
-          "solution": "Un agente de recepción y citas que atiende llamadas y WhatsApp 24/7, más un flujo automático de recordatorios y recuperación de citas.",
-          "results": [
+          "sector": "Clínicas dentales",
+          "heroValue": "−37%",
+          "heroLabel": "de ausencias en un trimestre",
+          "minis": [
             {
               "value": "97%",
               "label": "de llamadas y mensajes atendidos"
             },
             {
-              "value": "−37%",
-              "label": "de ausencias en el primer trimestre"
-            },
-            {
               "value": "19 h/sem",
               "label": "de recepción recuperadas"
             }
-          ]
+          ],
+          "line": "Agente de recepción 24/7 en llamadas y WhatsApp, con recordatorios automáticos."
         },
         {
           "company": "Llobregat Homes",
-          "sector": "Agencia inmobiliaria",
-          "challenge": "Los leads de los portales llegaban a cualquier hora pero los agentes respondían a la mañana siguiente — y un comprador que espera toda una noche rara vez sigue disponible.",
-          "solution": "Un agente de cualificación que responde en segundos, cualifica presupuesto y plazos, y agenda visitas directamente en el calendario de cada comercial.",
-          "results": [
-            {
-              "value": "+34%",
-              "label": "de visitas agendadas al mes"
-            },
+          "sector": "Inmobiliaria",
+          "heroValue": "+34%",
+          "heroLabel": "de visitas al mes",
+          "minis": [
             {
               "value": "2,6×",
-              "label": "más leads cualificados por comercial"
+              "label": "leads cualificados por comercial"
             },
             {
               "value": "4 h → 45 s",
-              "label": "de tiempo medio de primera respuesta"
+              "label": "de primera respuesta"
             }
-          ]
+          ],
+          "line": "Agente de cualificación que responde en segundos y agenda visitas solo."
         },
         {
           "company": "Vela Studio",
           "sector": "Moda online",
-          "challenge": "Un equipo de soporte de dos personas estaba enterrado en dudas de pedidos, tallas y devoluciones, con respuestas de más de 24 horas en temporada de rebajas.",
-          "solution": "Un agente de soporte entrenado con su catálogo y sus políticas, que gestiona los tickets rutinarios de principio a fin y escala los casos raros a su equipo con todo el histórico adjunto.",
-          "results": [
-            {
-              "value": "73%",
-              "label": "de tickets resueltos sin intervención humana"
-            },
+          "heroValue": "73%",
+          "heroLabel": "de tickets resueltos solos",
+          "minis": [
             {
               "value": "< 3 min",
               "label": "de tiempo medio de respuesta"
             },
             {
               "value": "4,7/5",
-              "label": "de satisfacción tras la resolución"
+              "label": "de satisfacción"
             }
-          ]
+          ],
+          "line": "Agente de soporte entrenado con su catálogo; los casos límite escalan con contexto."
         }
       ]
     },
     "pricing": {
-      "heading": "Precios simples. ROI serio.",
-      "intro": "Una cuota mensual que cubre construcción, hosting, monitorización e iteración. Si un agente no se paga solo, hemos construido el agente equivocado.",
+      "heading": "Precios simples",
+      "sub": "Una cuota cubre construcción, hosting e iteración.",
       "tiers": [
         {
           "name": "Starter",
           "price": "890 €",
           "period": "/mes",
-          "setupNote": "Puesta en marcha desde 1.200 €",
-          "description": "Un agente, un proceso de alto impacto. La forma más rápida de comprobar lo que la IA puede hacer por ti.",
+          "setup": "1.200 € de setup",
           "features": [
-            "1 agente de IA a medida",
-            "Hasta 3 integraciones con tus herramientas",
-            "Reglas de traspaso a personas incluidas",
-            "Informe mensual de rendimiento",
-            "Soporte por email, respuesta en 24 h",
-            "En producción en 2–3 semanas"
+            "1 agente a medida",
+            "3 integraciones",
+            "Escalado a tu equipo",
+            "Informe mensual"
           ],
-          "cta": "Empieza con un agente",
+          "cta": "Empieza",
           "highlighted": "false"
         },
         {
           "name": "Growth",
           "price": "2.100 €",
           "period": "/mes",
-          "setupNote": "Setup único desde 3.000 €",
-          "description": "Hasta tres agentes trabajando juntos en ventas, soporte y operaciones. Nuestro plan más popular.",
+          "setup": "3.000 € de setup",
           "features": [
-            "Hasta 3 agentes de IA",
+            "Hasta 3 agentes",
             "Integraciones ilimitadas",
-            "Memoria compartida entre agentes",
-            "Panel en vivo + llamada mensual de estrategia",
-            "Soporte prioritario, respuesta en 4 h",
-            "Optimización continua incluida"
+            "Memoria compartida",
+            "Llamada mensual de estrategia"
           ],
-          "cta": "Escala con Growth",
+          "cta": "Escala",
           "highlighted": "true"
         },
         {
           "name": "Enterprise",
-          "price": "Hablamos",
+          "price": "A medida",
           "period": "",
-          "setupNote": "Alcance y SLA a medida",
-          "description": "Flotas de agentes, infraestructura a medida, hosting on-premise o dedicado en la UE y un ingeniero asignado.",
+          "setup": "Alcance y SLA a medida",
           "features": [
-            "Agentes y flujos ilimitados",
-            "Ingeniero de soluciones dedicado",
-            "SLAs y garantías de disponibilidad a medida",
-            "Revisión avanzada de seguridad y cumplimiento",
-            "Despliegue on-premise o en nube privada",
-            "Revisiones ejecutivas trimestrales"
+            "Agentes ilimitados",
+            "Ingeniero dedicado",
+            "SLAs a medida",
+            "Opción on-premise"
           ],
-          "cta": "Hablemos",
+          "cta": "Hablamos",
           "highlighted": "false"
         }
       ],
-      "footnote": "Sin permanencia. Cancela cualquier mes. El setup cubre descubrimiento, construcción y pruebas — presupuestado antes de empezar, nunca después."
+      "footnote": "Sin permanencia — cancela cualquier mes. Setup presupuestado antes de empezar."
     },
     "faq": {
-      "heading": "Preguntas, respondidas sin rodeos",
+      "heading": "Respuestas rápidas",
       "items": [
         {
-          "q": "¿Qué es exactamente un agente de IA?",
-          "a": "Software que hace un trabajo, no que solo responde a un prompt. Un agente lee el contexto, toma decisiones dentro de las reglas que tú marcas y actúa en tus herramientas: responde a un lead, agenda una reunión, actualiza tu CRM. Piensa en él como un compañero digital con un rol concreto y bien definido."
+          "q": "¿Qué es un agente de IA?",
+          "a": "Software que hace un trabajo, no solo responde. Actúa en tus herramientas, dentro de tus reglas."
         },
         {
-          "q": "¿Cuánto tarda en estar en producción?",
-          "a": "La mayoría de agentes sale en producción en menos de 30 días. La primera semana es descubrimiento y acceso a datos, la segunda y la tercera son construcción y pruebas contra conversaciones históricas reales, y después desplegamos con salvaguardas activadas. Los montajes multi-agente complejos pueden llevar de 6 a 8 semanas."
+          "q": "¿Cuándo está en producción?",
+          "a": "La mayoría, en menos de 30 días. Los montajes complejos, en 6–8 semanas."
         },
         {
-          "q": "¿Qué necesitáis de mi equipo?",
-          "a": "Nada técnico. La parte tecnológica es nuestra de principio a fin: la construimos, la alojamos, la vigilamos y la mejoramos. De ti solo necesitamos a la persona que mejor conoce el proceso: dos o tres horas durante la puesta en marcha y una revisión corta al mes."
+          "q": "¿Qué necesitáis de nosotros?",
+          "a": "Nada técnico. Solo unas horas de quien mejor conoce el proceso."
         },
         {
-          "q": "¿Y si el agente se equivoca?",
-          "a": "Todos los agentes salen con umbrales de confianza y reglas de escalado: cualquier cosa ambigua, delicada o de alto valor pasa a una persona con la conversación completa adjunta. Además, el primer mes revisamos transcripciones cada semana y afinamos el agente antes de que los casos raros se conviertan en patrones."
+          "q": "¿Y si se equivoca?",
+          "a": "Lo ambiguo o delicado pasa a una persona, con la conversación completa."
         },
         {
-          "q": "¿Cómo gestionáis la seguridad de datos y el RGPD?",
-          "a": "Todo se procesa y se guarda dentro de la UE con cifrado de extremo a extremo. Firmamos un contrato de encargado de tratamiento (DPA) con cada cliente, recogemos solo lo que cada flujo necesita y tus datos nunca alimentan modelos ajenos. Bajo petición, trabajamos con hosting de modelos dedicado en la UE."
+          "q": "¿RGPD y seguridad de datos?",
+          "a": "Todo se queda en la UE, cifrado. Firmamos un DPA con cada cliente."
         },
         {
-          "q": "¿Con qué herramientas funciona?",
-          "a": "Con cualquiera que tenga API — y eso cubre casi todo: WhatsApp, Gmail, Outlook, Slack, HubSpot, Salesforce, Shopify, Stripe, Notion, Airtable, Google Sheets y cientos más. Si una herramienta no tiene API, normalmente podemos conectarla a través de Make o Zapier."
+          "q": "¿Funciona con mis herramientas?",
+          "a": "Con cualquiera que tenga API — casi todas. ¿Sin API? La conectamos igual."
         },
         {
-          "q": "¿Qué pasa después del lanzamiento?",
-          "a": "El lanzamiento es el principio, no el final. Tu plan incluye monitorización, gestión de errores, actualizaciones de modelo y ajuste continuo basado en conversaciones reales. Cada mes recibes un informe con números de verdad y una llamada para decidir qué debe aprender el agente a continuación."
+          "q": "¿Y después del lanzamiento?",
+          "a": "Monitorización, ajuste continuo e informe mensual con números. El lanzamiento es el principio."
         }
       ]
     },
     "finalCta": {
-      "heading": "Recupera 30 horas a la semana. Tú decides qué haces con ellas.",
-      "subheading": "Reserva una auditoría gratuita. En 45 minutos te enseñamos exactamente qué proceso automatizar primero — y cuánto te está costando no hacerlo.",
-      "cta": "Quiero mi auditoría gratis"
+      "heading": "Descubre qué se siente con 30 horas más",
+      "sub": "Auditoría gratuita de 45 minutos. Te decimos qué automatizar primero.",
+      "cta": "Quiero mi auditoría"
     },
     "contact": {
-      "heading": "Cuéntanos qué se está comiendo tu semana",
-      "intro": "Rellena esto y te respondemos en un día laborable con una primera opinión honesta — no con un guion de ventas.",
+      "heading": "Cuéntanos qué te frena",
+      "sub": "Respondemos en un día laborable. Sin guion de ventas.",
       "form": {
-        "name": "Tu nombre",
+        "name": "Nombre",
         "email": "Email de trabajo",
         "company": "Empresa",
         "interest": "¿Qué quieres automatizar?",
         "interestOptions": [
-          "Ventas y captación de leads",
+          "Ventas y leads",
           "Atención al cliente",
           "Recepción y citas",
           "Contenido y marketing",
           "Otra cosa"
         ],
-        "message": "Cuéntanos tu proceso (opcional)",
-        "submit": "Enviar mensaje",
+        "message": "Tu proceso (opcional)",
+        "submit": "Enviar",
         "sending": "Enviando..."
       },
       "successTitle": "¡Recibido!",
-      "successMessage": "Gracias — hemos recibido tu mensaje y te responderemos en un día laborable.",
-      "errorMessage": "Algo ha fallado al enviar tu mensaje. Inténtalo de nuevo o escríbenos directamente por email.",
-      "privacyNote": "Usamos tus datos solo para responderte — ni listas ni spam. ¿Dudas? ralcaraz.canals@gmail.com"
+      "successMessage": "Gracias — te respondemos en un día laborable.",
+      "errorMessage": "Algo ha fallado. Inténtalo de nuevo o escríbenos.",
+      "privacyNote": "Tus datos, solo para responderte. ¿Dudas? ralcaraz.canals@gmail.com"
     },
     "footer": {
-      "blurb": "50 Labs diseña, construye y opera agentes de IA a medida que devuelven sus horas a los negocios.",
-      "directEmailLabel": "¿Prefieres el email? Escríbenos directamente:",
+      "line": "Agentes de IA a medida, construidos y operados.",
+      "emailLabel": "¿Prefieres email?",
       "email": "ralcaraz.canals@gmail.com",
       "rights": "© 2026 50 Labs",
-      "madeIn": "Barcelona · Remoto para todo el mundo"
+      "madeIn": "Barcelona · En remoto, en todo el mundo"
     }
   }
 }
