@@ -1,0 +1,2336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>50 Labs — Custom AI Agents for Your Business</title>
+<meta name="description" content="We design, build and operate AI agents that answer your customers, qualify your leads and run your back office. First agent live in under 30 days — no engineers needed on your side.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="50 Labs — Custom AI Agents for Your Business">
+<meta property="og:description" content="We design, build and operate AI agents that answer your customers, qualify your leads and run your back office. First agent live in under 30 days — no engineers needed on your side.">
+<meta property="og:site_name" content="50 Labs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="50 Labs — Custom AI Agents for Your Business">
+<meta name="twitter:description" content="We design, build and operate AI agents that answer your customers, qualify your leads and run your back office. First agent live in under 30 days — no engineers needed on your side.">
+<meta name="theme-color" content="#F6F1E5">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2034%2034'%3E%3Crect%20width='34'%20height='34'%20rx='3'%20fill='%23211D18'/%3E%3Cpath%20d='M12%207v18.25h21'%20stroke='%23F6F1E5'%20stroke-width='3.5'%20fill='none'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============ RESET & TOKENS ============ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#F6F1E5;
+  --surface:#FDFAF2;
+  --ink:#211D18;
+  --muted:#6E6455; /* darkened from #7C7264 for 4.5:1 contrast on cream */
+  --accent:#B5401C;
+  --green:#31513F;
+  --cream:#F6F1E5;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Source Sans 3','Helvetica Neue',Arial,sans-serif;
+  --nav-h:72px;
+  --container:1200px;
+}
+html{scroll-behavior:smooth}
+html,body{overflow-x:hidden}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  padding-top:var(--nav-h);
+}
+::selection{background:var(--accent);color:var(--cream)}
+img,svg{max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.container{max-width:var(--container);margin:0 auto;padding-left:24px;padding-right:24px}
+section{position:relative}
+[hidden]{display:none!important}
+
+.skip-link{
+  position:absolute;left:-9999px;top:0;z-index:200;
+  background:var(--ink);color:var(--cream);
+  font-family:var(--mono);font-size:13px;text-transform:uppercase;letter-spacing:.08em;
+  padding:10px 18px;text-decoration:none;
+}
+.skip-link:focus{left:12px;top:12px}
+
+/* ============ TYPE ============ */
+h1,h2,h3{font-family:var(--serif);font-optical-sizing:auto;font-weight:600;letter-spacing:-.02em;line-height:1.05}
+h1{font-size:clamp(38px,6.5vw,84px)}
+h2{font-size:clamp(32px,4vw,52px);max-width:20ch}
+.kicker{
+  font-family:var(--mono);font-weight:500;font-size:13px;
+  text-transform:uppercase;letter-spacing:.12em;color:var(--accent);
+  display:flex;align-items:center;gap:20px;margin-bottom:28px;min-width:0;
+}
+.kicker::after{content:"";flex:1;height:1px;background:var(--ink);min-width:24px}
+.lede{color:var(--muted);max-width:52ch;font-size:17px}
+.mono-nums,.tick,.tickdown{font-variant-numeric:tabular-nums}
+
+/* marker underline */
+.mark{
+  font-style:italic;font-weight:400;color:var(--accent);
+  position:relative;display:inline-block;white-space:nowrap;
+  font-optical-sizing:auto;
+}
+.mark svg{
+  position:absolute;left:0;bottom:-.08em;width:100%;height:.16em;
+  overflow:visible;pointer-events:none;
+}
+.mark svg path{stroke:var(--accent);stroke-width:3;fill:none;stroke-linecap:round;vector-effect:non-scaling-stroke}
+
+/* ghost numerals */
+.ghost{
+  position:absolute;top:-.08em;right:-4vw;z-index:0;
+  font-family:var(--serif);font-weight:700;font-optical-sizing:auto;
+  font-size:28vw;line-height:1;letter-spacing:-.04em;
+  color:transparent;-webkit-text-stroke:1px rgba(33,29,24,.08);
+  pointer-events:none;user-select:none;
+}
+
+/* ============ BUTTONS ============ */
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--mono);font-weight:500;font-size:15px;
+  text-transform:uppercase;letter-spacing:.08em;text-decoration:none;
+  padding:14px 28px;border-radius:2px;white-space:nowrap;
+  transition:background-color 120ms ease,border-color 120ms ease,color 120ms ease;
+}
+.btn .arrow{display:inline-block;transition:transform 120ms ease}
+.btn-primary{background:var(--ink);color:var(--cream);border:1px solid var(--ink)}
+.btn-primary:hover{background:var(--accent);border-color:var(--accent)}
+.btn-primary:hover .arrow{transform:translateX(4px)}
+.btn-primary:active{transform:translateY(1px)}
+.btn-secondary{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.btn-secondary:hover{color:var(--accent);border-color:var(--accent)}
+.btn-secondary:active{transform:translateY(1px)}
+.txt-link{
+  color:var(--ink);text-decoration:underline;
+  text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:4px;
+}
+.txt-link:hover{text-decoration-thickness:3px}
+
+/* ============ NAV ============ */
+.site-nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  height:var(--nav-h);background:var(--bg);
+  border-bottom:1px solid var(--ink);
+}
+.nav-inner{
+  height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px;
+}
+.logo{display:inline-flex;align-items:center;gap:12px;text-decoration:none}
+.logo-mark{flex:none;display:block}
+.logo-mark rect{stroke:var(--ink);transition:stroke 120ms ease}
+.logo-mark path{stroke:var(--ink);transition:stroke 120ms ease}
+.logo:hover .logo-mark rect,.logo:hover .logo-mark path{stroke:var(--accent)}
+.logo-word{
+  font-family:var(--serif);font-weight:600;font-size:22px;letter-spacing:-.02em;
+  font-optical-sizing:auto;white-space:nowrap;
+}
+.logo-suffix{
+  font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);margin-left:2px;
+}
+.nav-links{display:flex;gap:28px}
+.nav-links a{
+  font-family:var(--mono);font-size:13px;font-weight:500;
+  text-transform:uppercase;letter-spacing:.12em;text-decoration:none;color:var(--ink);
+  padding:4px 0;
+}
+.nav-links a:hover{
+  text-decoration:underline;text-decoration-color:var(--accent);
+  text-decoration-thickness:2px;text-underline-offset:6px;
+}
+.nav-links a.active{color:var(--accent)}
+.nav-right{display:flex;align-items:center;gap:22px}
+.lang-toggle{display:flex;align-items:center;gap:6px;font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:.08em}
+.lang-toggle .sep{color:var(--muted)}
+.lang-btn{color:var(--muted);padding:2px 1px;text-transform:uppercase}
+.lang-btn.active{
+  color:var(--accent);text-decoration:underline;
+  text-decoration-thickness:2px;text-underline-offset:4px;
+}
+.nav-cta{padding:10px 20px;font-size:13px}
+.hamburger{display:none;flex-direction:column;gap:6px;padding:10px 2px;width:34px}
+.hamburger span{display:block;height:1px;background:var(--ink);transition:transform 160ms ease,opacity 160ms ease}
+.hamburger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.hamburger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* mobile menu sheet */
+.mobile-menu{
+  position:fixed;inset:var(--nav-h) 0 0 0;z-index:99;
+  background:var(--bg);display:none;flex-direction:column;
+  padding:24px;overflow-y:auto;
+}
+.mobile-menu.open{display:flex}
+.mobile-menu a.mm-link{
+  font-family:var(--serif);font-weight:600;font-size:32px;letter-spacing:-.02em;
+  text-decoration:none;color:var(--ink);padding:18px 0;
+  border-bottom:1px solid var(--ink);
+}
+.mobile-menu a.mm-link:first-child{border-top:1px solid var(--ink)}
+.mm-bottom{margin-top:auto;padding-top:32px;display:flex;flex-direction:column;gap:24px}
+.mm-bottom .btn{justify-content:center}
+
+/* ============ HERO ============ */
+.hero{overflow:hidden;border-bottom:1px solid var(--ink)}
+.hero .ghost{left:-6vw;right:auto;top:-.1em;font-size:30vw}
+.hero-grid{
+  display:grid;grid-template-columns:55fr 45fr;gap:56px;align-items:center;
+  padding-top:88px;padding-bottom:96px;position:relative;z-index:1;
+}
+.hero h1{max-width:14ch;margin:26px 0 24px}
+.hero .lede{margin-bottom:36px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:16px}
+
+/* receipt card */
+.receipt-wrap{position:relative;justify-self:end;width:min(400px,100%)}
+.receipt{
+  position:relative;background:var(--surface);
+  border:1px solid var(--ink);border-top-style:dashed;border-radius:2px;
+  padding:28px 26px 30px;transform:rotate(1.5deg);
+  font-family:var(--mono);font-size:13px;line-height:1.5;
+}
+.receipt::before{ /* paper fold at top corner */
+  content:"";position:absolute;top:-1px;right:-1px;width:0;height:0;
+  border-top:22px solid var(--bg);border-left:22px solid transparent;
+  border-bottom:none;
+}
+.receipt::after{
+  content:"";position:absolute;top:-1px;right:-1px;width:22px;height:22px;
+  background:linear-gradient(225deg,transparent 49%,var(--ink) 49%,var(--ink) 51%,transparent 51%);
+}
+.receipt-head{
+  font-weight:500;letter-spacing:.06em;text-transform:uppercase;
+  padding-bottom:14px;margin-bottom:14px;border-bottom:1px solid var(--ink);
+}
+.r-row{
+  display:flex;gap:10px;align-items:baseline;padding:5px 0;
+  opacity:0;animation:printIn .3s steps(2,end) forwards;
+}
+.r-row:nth-child(1){animation-delay:.45s}
+.r-row:nth-child(2){animation-delay:.75s}
+.r-row:nth-child(3){animation-delay:1.05s}
+.r-row:nth-child(4){animation-delay:1.35s}
+.r-row:nth-child(5){animation-delay:1.65s}
+.r-row .ok{margin-left:auto;color:var(--green);font-weight:500}
+@keyframes printIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.r-hours{
+  display:flex;justify-content:flex-start;gap:14px;align-items:baseline;
+  margin-top:14px;padding-top:14px;border-top:1px dotted var(--ink);
+  font-weight:500;letter-spacing:.06em;text-transform:uppercase;
+}
+.r-hours .tickdown{color:var(--accent);font-size:16px}
+.receipt-stamp{
+  position:absolute;right:-26px;bottom:-34px;width:112px;height:112px;
+  transform:rotate(-12deg);z-index:2;
+}
+.stamp text{fill:var(--accent)}
+.stamp .rim-text{font-family:var(--mono);font-size:9.5px;letter-spacing:.22em;text-transform:uppercase}
+.stamp .center-word{font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
+.stamp circle,.stamp rect,.stamp path{stroke:var(--accent);fill:none}
+
+/* proof strip */
+.proof-strip{border-top:1px solid var(--ink)}
+.proof-inner{
+  display:grid;grid-template-columns:repeat(3,1fr);
+}
+.proof-item{padding:22px 24px;border-left:1px solid var(--ink)}
+.proof-item:first-child{border-left:none;padding-left:0}
+.proof-item .val{
+  font-family:var(--mono);font-weight:500;font-size:clamp(20px,2.4vw,28px);
+  color:var(--accent);font-variant-numeric:tabular-nums;display:block;
+}
+.proof-item .lbl{
+  font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+}
+
+/* ============ SECTIONS ============ */
+.section{padding:120px 0;border-top:1px solid var(--ink);overflow:hidden}
+.section > .container{position:relative;z-index:1}
+.sec-intro{color:var(--muted);max-width:52ch;margin-top:20px}
+.anchor-target{scroll-margin-top:calc(var(--nav-h) + 16px)}
+
+/* problem */
+.ba-grid{display:grid;grid-template-columns:1fr 1fr;margin-top:56px;border:1px solid var(--ink);border-radius:2px}
+.ba-col{padding:36px}
+.ba-col + .ba-col{border-left:1px solid var(--ink)}
+.ba-col h3{
+  font-family:var(--mono);font-weight:500;font-size:13px;letter-spacing:.12em;
+  text-transform:uppercase;margin-bottom:22px;
+}
+.ba-col.before h3{color:var(--muted)}
+.ba-col.after h3{color:var(--green)}
+.ba-col ul{list-style:none}
+.ba-col li{
+  display:flex;gap:14px;padding:13px 0;border-top:1px solid rgba(33,29,24,.16);
+}
+.ba-col li:first-child{border-top:none}
+.ba-col .glyph{font-family:var(--mono);flex:none;font-weight:500}
+.ba-col.before .glyph{color:var(--accent)}
+.ba-col.after .glyph{color:var(--green)}
+.ba-col.before li{color:var(--muted)}
+
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:64px}
+.svc-card{
+  border:1px solid var(--ink);border-radius:2px;padding:32px;
+  margin:0 -1px -1px 0;position:relative;background:transparent;
+  transition:border-color 150ms ease,transform 150ms ease;
+  display:flex;flex-direction:column;
+}
+.svc-card:hover{border-color:var(--accent);transform:translateY(-2px);z-index:2}
+.svc-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:22px}
+.svc-index{font-family:var(--mono);font-size:13px;font-weight:500;color:var(--muted);letter-spacing:.12em}
+.svc-glyph{width:24px;height:24px}
+.svc-glyph path,.svc-glyph rect,.svc-glyph circle,.svc-glyph line,.svc-glyph polyline{
+  stroke:var(--ink);stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round;
+}
+.svc-card h3{font-weight:500;font-size:22px;letter-spacing:-.01em}
+.svc-tagline{
+  font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--accent);margin:6px 0 14px;
+}
+.svc-card p{font-size:15.5px;color:var(--muted);margin-bottom:16px}
+.svc-card ul{list-style:none;margin-bottom:24px}
+.svc-card li{
+  font-size:14.5px;padding:7px 0 7px 20px;position:relative;
+  border-top:1px solid rgba(33,29,24,.16);
+}
+.svc-card li::before{content:"—";position:absolute;left:0;color:var(--muted)}
+.metric-chip{
+  margin-top:auto;align-self:flex-start;
+  font-family:var(--mono);font-size:12.5px;font-weight:500;letter-spacing:.04em;
+  border:1px solid var(--ink);border-radius:2px;background:var(--surface);
+  padding:6px 12px;font-variant-numeric:tabular-nums;
+}
+.metric-chip .tick{color:var(--accent)}
+
+/* process — inverted band */
+.section.process{background:var(--ink);color:var(--cream);border-top:1px solid var(--ink)}
+.process .kicker::after{background:var(--cream)}
+.process .sec-intro{color:#A99E8D}
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);margin-top:72px;border-top:1px solid var(--cream)}
+.p-step{padding:36px 28px 8px 0;border-left:1px solid var(--cream);padding-left:28px}
+.p-step:first-child{border-left:none;padding-left:0}
+.p-num{
+  font-family:var(--serif);font-weight:700;font-optical-sizing:auto;font-size:96px;line-height:1;
+  color:transparent;-webkit-text-stroke:1px rgba(246,241,229,.45);display:block;margin-bottom:18px;
+}
+.p-step h3{
+  font-weight:500;font-size:21px;margin-bottom:12px;color:var(--cream);
+  display:inline-block;border-bottom:2px solid var(--accent);padding-bottom:6px;
+}
+.p-step p{font-size:15px;color:#A99E8D}
+
+/* integrations */
+.chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:48px}
+.chip{
+  font-family:var(--mono);font-size:13px;letter-spacing:.04em;
+  border:1px solid var(--ink);border-radius:2px;background:var(--surface);
+  padding:6px 12px;display:inline-flex;align-items:center;gap:8px;
+}
+.chip.live::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--green);flex:none}
+.chip.more{border-style:dashed;color:var(--muted)}
+.chips-legend{
+  margin-top:22px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:8px;
+}
+.chips-legend::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--green)}
+
+/* cases */
+.case-grid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:64px}
+.case-card{
+  border:1px solid var(--ink);border-radius:2px;padding:32px;margin:0 -1px -1px 0;
+  display:flex;flex-direction:column;transition:border-color 150ms ease,transform 150ms ease;position:relative;
+}
+.case-card:hover{border-color:var(--accent);transform:translateY(-2px);z-index:2}
+.case-sector{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.case-card h3{font-weight:500;font-size:22px;margin-bottom:20px}
+.case-lbl{
+  font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--accent);margin-bottom:6px;
+}
+.case-card p{font-size:14.5px;color:var(--muted);margin-bottom:18px}
+.case-results{
+  margin-top:auto;border-top:1px solid var(--ink);padding-top:18px;
+  display:grid;grid-template-columns:1fr;gap:10px;
+}
+.case-res{display:flex;align-items:baseline;gap:12px}
+.case-res .val{
+  font-family:var(--mono);font-weight:500;font-size:17px;color:var(--accent);
+  font-variant-numeric:tabular-nums;min-width:84px;
+}
+.case-res .lbl{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;color:var(--muted);text-transform:uppercase}
+
+/* pricing */
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:64px;align-items:stretch}
+.tier{
+  border:1px solid var(--ink);border-radius:2px;padding:36px 32px;
+  display:flex;flex-direction:column;position:relative;
+}
+.tier.highlight{border:2px solid var(--accent)}
+.tier-badge{
+  position:absolute;top:-13px;left:28px;background:var(--accent);color:var(--cream);
+  font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
+  padding:4px 12px;border-radius:2px;
+}
+.tier h3{font-weight:500;font-size:22px}
+.tier-price{
+  font-family:var(--serif);font-weight:600;font-optical-sizing:auto;
+  font-size:44px;letter-spacing:-.02em;margin:16px 0 2px;line-height:1;
+}
+.tier-price .period{font-family:var(--mono);font-size:14px;font-weight:400;letter-spacing:.04em;color:var(--muted)}
+.tier-setup{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+.tier > p{font-size:15px;color:var(--muted);margin-bottom:22px}
+.tier ul{list-style:none;margin-bottom:28px}
+.tier li{
+  padding:9px 0 9px 26px;position:relative;font-size:15px;
+  border-top:1px solid rgba(33,29,24,.16);
+}
+.tier li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:600}
+.tier .btn{margin-top:auto;justify-content:center}
+.price-footnote{
+  margin-top:36px;font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--muted);max-width:72ch;
+}
+
+/* faq */
+.faq-list{margin-top:56px;border-top:1px solid var(--ink);max-width:860px}
+.faq-item{border-bottom:1px solid var(--ink)}
+.faq-q{
+  width:100%;display:flex;justify-content:space-between;align-items:baseline;gap:24px;
+  text-align:left;padding:24px 4px;
+  font-family:var(--serif);font-weight:500;font-size:21px;letter-spacing:-.01em;line-height:1.3;
+}
+.faq-q .faq-icon{
+  font-family:var(--mono);font-size:18px;color:var(--accent);flex:none;
+  transition:transform 160ms ease;
+}
+.faq-q[aria-expanded="true"] .faq-icon{transform:rotate(45deg)}
+.faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows 200ms ease}
+.faq-a > div{overflow:hidden}
+.faq-a p{color:var(--muted);padding:0 4px 26px;max-width:64ch}
+.faq-item.open .faq-a{grid-template-rows:1fr}
+
+/* final CTA */
+.final-cta{text-align:center;padding:120px 0}
+.final-cta h2{margin:0 auto;max-width:18ch}
+.final-cta p{color:var(--muted);max-width:52ch;margin:22px auto 40px}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:5fr 6fr;gap:64px;margin-top:8px;align-items:start}
+.contact-info .lede{margin-top:20px}
+.contact-info .privacy-note{
+  margin-top:32px;font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--muted);max-width:44ch;line-height:1.7;
+}
+.form-panel{
+  background:var(--surface);border:1px solid var(--ink);border-radius:2px;padding:36px;position:relative;
+}
+.form-kicker{
+  font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:28px;display:flex;align-items:center;gap:16px;
+}
+.form-kicker::after{content:"";flex:1;height:1px;background:var(--ink)}
+.field{margin-bottom:26px}
+.field label{
+  display:block;font-family:var(--mono);font-size:12px;font-weight:500;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;
+}
+.field input[type="text"],.field input[type="email"],.field select{
+  width:100%;background:transparent;border:none;border-bottom:1px solid var(--ink);
+  border-radius:0;padding:12px 2px;font-family:var(--sans);font-size:17px;color:var(--ink);
+  appearance:none;
+}
+.field select{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23211D18' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 4px center;padding-right:24px;cursor:pointer;
+}
+.field textarea{
+  width:100%;background:var(--surface);border:1px solid var(--ink);border-radius:2px;
+  padding:12px;font-family:var(--sans);font-size:17px;color:var(--ink);min-height:110px;resize:vertical;
+}
+.field input::placeholder,.field textarea::placeholder{color:var(--muted);opacity:1}
+.field input:focus,.field select:focus{outline:none;border-bottom:2px solid var(--accent);padding-bottom:11px}
+.field textarea:focus{outline:none;border-color:var(--accent)}
+.field input:focus-visible,.field select:focus-visible,.field textarea:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.field-error{
+  display:none;font-family:var(--mono);font-size:12px;color:var(--accent);
+  letter-spacing:.04em;padding-top:6px;
+}
+.field.invalid .field-error{display:block}
+.field.invalid input,.field.invalid select{border-bottom-color:var(--accent)}
+.consent{display:flex;gap:12px;align-items:flex-start;margin-bottom:30px}
+.consent input{
+  appearance:none;width:16px;height:16px;flex:none;margin-top:4px;
+  border:1px solid var(--ink);border-radius:2px;background:var(--surface);cursor:pointer;position:relative;
+}
+.consent input:checked{background:var(--accent);border-color:var(--accent)}
+.consent input:checked::after{
+  content:"";position:absolute;left:4px;top:1px;width:5px;height:9px;
+  border:solid var(--cream);border-width:0 2px 2px 0;transform:rotate(45deg);
+}
+.consent label{font-size:14px;color:var(--muted);cursor:pointer}
+.consent.invalid label{color:var(--accent)}
+.honeypot{position:absolute;left:-9999px;top:-9999px;height:1px;width:1px;overflow:hidden}
+.form-submit{width:auto}
+.form-submit[disabled]{opacity:.6;cursor:wait}
+.form-error-box{margin-top:20px;font-family:var(--mono);font-size:13px;color:var(--accent);line-height:1.7}
+.form-error-box a{color:var(--ink)}
+.form-success{text-align:center;padding:24px 0 8px}
+.form-success .stamp-wrap{width:120px;height:120px;margin:0 auto 26px;transform:rotate(-12deg)}
+.form-success h3{font-weight:600;font-size:30px;margin-bottom:12px}
+.form-success p{color:var(--muted);max-width:40ch;margin:0 auto}
+
+/* ============ FOOTER ============ */
+.site-footer{
+  border-top:1px solid var(--ink);padding:72px 0 40px;position:relative;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cg transform='rotate(45 60 60)' opacity='0.04'%3E%3Cpath d='M45 30v55h38' stroke='%23211D18' stroke-width='8' fill='none'/%3E%3C/g%3E%3C/svg%3E");
+}
+.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:40px;align-items:flex-start}
+.footer-brand{max-width:400px}
+.footer-brand .logo{margin-bottom:20px}
+.footer-brand p{color:var(--muted);font-size:15px}
+.footer-contact{max-width:340px}
+.footer-contact .lbl{
+  font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:10px;
+}
+.footer-contact a{
+  font-family:var(--mono);font-size:15px;color:var(--ink);
+  text-decoration:underline;text-decoration-color:var(--accent);
+  text-decoration-thickness:2px;text-underline-offset:4px;word-break:break-all;
+}
+.footer-contact a:hover{text-decoration-thickness:3px}
+.footer-stamp{width:96px;height:96px;transform:rotate(-12deg);flex:none}
+.footer-bottom{
+  margin-top:56px;padding-top:24px;border-top:1px solid var(--ink);
+  display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
+  font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
+}
+
+/* ============ REVEAL ============ */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .45s ease,transform .45s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:1100px){
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .case-grid{grid-template-columns:1fr;max-width:640px}
+  .process-steps{grid-template-columns:repeat(2,1fr)}
+  .p-step:nth-child(3){border-left:none;padding-left:0}
+  .p-step:nth-child(n+3){border-top:1px solid var(--cream);margin-top:32px;padding-top:36px}
+}
+@media (max-width:960px){
+  .hero-grid{grid-template-columns:1fr;gap:72px;padding-top:64px;padding-bottom:80px}
+  .receipt-wrap{justify-self:start;margin-left:4px}
+  .price-grid{grid-template-columns:1fr;max-width:520px}
+  .contact-grid{grid-template-columns:1fr;gap:48px}
+  .contact-grid .form-panel{max-width:640px}
+}
+@media (max-width:1280px){
+  .logo-suffix{display:none}
+}
+@media (max-width:860px){
+  .nav-links{display:none}
+  .nav-cta{display:none}
+  .site-nav .lang-toggle{display:none}
+  .hamburger{display:flex}
+}
+@media (max-width:700px){
+  body{font-size:15px}
+  .section{padding:72px 0}
+  .final-cta{padding:72px 0}
+  .svc-grid{grid-template-columns:1fr}
+  .ba-grid{grid-template-columns:1fr}
+  .ba-col + .ba-col{border-left:none;border-top:1px solid var(--ink)}
+  .process-steps{grid-template-columns:1fr}
+  .p-step{border-left:none;padding-left:0}
+  .p-step:nth-child(n+2){border-top:1px solid var(--cream);margin-top:28px;padding-top:32px}
+  .proof-inner{grid-template-columns:1fr}
+  .proof-item{border-left:none;border-top:1px solid rgba(33,29,24,.16);padding:16px 0}
+  .proof-item:first-child{border-top:none}
+  .faq-q{font-size:18px}
+  .receipt{transform:rotate(.8deg)}
+  .receipt-stamp{right:-8px;bottom:-30px}
+  .form-panel{padding:28px 22px}
+}
+
+@media (min-width:861px){
+  .mobile-menu{display:none!important}
+}
+@media (max-width:480px){
+  .btn{font-size:13px;padding:13px 16px;letter-spacing:.06em}
+  .hero-ctas .btn{width:100%;justify-content:center}
+  .tier .btn,.form-submit{width:100%;justify-content:center}
+  h1{font-size:clamp(29px,9.4vw,36px)}
+}
+
+/* ============ REDUCED MOTION ============ */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0ms!important;transition-duration:.01ms!important}
+  .r-row{opacity:1;animation:none}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<noscript><p style="margin:0;padding:14px 20px;background:#211D18;color:#F6F1E5;font-family:monospace;font-size:14px">This site needs JavaScript for the full experience. You can reach us directly at <a href="mailto:ralcaraz.canals@gmail.com" style="color:#F6F1E5">ralcaraz.canals@gmail.com</a> · Esta web necesita JavaScript; escríbenos a ese mismo email.</p></noscript>
+<a class="skip-link" href="#main" data-i18n="ui:skip">Skip to content</a>
+
+<!-- ============ NAV ============ -->
+<header class="site-nav">
+  <div class="container nav-inner">
+    <a class="logo" href="#top" aria-label="50 Labs">
+      <svg class="logo-mark" width="34" height="34" viewBox="0 0 34 34" aria-hidden="true">
+        <rect x="0.75" y="0.75" width="32.5" height="32.5" rx="2" fill="none" stroke-width="1.5"/>
+        <path d="M12 7v18.25h21.25" fill="none" stroke-width="3"/>
+      </svg>
+      <span class="logo-word">50 Labs</span>
+      <span class="logo-suffix" data-i18n="ui:logoSuffix">Agents &amp; Automations</span>
+    </a>
+    <nav class="nav-links" data-i18n-aria="ui:aria.nav" aria-label="Main navigation">
+      <a href="#services" data-i18n="nav.items.0.label">Services</a>
+      <a href="#process" data-i18n="nav.items.1.label">Process</a>
+      <a href="#cases" data-i18n="nav.items.2.label">Case studies</a>
+      <a href="#pricing" data-i18n="nav.items.3.label">Pricing</a>
+      <a href="#faq" data-i18n="nav.items.4.label">FAQ</a>
+      <a href="#contact" data-i18n="nav.items.5.label">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang-toggle" role="group" data-i18n-aria="ui:aria.langGroup" aria-label="Language">
+        <button type="button" class="lang-btn" data-lang="en" data-i18n-aria="ui:aria.langEN">EN</button>
+        <span class="sep" aria-hidden="true">/</span>
+        <button type="button" class="lang-btn" data-lang="es" data-i18n-aria="ui:aria.langES">ES</button>
+      </div>
+      <a class="btn btn-primary nav-cta" href="#contact"><span data-i18n="nav.cta">Book a call</span><span class="arrow" aria-hidden="true">→</span></a>
+      <button type="button" class="hamburger" aria-expanded="false" aria-controls="mobileMenu" data-i18n-aria="ui:aria.menuOpen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a class="mm-link" href="#services" data-i18n="nav.items.0.label">Services</a>
+  <a class="mm-link" href="#process" data-i18n="nav.items.1.label">Process</a>
+  <a class="mm-link" href="#cases" data-i18n="nav.items.2.label">Case studies</a>
+  <a class="mm-link" href="#pricing" data-i18n="nav.items.3.label">Pricing</a>
+  <a class="mm-link" href="#faq" data-i18n="nav.items.4.label">FAQ</a>
+  <a class="mm-link" href="#contact" data-i18n="nav.items.5.label">Contact</a>
+  <div class="mm-bottom">
+    <div class="lang-toggle">
+      <button type="button" class="lang-btn" data-lang="en" data-i18n-aria="ui:aria.langEN">EN</button>
+      <span class="sep" aria-hidden="true">/</span>
+      <button type="button" class="lang-btn" data-lang="es" data-i18n-aria="ui:aria.langES">ES</button>
+    </div>
+    <a class="btn btn-primary" href="#contact"><span data-i18n="nav.cta">Book a call</span><span class="arrow" aria-hidden="true">→</span></a>
+  </div>
+</div>
+
+<main id="main">
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="ghost" aria-hidden="true">50</div>
+  <div class="container hero-grid">
+    <div class="hero-left">
+      <p class="kicker" data-i18n="hero.eyebrow">AI agents, built and operated for you</p>
+      <h1 data-i18n-rich="hero.headline">Agents that do the work. <em class="mark">You keep the margin.<svg viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true"><path d="M2 5 Q 14 2, 27 4.6 T 52 4.4 T 76 5 T 98 3.6"></path></svg></em></h1>
+      <p class="lede" data-i18n="hero.subheadline">We build AI agents that answer every message, qualify every lead and handle the repetitive work your team hates. You keep the decisions. They do the grind.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#contact"><span data-i18n="hero.primaryCta">Get a free ops audit</span><span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn btn-secondary" href="#process" data-i18n="hero.secondaryCta">See how it works</a>
+      </div>
+    </div>
+    <div class="receipt-wrap">
+      <div class="receipt" aria-hidden="false">
+        <div class="receipt-head" data-i18n="ui:receipt.header">Work order Nº 0050 — Lead intake agent</div>
+        <div class="r-row"><span>09:41</span><span data-i18n="ui:receipt.rows.0">lead captured — web form</span><span class="ok" aria-hidden="true">✓</span></div>
+        <div class="r-row"><span>09:41</span><span data-i18n="ui:receipt.rows.1">enriched — company data</span><span class="ok" aria-hidden="true">✓</span></div>
+        <div class="r-row"><span>09:42</span><span data-i18n="ui:receipt.rows.2">qualified — score 87/100</span><span class="ok" aria-hidden="true">✓</span></div>
+        <div class="r-row"><span>09:43</span><span data-i18n="ui:receipt.rows.3">meeting booked — Tue 10:00</span><span class="ok" aria-hidden="true">✓</span></div>
+        <div class="r-row"><span>09:43</span><span data-i18n="ui:receipt.rows.4">CRM updated — HubSpot</span><span class="ok" aria-hidden="true">✓</span></div>
+        <div class="r-hours">
+          <span data-i18n="ui:receipt.hoursLabel">Human hours spent</span>
+          <span class="tickdown" id="hoursTick" data-i18n="ui:receipt.hoursValue">0.0</span>
+        </div>
+      </div>
+      <svg class="receipt-stamp stamp" viewBox="0 0 120 120" aria-hidden="true">
+        <circle cx="60" cy="60" r="57" stroke-width="1.5"/>
+        <circle cx="60" cy="60" r="38" stroke-width="1"/>
+        <defs><path id="rimPathHero" d="M60,60 m-47,0 a47,47 0 1,1 94,0 a47,47 0 1,1 -94,0"/></defs>
+        <text class="rim-text"><textPath href="#rimPathHero" data-i18n="ui:stampRim">50 LABS · BARCELONA · MMXXVI ·</textPath></text>
+        <rect x="49" y="38" width="22" height="22" rx="1.5" stroke-width="1.5"/>
+        <path d="M56 42.5v13h14.5" stroke-width="2"/>
+        <text class="center-word" x="60" y="80" text-anchor="middle" data-i18n="ui:receipt.stamp">Done</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- proof strip -->
+<div class="proof-strip">
+  <div class="container proof-inner">
+    <div class="proof-item"><span class="val tick" data-i18n="hero.stats.0.value">30+ h</span><span class="lbl" data-i18n="hero.stats.0.label">saved per team, every week</span></div>
+    <div class="proof-item"><span class="val tick" data-i18n="hero.stats.1.value">&lt; 60 s</span><span class="lbl" data-i18n="hero.stats.1.label">response to any lead, 24/7</span></div>
+    <div class="proof-item"><span class="val tick" data-i18n="hero.stats.2.value">&lt; 30 days</span><span class="lbl" data-i18n="hero.stats.2.label">from kickoff to live agent</span></div>
+  </div>
+</div>
+
+<!-- ============ PROBLEM ============ -->
+<section class="section anchor-target" id="problem">
+  <div class="ghost" aria-hidden="true">01</div>
+  <div class="container">
+    <p class="kicker" data-i18n="ui:kickers.problem">01 — The problem</p>
+    <h2 class="reveal" data-i18n="problem.heading">Manual ops are eating your margin</h2>
+    <p class="sec-intro reveal" data-i18n="problem.intro">Most teams lose deals not because their product is worse — because they answer late, follow up twice instead of five times, and drown in admin. Here is what changes.</p>
+    <div class="ba-grid reveal">
+      <div class="ba-col before">
+        <h3 data-i18n="ui:before">Without agents</h3>
+        <ul>
+          <li><span class="glyph" aria-hidden="true">✕</span><span data-i18n="problem.before.0">New enquiries sit unanswered until someone finds a gap in their day</span></li>
+          <li><span class="glyph" aria-hidden="true">✕</span><span data-i18n="problem.before.1">Follow-ups depend on someone remembering</span></li>
+          <li><span class="glyph" aria-hidden="true">✕</span><span data-i18n="problem.before.2">Support answers the same 20 questions on loop</span></li>
+          <li><span class="glyph" aria-hidden="true">✕</span><span data-i18n="problem.before.3">Data lives in inboxes, not in your CRM</span></li>
+        </ul>
+      </div>
+      <div class="ba-col after">
+        <h3 data-i18n="ui:after">With agents</h3>
+        <ul>
+          <li><span class="glyph" aria-hidden="true">✓</span><span data-i18n="problem.after.0">Every lead gets a useful answer in under a minute</span></li>
+          <li><span class="glyph" aria-hidden="true">✓</span><span data-i18n="problem.after.1">Follow-up sequences run themselves, every time</span></li>
+          <li><span class="glyph" aria-hidden="true">✓</span><span data-i18n="problem.after.2">Agents resolve routine tickets; humans take the hard ones</span></li>
+          <li><span class="glyph" aria-hidden="true">✓</span><span data-i18n="problem.after.3">Every interaction logged, tagged and synced automatically</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="section anchor-target" id="services">
+  <div class="container">
+    <p class="kicker" data-i18n="ui:kickers.services">02 — What we build</p>
+    <h2 class="reveal" data-i18n="services.heading">Six agents. One goal: hours back.</h2>
+    <p class="sec-intro reveal" data-i18n="services.intro">Every agent learns from your real conversations and sounds like your team from day one — not a generic chatbot with your logo on it.</p>
+    <div class="svc-grid">
+      <!-- 01 Scout -->
+      <article class="svc-card reveal">
+        <div class="svc-top">
+          <span class="svc-index">01</span>
+          <svg class="svc-glyph" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="1"/><path d="M2 6l10 7L22 6"/></svg>
+        </div>
+        <h3 data-i18n="services.agents.0.name">Scout</h3>
+        <p class="svc-tagline" data-i18n="services.agents.0.tagline">Outbound sales agent</p>
+        <p data-i18n="services.agents.0.description">Scout finds prospects that match your best customers and opens conversations at scale. Personalized outreach, not spray-and-pray.</p>
+        <ul>
+          <li data-i18n="services.agents.0.bullets.0">Researches and enriches prospect lists</li>
+          <li data-i18n="services.agents.0.bullets.1">Writes personalized first touches and follow-ups</li>
+          <li data-i18n="services.agents.0.bullets.2">Books meetings straight into your calendar</li>
+        </ul>
+        <span class="metric-chip"><span class="tick" data-i18n="ui:metrics.0">+3× outreach volume</span></span>
+      </article>
+      <!-- 02 Sift -->
+      <article class="svc-card reveal">
+        <div class="svc-top">
+          <span class="svc-index">02</span>
+          <svg class="svc-glyph" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h18l-7 8v7l-4-2v-5L3 4z"/></svg>
+        </div>
+        <h3 data-i18n="services.agents.1.name">Sift</h3>
+        <p class="svc-tagline" data-i18n="services.agents.1.tagline">Lead qualification agent</p>
+        <p data-i18n="services.agents.1.description">Sift talks to every inbound lead the moment it arrives and scores it against your criteria. Your sales team only sees the ones worth their time.</p>
+        <ul>
+          <li data-i18n="services.agents.1.bullets.0">Instant reply on web, WhatsApp and email</li>
+          <li data-i18n="services.agents.1.bullets.1">Asks your qualifying questions, scores answers</li>
+          <li data-i18n="services.agents.1.bullets.2">Hands hot leads to your team with the whole conversation attached</li>
+        </ul>
+        <span class="metric-chip"><span class="tick" data-i18n="ui:metrics.1">45 s first reply</span></span>
+      </article>
+      <!-- 03 Resolve -->
+      <article class="svc-card reveal">
+        <div class="svc-top">
+          <span class="svc-index">03</span>
+          <svg class="svc-glyph" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13a8 8 0 0 1 16 0"/><rect x="2" y="13" width="4" height="7" rx="1"/><rect x="18" y="13" width="4" height="7" rx="1"/><path d="M20 20a4 4 0 0 1-4 2h-3"/></svg>
+        </div>
+        <h3 data-i18n="services.agents.2.name">Resolve</h3>
+        <p class="svc-tagline" data-i18n="services.agents.2.tagline">Customer support agent</p>
+        <p data-i18n="services.agents.2.description">Resolve answers the questions your team repeats all day — orders, returns, invoices, how-tos. It escalates anything sensitive with the full thread attached.</p>
+        <ul>
+          <li data-i18n="services.agents.2.bullets.0">Trained on your docs, policies and history</li>
+          <li data-i18n="services.agents.2.bullets.1">Handles 60-80% of tickets end to end</li>
+          <li data-i18n="services.agents.2.bullets.2">Knows when a case needs a person, and passes it on at the right moment</li>
+        </ul>
+        <span class="metric-chip"><span class="tick" data-i18n="ui:metrics.2">−70% ticket load</span></span>
+      </article>
+      <!-- 04 Concierge -->
+      <article class="svc-card reveal">
+        <div class="svc-top">
+          <span class="svc-index">04</span>
+          <svg class="svc-glyph" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M9 15l2 2 4-4"/></svg>
+        </div>
+        <h3 data-i18n="services.agents.3.name">Concierge</h3>
+        <p class="svc-tagline" data-i18n="services.agents.3.tagline">Reception &amp; booking agent</p>
+        <p data-i18n="services.agents.3.description">Concierge picks up every call and message, books appointments and chases no-shows. No more voicemail, no more empty slots.</p>
+        <ul>
+          <li data-i18n="services.agents.3.bullets.0">Answers calls and WhatsApp 24/7</li>
+          <li data-i18n="services.agents.3.bullets.1">Books, reschedules and confirms appointments</li>
+          <li data-i18n="services.agents.3.bullets.2">Sends reminders that actually cut no-shows</li>
+        </ul>
+        <span class="metric-chip"><span class="tick" data-i18n="ui:metrics.3">−37% no-shows</span></span>
+      </article>
+      <!-- 05 Quill -->
+      <article class="svc-card reveal">
+        <div class="svc-top">
+          <span class="svc-index">05</span>
+          <svg class="svc-glyph" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4c-8 0-13 5-14 12 3 0 11-1 13-10"/><path d="M6 16c2-1 6-2 9-6"/><path d="M4 21l3-5"/></svg>
+        </div>
+        <h3 data-i18n="services.agents.4.name">Quill</h3>
+        <p class="svc-tagline" data-i18n="services.agents.4.tagline">Content agent</p>
+        <p data-i18n="services.agents.4.description">Quill turns your expertise into a steady stream of posts, newsletters and product copy in your voice. You approve; it publishes.</p>
+        <ul>
+          <li data-i18n="services.agents.4.bullets.0">Drafts social posts, emails and articles on brand</li>
+          <li data-i18n="services.agents.4.bullets.1">Repurposes one idea across every channel</li>
+          <li data-i18n="services.agents.4.bullets.2">Keeps a publishing calendar running weekly</li>
+        </ul>
+        <span class="metric-chip"><span class="tick" data-i18n="ui:metrics.4">5× content output</span></span>
+      </article>
+      <!-- 06 Ledger -->
+      <article class="svc-card reveal">
+        <div class="svc-top">
+          <span class="svc-index">06</span>
+          <svg class="svc-glyph" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 3v18M12 8h5M12 12h5M12 16h5"/></svg>
+        </div>
+        <h3 data-i18n="services.agents.5.name">Ledger</h3>
+        <p class="svc-tagline" data-i18n="services.agents.5.tagline">Operations &amp; back-office agent</p>
+        <p data-i18n="services.agents.5.description">Ledger does the invisible work: data entry, invoice chasing, report building, CRM hygiene. The stuff nobody wants to own — owned.</p>
+        <ul>
+          <li data-i18n="services.agents.5.bullets.0">Moves data between your tools without errors</li>
+          <li data-i18n="services.agents.5.bullets.1">Chases unpaid invoices and missing documents</li>
+          <li data-i18n="services.agents.5.bullets.2">Builds weekly reports from live data, automatically</li>
+        </ul>
+        <span class="metric-chip"><span class="tick" data-i18n="ui:metrics.5">12 h/wk admin saved</span></span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS (inverted band) ============ -->
+<section class="section process anchor-target" id="process">
+  <div class="container">
+    <p class="kicker" data-i18n="ui:kickers.process">03 — The method</p>
+    <h2 class="reveal" data-i18n="process.heading">From audit to live agent in under 30 days</h2>
+    <p class="sec-intro reveal" data-i18n="process.intro">No six-month consulting projects. We find the highest-leverage process, automate it, and prove the numbers.</p>
+    <div class="process-steps">
+      <div class="p-step reveal">
+        <span class="p-num" aria-hidden="true">1</span>
+        <h3 data-i18n="process.steps.0.title">1. Audit</h3>
+        <p data-i18n="process.steps.0.description">We map your workflows and find where hours and leads are leaking. You get a prioritized list of what to automate first — free, no strings.</p>
+      </div>
+      <div class="p-step reveal">
+        <span class="p-num" aria-hidden="true">2</span>
+        <h3 data-i18n="process.steps.1.title">2. Design &amp; build</h3>
+        <p data-i18n="process.steps.1.description">We train the agent on real examples from your business and stress-test it against months of past conversations before it ever talks to a customer.</p>
+      </div>
+      <div class="p-step reveal">
+        <span class="p-num" aria-hidden="true">3</span>
+        <h3 data-i18n="process.steps.2.title">3. Deploy</h3>
+        <p data-i18n="process.steps.2.description">The agent goes live connected to your channels and CRM, with human handoff rules and guardrails set from day one. Most agents ship in under a month.</p>
+      </div>
+      <div class="p-step reveal">
+        <span class="p-num" aria-hidden="true">4</span>
+        <h3 data-i18n="process.steps.3.title">4. Measure &amp; optimize</h3>
+        <p data-i18n="process.steps.3.description">You get a dashboard with hard numbers: conversations, conversions, hours saved. We review it with you monthly and keep tuning.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INTEGRATIONS ============ -->
+<section class="section anchor-target" id="integrations">
+  <div class="container">
+    <p class="kicker" data-i18n="ui:kickers.integrations">04 — The stack</p>
+    <h2 class="reveal" data-i18n="integrations.heading">Built to fit your stack</h2>
+    <p class="sec-intro reveal" data-i18n="integrations.intro">No rip-and-replace. Your agents work inside your current stack from day one.</p>
+    <div class="chips reveal" id="chipRow"></div>
+    <p class="chips-legend reveal" data-i18n="ui:liveLegend">Green dot — live in client projects today</p>
+  </div>
+</section>
+
+<!-- ============ CASES ============ -->
+<section class="section anchor-target" id="cases">
+  <div class="ghost" aria-hidden="true">05</div>
+  <div class="container">
+    <p class="kicker" data-i18n="ui:kickers.cases">05 — Case files</p>
+    <h2 class="reveal" data-i18n="cases.heading">Real teams, measurable results</h2>
+    <p class="sec-intro reveal" data-i18n="cases.intro">Different sectors, same pattern: fewer missed conversations, more closed business.</p>
+    <div class="case-grid">
+      <article class="case-card reveal">
+        <p class="case-sector" data-i18n="cases.studies.0.sector">Dental clinics · 4 locations</p>
+        <h3 data-i18n="cases.studies.0.company">Denta Nova Group</h3>
+        <p class="case-lbl" data-i18n="ui:caseChallenge">Challenge</p>
+        <p data-i18n="cases.studies.0.challenge">Reception missed roughly a third of incoming calls at peak hours, and no-shows were leaving chairs empty every day.</p>
+        <p class="case-lbl" data-i18n="ui:caseSolution">Solution</p>
+        <p data-i18n="cases.studies.0.solution">A reception &amp; booking agent answering calls and WhatsApp 24/7, plus an automated reminder and rebooking flow.</p>
+        <div class="case-results">
+          <div class="case-res"><span class="val tick" data-i18n="cases.studies.0.results.0.value">97%</span><span class="lbl" data-i18n="cases.studies.0.results.0.label">of calls and messages answered</span></div>
+          <div class="case-res"><span class="val tick" data-i18n="cases.studies.0.results.1.value">−37%</span><span class="lbl" data-i18n="cases.studies.0.results.1.label">no-shows in the first quarter</span></div>
+          <div class="case-res"><span class="val tick" data-i18n="cases.studies.0.results.2.value">19 h/wk</span><span class="lbl" data-i18n="cases.studies.0.results.2.label">of front-desk time recovered</span></div>
+        </div>
+      </article>
+      <article class="case-card reveal">
+        <p class="case-sector" data-i18n="cases.studies.1.sector">Real-estate agency</p>
+        <h3 data-i18n="cases.studies.1.company">Llobregat Homes</h3>
+        <p class="case-lbl" data-i18n="ui:caseChallenge">Challenge</p>
+        <p data-i18n="cases.studies.1.challenge">Portal leads arrived around the clock but agents replied the next morning — and a buyer who waits overnight has usually moved on.</p>
+        <p class="case-lbl" data-i18n="ui:caseSolution">Solution</p>
+        <p data-i18n="cases.studies.1.solution">A lead qualification agent that replies in seconds, qualifies budget and timeline, and books viewings directly into agents&#x27; calendars.</p>
+        <div class="case-results">
+          <div class="case-res"><span class="val tick" data-i18n="cases.studies.1.results.0.value">+34%</span><span class="lbl" data-i18n="cases.studies.1.results.0.label">viewings booked per month</span></div>
+          <div class="case-res"><span class="val tick" data-i18n="cases.studies.1.results.1.value">2.6×</span><span class="lbl" data-i18n="cases.studies.1.results.1.label">more qualified leads per agent</span></div>
+          <div class="case-res"><span class="val tick" data-i18n="cases.studies.1.results.2.value">4 h → 45 s</span><span class="lbl" data-i18n="cases.studies.1.results.2.label">average first-response time</span></div>
+        </div>
+      </article>
+      <article class="case-card reveal">
+        <p class="case-sector" data-i18n="cases.studies.2.sector">Online fashion retail</p>
+        <h3 data-i18n="cases.studies.2.company">Vela Studio</h3>
+        <p class="case-lbl" data-i18n="ui:caseChallenge">Challenge</p>
+        <p data-i18n="cases.studies.2.challenge">A two-person support team was buried under order, sizing and returns questions, with response times stretching past 24 hours in sales season.</p>
+        <p class="case-lbl" data-i18n="ui:caseSolution">Solution</p>
+        <p data-i18n="cases.studies.2.solution">A support agent trained on their catalog and policies, handling routine tickets end to end and escalating edge cases to the team with the full history attached.</p>
+        <div class="case-results">
+          <div class="case-res"><span class="val tick" data-i18n="cases.studies.2.results.0.value">73%</span><span class="lbl" data-i18n="cases.studies.2.results.0.label">of tickets resolved without a human</span></div>
+          <div class="case-res"><span class="val tick" data-i18n="cases.studies.2.results.1.value">&lt; 3 min</span><span class="lbl" data-i18n="cases.studies.2.results.1.label">median response time</span></div>
+          <div class="case-res"><span class="val tick" data-i18n="cases.studies.2.results.2.value">4.7/5</span><span class="lbl" data-i18n="cases.studies.2.results.2.label">post-resolution satisfaction</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="section anchor-target" id="pricing">
+  <div class="ghost" aria-hidden="true">06</div>
+  <div class="container">
+    <p class="kicker" data-i18n="ui:kickers.pricing">06 — Pricing</p>
+    <h2 class="reveal" data-i18n="pricing.heading">Simple pricing. Serious ROI.</h2>
+    <p class="sec-intro reveal" data-i18n="pricing.intro">One monthly fee covers build, hosting, monitoring and iteration. If an agent doesn&#x27;t pay for itself, we&#x27;ve built the wrong agent.</p>
+    <div class="price-grid">
+      <article class="tier reveal">
+        <h3 data-i18n="pricing.tiers.0.name">Starter</h3>
+        <p class="tier-price"><span data-i18n="pricing.tiers.0.price">€890</span><span class="period" data-i18n="pricing.tiers.0.period">/month</span></p>
+        <p class="tier-setup" data-i18n="pricing.tiers.0.setupNote">One-time build fee from €1,200</p>
+        <p data-i18n="pricing.tiers.0.description">One agent, one high-impact process. The fastest way to prove what AI can do for you.</p>
+        <ul>
+          <li data-i18n="pricing.tiers.0.features.0">1 custom AI agent</li>
+          <li data-i18n="pricing.tiers.0.features.1">Up to 3 tool integrations</li>
+          <li data-i18n="pricing.tiers.0.features.2">Human handoff rules included</li>
+          <li data-i18n="pricing.tiers.0.features.3">Monthly performance report</li>
+          <li data-i18n="pricing.tiers.0.features.4">Email support, 24 h response</li>
+          <li data-i18n="pricing.tiers.0.features.5">Live in 2–3 weeks</li>
+        </ul>
+        <a class="btn btn-secondary" href="#contact" data-i18n="pricing.tiers.0.cta">Start with one agent</a>
+      </article>
+      <article class="tier highlight reveal">
+        <span class="tier-badge" data-i18n="ui:popular">Most popular</span>
+        <h3 data-i18n="pricing.tiers.1.name">Growth</h3>
+        <p class="tier-price"><span data-i18n="pricing.tiers.1.price">€2,100</span><span class="period" data-i18n="pricing.tiers.1.period">/month</span></p>
+        <p class="tier-setup" data-i18n="pricing.tiers.1.setupNote">One-time setup from €3,000</p>
+        <p data-i18n="pricing.tiers.1.description">Up to three agents working together across sales, support and operations. Our most popular plan.</p>
+        <ul>
+          <li data-i18n="pricing.tiers.1.features.0">Up to 3 AI agents</li>
+          <li data-i18n="pricing.tiers.1.features.1">Unlimited tool integrations</li>
+          <li data-i18n="pricing.tiers.1.features.2">Shared memory across agents</li>
+          <li data-i18n="pricing.tiers.1.features.3">Live dashboard + monthly strategy call</li>
+          <li data-i18n="pricing.tiers.1.features.4">Priority support, 4 h response</li>
+          <li data-i18n="pricing.tiers.1.features.5">Continuous optimization included</li>
+        </ul>
+        <a class="btn btn-primary" href="#contact"><span data-i18n="pricing.tiers.1.cta">Scale with Growth</span><span class="arrow" aria-hidden="true">→</span></a>
+      </article>
+      <article class="tier reveal">
+        <h3 data-i18n="pricing.tiers.2.name">Enterprise</h3>
+        <p class="tier-price"><span data-i18n="pricing.tiers.2.price">Let&#x27;s talk</span><span class="period" data-i18n="pricing.tiers.2.period"></span></p>
+        <p class="tier-setup" data-i18n="pricing.tiers.2.setupNote">Custom scoping and SLA</p>
+        <p data-i18n="pricing.tiers.2.description">Agent fleets, custom infrastructure, on-premise or EU-dedicated hosting, and a dedicated engineer.</p>
+        <ul>
+          <li data-i18n="pricing.tiers.2.features.0">Unlimited agents and workflows</li>
+          <li data-i18n="pricing.tiers.2.features.1">Dedicated solutions engineer</li>
+          <li data-i18n="pricing.tiers.2.features.2">Custom SLAs and uptime guarantees</li>
+          <li data-i18n="pricing.tiers.2.features.3">Advanced security and compliance review</li>
+          <li data-i18n="pricing.tiers.2.features.4">On-premise or private-cloud deployment</li>
+          <li data-i18n="pricing.tiers.2.features.5">Quarterly executive reviews</li>
+        </ul>
+        <a class="btn btn-secondary" href="#contact" data-i18n="pricing.tiers.2.cta">Talk to us</a>
+      </article>
+    </div>
+    <p class="price-footnote reveal" data-i18n="pricing.footnote">No permanence. Cancel any month. Setup fee covers discovery, build and testing — quoted before we start, never after.</p>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section anchor-target" id="faq">
+  <div class="container">
+    <p class="kicker" data-i18n="ui:kickers.faq">07 — FAQ</p>
+    <h2 class="reveal" data-i18n="faq.heading">Questions, answered straight</h2>
+    <div class="faq-list" id="faqList">
+      <div class="faq-item">
+        <h3><button type="button" class="faq-q" aria-expanded="false"><span data-i18n="faq.items.0.q">What exactly is an AI agent?</span><span class="faq-icon" aria-hidden="true">+</span></button></h3>
+        <div class="faq-a"><div><p data-i18n="faq.items.0.a">Software that does a job, not just answers a prompt. An agent reads context, makes decisions within rules you set, and takes action across your tools — replying to a lead, booking a meeting, updating your CRM. Think of it as a digital teammate with a narrow, well-defined role.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <h3><button type="button" class="faq-q" aria-expanded="false"><span data-i18n="faq.items.1.q">How long until it&#x27;s live?</span><span class="faq-icon" aria-hidden="true">+</span></button></h3>
+        <div class="faq-a"><div><p data-i18n="faq.items.1.a">Most agents go live in under 30 days. Week one is discovery and data access, weeks two and three are build and testing against real historical conversations, then we deploy with guardrails on. Complex multi-agent setups can take 6 to 8 weeks.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <h3><button type="button" class="faq-q" aria-expanded="false"><span data-i18n="faq.items.2.q">What do you need from my team?</span><span class="faq-icon" aria-hidden="true">+</span></button></h3>
+        <div class="faq-a"><div><p data-i18n="faq.items.2.a">Nothing technical. The stack is ours end to end — we build it, host it, watch it and improve it. From you we need the person who knows the process best: two or three hours during setup, then a short review once a month.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <h3><button type="button" class="faq-q" aria-expanded="false"><span data-i18n="faq.items.3.q">What if the agent makes a mistake?</span><span class="faq-icon" aria-hidden="true">+</span></button></h3>
+        <div class="faq-a"><div><p data-i18n="faq.items.3.a">Every agent ships with confidence thresholds and escalation rules: anything ambiguous, sensitive or high-value goes to a human with the full conversation attached. We also review transcripts weekly during the first month and tune the agent before edge cases become patterns.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <h3><button type="button" class="faq-q" aria-expanded="false"><span data-i18n="faq.items.4.q">How do you handle data security and GDPR?</span><span class="faq-icon" aria-hidden="true">+</span></button></h3>
+        <div class="faq-a"><div><p data-i18n="faq.items.4.a">Everything is processed and stored inside the EU with end-to-end encryption. We sign a DPA with every client, collect only what each workflow strictly needs, and your data never feeds anyone else&#x27;s models. Dedicated EU model hosting is available on request.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <h3><button type="button" class="faq-q" aria-expanded="false"><span data-i18n="faq.items.5.q">Which tools does it work with?</span><span class="faq-icon" aria-hidden="true">+</span></button></h3>
+        <div class="faq-a"><div><p data-i18n="faq.items.5.a">Anything with an API — and that covers almost everything: WhatsApp, Gmail, Outlook, Slack, HubSpot, Salesforce, Shopify, Stripe, Notion, Airtable, Google Sheets and hundreds more. If a tool has no API, we can usually bridge it through Make or Zapier.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <h3><button type="button" class="faq-q" aria-expanded="false"><span data-i18n="faq.items.6.q">What happens after launch?</span><span class="faq-icon" aria-hidden="true">+</span></button></h3>
+        <div class="faq-a"><div><p data-i18n="faq.items.6.a">Launch is the start, not the end. Your plan includes monitoring, error handling, model updates and continuous tuning based on real conversations. You get a monthly report with hard numbers and a call to decide what the agent should learn next.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="section final-cta">
+  <div class="container">
+    <h2 class="reveal" data-i18n="finalCta.heading">Find out what 30 hours a week feels like</h2>
+    <p class="reveal" data-i18n="finalCta.subheading">Book a free ops audit. In 45 minutes we&#x27;ll show you exactly which process to automate first — and what it&#x27;s costing you not to.</p>
+    <a class="btn btn-primary reveal" href="#contact"><span data-i18n="finalCta.cta">Book my free audit</span><span class="arrow" aria-hidden="true">→</span></a>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section anchor-target" id="contact">
+  <div class="container">
+    <p class="kicker" data-i18n="ui:kickers.contact">08 — Contact</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h2 class="reveal" data-i18n="contact.heading">Tell us what&#x27;s eating your week</h2>
+        <p class="lede reveal" data-i18n="contact.intro">Fill this in and we&#x27;ll reply within one business day with honest first thoughts — not a sales script.</p>
+        <p class="privacy-note reveal" data-i18n="contact.privacyNote">We use your data only to reply to you — no lists, no spam. Questions? ralcaraz.canals@gmail.com</p>
+      </div>
+      <div class="form-panel reveal">
+        <p class="form-kicker" data-i18n="ui:form.kicker">Intake — 02 min</p>
+        <form id="contactForm" novalidate>
+          <div class="field" id="f-name">
+            <label for="in-name" data-i18n="contact.form.name">Your name</label>
+            <input type="text" id="in-name" name="name" autocomplete="name" data-i18n-placeholder="contact.form.name">
+            <p class="field-error" data-i18n="ui:form.required">This field is required</p>
+          </div>
+          <div class="field" id="f-email">
+            <label for="in-email" data-i18n="contact.form.email">Work email</label>
+            <input type="email" id="in-email" name="email" autocomplete="email" data-i18n-placeholder="contact.form.email">
+            <p class="field-error" data-i18n="ui:form.email">Enter a valid email address</p>
+          </div>
+          <div class="field" id="f-company">
+            <label for="in-company" data-i18n="contact.form.company">Company</label>
+            <input type="text" id="in-company" name="company" autocomplete="organization" data-i18n-placeholder="contact.form.company">
+            <p class="field-error" data-i18n="ui:form.required">This field is required</p>
+          </div>
+          <div class="field" id="f-interest">
+            <label for="in-interest" data-i18n="contact.form.interest">What do you want to automate?</label>
+            <select id="in-interest" name="interest">
+              <option value="" data-i18n="ui:form.select">Choose an option</option>
+              <option value="0" data-i18n="contact.form.interestOptions.0">Sales &amp; lead generation</option>
+              <option value="1" data-i18n="contact.form.interestOptions.1">Customer support</option>
+              <option value="2" data-i18n="contact.form.interestOptions.2">Reception &amp; bookings</option>
+              <option value="3" data-i18n="contact.form.interestOptions.3">Content &amp; marketing</option>
+              <option value="4" data-i18n="contact.form.interestOptions.4">Something else</option>
+            </select>
+            <p class="field-error" data-i18n="ui:form.required">This field is required</p>
+          </div>
+          <div class="field" id="f-message">
+            <label for="in-message" data-i18n="contact.form.message">Tell us about your process (optional)</label>
+            <textarea id="in-message" name="message" data-i18n-placeholder="contact.form.message"></textarea>
+          </div>
+          <div class="honeypot" aria-hidden="true">
+            <input type="text" name="_honey" id="in-honey" tabindex="-1" autocomplete="off">
+          </div>
+          <div class="consent" id="f-consent">
+            <input type="checkbox" id="in-consent">
+            <label for="in-consent"><span data-i18n="ui:form.consent">I agree to be contacted about my request.</span> <span class="field-error" style="display:inline" hidden id="consentErr" data-i18n="ui:form.consentErr">— please tick the box to continue</span></label>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit" id="submitBtn"><span id="submitLabel" data-i18n="contact.form.submit">Send message</span><span class="arrow" aria-hidden="true">→</span></button>
+          <p class="form-error-box" id="formError" hidden>
+            <span data-i18n="contact.errorMessage">Something went wrong sending your message. Please try again or email us directly.</span><br>
+            <a href="mailto:ralcaraz.canals@gmail.com" class="txt-link" data-i18n="ui:form.mailto">Email us instead</a>
+          </p>
+        </form>
+        <div class="form-success" id="formSuccess" hidden>
+          <div class="stamp-wrap">
+            <svg class="stamp" viewBox="0 0 120 120" aria-hidden="true">
+              <circle cx="60" cy="60" r="57" stroke-width="1.5"/>
+              <circle cx="60" cy="60" r="38" stroke-width="1"/>
+              <defs><path id="rimPathForm" d="M60,60 m-47,0 a47,47 0 1,1 94,0 a47,47 0 1,1 -94,0"/></defs>
+              <text class="rim-text"><textPath href="#rimPathForm" data-i18n="ui:stampRim">50 LABS · BARCELONA · MMXXVI ·</textPath></text>
+              <rect x="49" y="38" width="22" height="22" rx="1.5" stroke-width="1.5"/>
+              <path d="M56 42.5v13h14.5" stroke-width="2"/>
+              <text class="center-word" x="60" y="80" text-anchor="middle" data-i18n="ui:stampReceived">Received</text>
+            </svg>
+          </div>
+          <h3 data-i18n="contact.successTitle">Got it!</h3>
+          <p data-i18n="contact.successMessage">Thanks — we&#x27;ve received your message and will get back to you within one business day.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="logo" href="#top" aria-label="50 Labs">
+          <svg class="logo-mark" width="34" height="34" viewBox="0 0 34 34" aria-hidden="true">
+            <rect x="0.75" y="0.75" width="32.5" height="32.5" rx="2" fill="none" stroke-width="1.5"/>
+            <path d="M12 7v18.25h21.25" fill="none" stroke-width="3"/>
+          </svg>
+          <span class="logo-word">50 Labs</span>
+        </a>
+        <p data-i18n="footer.blurb">50 Labs designs, builds and operates custom AI agents that give businesses their hours back.</p>
+      </div>
+      <div class="footer-contact">
+        <p class="lbl" data-i18n="footer.directEmailLabel">Prefer email? Write to us directly:</p>
+        <a href="mailto:ralcaraz.canals@gmail.com" data-i18n="footer.email">ralcaraz.canals@gmail.com</a>
+      </div>
+      <svg class="footer-stamp stamp" viewBox="0 0 120 120" aria-hidden="true">
+        <circle cx="60" cy="60" r="57" stroke-width="1.5"/>
+        <circle cx="60" cy="60" r="38" stroke-width="1"/>
+        <defs><path id="rimPathFoot" d="M60,60 m-47,0 a47,47 0 1,1 94,0 a47,47 0 1,1 -94,0"/></defs>
+        <text class="rim-text"><textPath href="#rimPathFoot" data-i18n="ui:stampRim">50 LABS · BARCELONA · MMXXVI ·</textPath></text>
+        <rect x="49" y="46" width="22" height="22" rx="1.5" stroke-width="1.5"/>
+        <path d="M56 50.5v13h14.5" stroke-width="2"/>
+      </svg>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer.rights">© 2026 50 Labs</span>
+      <span data-i18n="footer.madeIn">Barcelona · Remote worldwide</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ==================== CONTENT DICTIONARY (verbatim from content.json) ==================== */
+const CONTENT = {
+  "meta": {
+    "en": {
+      "title": "50 Labs — Custom AI Agents for Your Business",
+      "description": "We design, build and operate AI agents that answer your customers, qualify your leads and run your back office. First agent live in under 30 days — no engineers needed on your side."
+    },
+    "es": {
+      "title": "50 Labs — Agentes de IA a medida para tu negocio",
+      "description": "Diseñamos, construimos y operamos agentes de IA que atienden a tus clientes, cualifican tus leads y mueven tu back office. Primer agente en producción en menos de 30 días, sin ingenieros por tu parte."
+    }
+  },
+  "en": {
+    "nav": {
+      "items": [
+        {
+          "label": "Services",
+          "href": "#services"
+        },
+        {
+          "label": "Process",
+          "href": "#process"
+        },
+        {
+          "label": "Case studies",
+          "href": "#cases"
+        },
+        {
+          "label": "Pricing",
+          "href": "#pricing"
+        },
+        {
+          "label": "FAQ",
+          "href": "#faq"
+        },
+        {
+          "label": "Contact",
+          "href": "#contact"
+        }
+      ],
+      "cta": "Book a call"
+    },
+    "hero": {
+      "eyebrow": "AI agents, built and operated for you",
+      "headline": "Agents that do the work. {{You keep the margin.}}",
+      "subheadline": "We build AI agents that answer every message, qualify every lead and handle the repetitive work your team hates. You keep the decisions. They do the grind.",
+      "primaryCta": "Get a free ops audit",
+      "secondaryCta": "See how it works",
+      "stats": [
+        {
+          "value": "30+ h",
+          "label": "saved per team, every week"
+        },
+        {
+          "value": "< 60 s",
+          "label": "response to any lead, 24/7"
+        },
+        {
+          "value": "< 30 days",
+          "label": "from kickoff to live agent"
+        }
+      ]
+    },
+    "problem": {
+      "heading": "Manual ops are eating your margin",
+      "intro": "Most teams lose deals not because their product is worse — because they answer late, follow up twice instead of five times, and drown in admin. Here is what changes.",
+      "before": [
+        "New enquiries sit unanswered until someone finds a gap in their day",
+        "Follow-ups depend on someone remembering",
+        "Support answers the same 20 questions on loop",
+        "Data lives in inboxes, not in your CRM"
+      ],
+      "after": [
+        "Every lead gets a useful answer in under a minute",
+        "Follow-up sequences run themselves, every time",
+        "Agents resolve routine tickets; humans take the hard ones",
+        "Every interaction logged, tagged and synced automatically"
+      ]
+    },
+    "services": {
+      "heading": "Six agents. One goal: hours back.",
+      "intro": "Every agent learns from your real conversations and sounds like your team from day one — not a generic chatbot with your logo on it.",
+      "agents": [
+        {
+          "name": "Scout",
+          "tagline": "Outbound sales agent",
+          "description": "Scout finds prospects that match your best customers and opens conversations at scale. Personalized outreach, not spray-and-pray.",
+          "bullets": [
+            "Researches and enriches prospect lists",
+            "Writes personalized first touches and follow-ups",
+            "Books meetings straight into your calendar"
+          ]
+        },
+        {
+          "name": "Sift",
+          "tagline": "Lead qualification agent",
+          "description": "Sift talks to every inbound lead the moment it arrives and scores it against your criteria. Your sales team only sees the ones worth their time.",
+          "bullets": [
+            "Instant reply on web, WhatsApp and email",
+            "Asks your qualifying questions, scores answers",
+            "Hands hot leads to your team with the whole conversation attached"
+          ]
+        },
+        {
+          "name": "Resolve",
+          "tagline": "Customer support agent",
+          "description": "Resolve answers the questions your team repeats all day — orders, returns, invoices, how-tos. It escalates anything sensitive with the full thread attached.",
+          "bullets": [
+            "Trained on your docs, policies and history",
+            "Handles 60-80% of tickets end to end",
+            "Knows when a case needs a person, and passes it on at the right moment"
+          ]
+        },
+        {
+          "name": "Concierge",
+          "tagline": "Reception & booking agent",
+          "description": "Concierge picks up every call and message, books appointments and chases no-shows. No more voicemail, no more empty slots.",
+          "bullets": [
+            "Answers calls and WhatsApp 24/7",
+            "Books, reschedules and confirms appointments",
+            "Sends reminders that actually cut no-shows"
+          ]
+        },
+        {
+          "name": "Quill",
+          "tagline": "Content agent",
+          "description": "Quill turns your expertise into a steady stream of posts, newsletters and product copy in your voice. You approve; it publishes.",
+          "bullets": [
+            "Drafts social posts, emails and articles on brand",
+            "Repurposes one idea across every channel",
+            "Keeps a publishing calendar running weekly"
+          ]
+        },
+        {
+          "name": "Ledger",
+          "tagline": "Operations & back-office agent",
+          "description": "Ledger does the invisible work: data entry, invoice chasing, report building, CRM hygiene. The stuff nobody wants to own — owned.",
+          "bullets": [
+            "Moves data between your tools without errors",
+            "Chases unpaid invoices and missing documents",
+            "Builds weekly reports from live data, automatically"
+          ]
+        }
+      ]
+    },
+    "process": {
+      "heading": "From audit to live agent in under 30 days",
+      "intro": "No six-month consulting projects. We find the highest-leverage process, automate it, and prove the numbers.",
+      "steps": [
+        {
+          "title": "1. Audit",
+          "description": "We map your workflows and find where hours and leads are leaking. You get a prioritized list of what to automate first — free, no strings."
+        },
+        {
+          "title": "2. Design & build",
+          "description": "We train the agent on real examples from your business and stress-test it against months of past conversations before it ever talks to a customer."
+        },
+        {
+          "title": "3. Deploy",
+          "description": "The agent goes live connected to your channels and CRM, with human handoff rules and guardrails set from day one. Most agents ship in under a month."
+        },
+        {
+          "title": "4. Measure & optimize",
+          "description": "You get a dashboard with hard numbers: conversations, conversions, hours saved. We review it with you monthly and keep tuning."
+        }
+      ]
+    },
+    "integrations": {
+      "heading": "Built to fit your stack",
+      "intro": "No rip-and-replace. Your agents work inside your current stack from day one.",
+      "tools": [
+        "WhatsApp",
+        "Gmail",
+        "Slack",
+        "HubSpot",
+        "Salesforce",
+        "Shopify",
+        "Stripe",
+        "Google Calendar",
+        "Notion",
+        "Airtable",
+        "Instagram",
+        "LinkedIn",
+        "Zapier",
+        "Make",
+        "Google Sheets",
+        "Outlook"
+      ],
+      "closing": "and many more"
+    },
+    "cases": {
+      "heading": "Real teams, measurable results",
+      "intro": "Different sectors, same pattern: fewer missed conversations, more closed business.",
+      "studies": [
+        {
+          "company": "Denta Nova Group",
+          "sector": "Dental clinics · 4 locations",
+          "challenge": "Reception missed roughly a third of incoming calls at peak hours, and no-shows were leaving chairs empty every day.",
+          "solution": "A reception & booking agent answering calls and WhatsApp 24/7, plus an automated reminder and rebooking flow.",
+          "results": [
+            {
+              "value": "97%",
+              "label": "of calls and messages answered"
+            },
+            {
+              "value": "−37%",
+              "label": "no-shows in the first quarter"
+            },
+            {
+              "value": "19 h/wk",
+              "label": "of front-desk time recovered"
+            }
+          ]
+        },
+        {
+          "company": "Llobregat Homes",
+          "sector": "Real-estate agency",
+          "challenge": "Portal leads arrived around the clock but agents replied the next morning — and a buyer who waits overnight has usually moved on.",
+          "solution": "A lead qualification agent that replies in seconds, qualifies budget and timeline, and books viewings directly into agents' calendars.",
+          "results": [
+            {
+              "value": "+34%",
+              "label": "viewings booked per month"
+            },
+            {
+              "value": "2.6×",
+              "label": "more qualified leads per agent"
+            },
+            {
+              "value": "4 h → 45 s",
+              "label": "average first-response time"
+            }
+          ]
+        },
+        {
+          "company": "Vela Studio",
+          "sector": "Online fashion retail",
+          "challenge": "A two-person support team was buried under order, sizing and returns questions, with response times stretching past 24 hours in sales season.",
+          "solution": "A support agent trained on their catalog and policies, handling routine tickets end to end and escalating edge cases to the team with the full history attached.",
+          "results": [
+            {
+              "value": "73%",
+              "label": "of tickets resolved without a human"
+            },
+            {
+              "value": "< 3 min",
+              "label": "median response time"
+            },
+            {
+              "value": "4.7/5",
+              "label": "post-resolution satisfaction"
+            }
+          ]
+        }
+      ]
+    },
+    "pricing": {
+      "heading": "Simple pricing. Serious ROI.",
+      "intro": "One monthly fee covers build, hosting, monitoring and iteration. If an agent doesn't pay for itself, we've built the wrong agent.",
+      "tiers": [
+        {
+          "name": "Starter",
+          "price": "€890",
+          "period": "/month",
+          "setupNote": "One-time build fee from €1,200",
+          "description": "One agent, one high-impact process. The fastest way to prove what AI can do for you.",
+          "features": [
+            "1 custom AI agent",
+            "Up to 3 tool integrations",
+            "Human handoff rules included",
+            "Monthly performance report",
+            "Email support, 24 h response",
+            "Live in 2–3 weeks"
+          ],
+          "cta": "Start with one agent",
+          "highlighted": "false"
+        },
+        {
+          "name": "Growth",
+          "price": "€2,100",
+          "period": "/month",
+          "setupNote": "One-time setup from €3,000",
+          "description": "Up to three agents working together across sales, support and operations. Our most popular plan.",
+          "features": [
+            "Up to 3 AI agents",
+            "Unlimited tool integrations",
+            "Shared memory across agents",
+            "Live dashboard + monthly strategy call",
+            "Priority support, 4 h response",
+            "Continuous optimization included"
+          ],
+          "cta": "Scale with Growth",
+          "highlighted": "true"
+        },
+        {
+          "name": "Enterprise",
+          "price": "Let's talk",
+          "period": "",
+          "setupNote": "Custom scoping and SLA",
+          "description": "Agent fleets, custom infrastructure, on-premise or EU-dedicated hosting, and a dedicated engineer.",
+          "features": [
+            "Unlimited agents and workflows",
+            "Dedicated solutions engineer",
+            "Custom SLAs and uptime guarantees",
+            "Advanced security and compliance review",
+            "On-premise or private-cloud deployment",
+            "Quarterly executive reviews"
+          ],
+          "cta": "Talk to us",
+          "highlighted": "false"
+        }
+      ],
+      "footnote": "No permanence. Cancel any month. Setup fee covers discovery, build and testing — quoted before we start, never after."
+    },
+    "faq": {
+      "heading": "Questions, answered straight",
+      "items": [
+        {
+          "q": "What exactly is an AI agent?",
+          "a": "Software that does a job, not just answers a prompt. An agent reads context, makes decisions within rules you set, and takes action across your tools — replying to a lead, booking a meeting, updating your CRM. Think of it as a digital teammate with a narrow, well-defined role."
+        },
+        {
+          "q": "How long until it's live?",
+          "a": "Most agents go live in under 30 days. Week one is discovery and data access, weeks two and three are build and testing against real historical conversations, then we deploy with guardrails on. Complex multi-agent setups can take 6 to 8 weeks."
+        },
+        {
+          "q": "What do you need from my team?",
+          "a": "Nothing technical. The stack is ours end to end — we build it, host it, watch it and improve it. From you we need the person who knows the process best: two or three hours during setup, then a short review once a month."
+        },
+        {
+          "q": "What if the agent makes a mistake?",
+          "a": "Every agent ships with confidence thresholds and escalation rules: anything ambiguous, sensitive or high-value goes to a human with the full conversation attached. We also review transcripts weekly during the first month and tune the agent before edge cases become patterns."
+        },
+        {
+          "q": "How do you handle data security and GDPR?",
+          "a": "Everything is processed and stored inside the EU with end-to-end encryption. We sign a DPA with every client, collect only what each workflow strictly needs, and your data never feeds anyone else's models. Dedicated EU model hosting is available on request."
+        },
+        {
+          "q": "Which tools does it work with?",
+          "a": "Anything with an API — and that covers almost everything: WhatsApp, Gmail, Outlook, Slack, HubSpot, Salesforce, Shopify, Stripe, Notion, Airtable, Google Sheets and hundreds more. If a tool has no API, we can usually bridge it through Make or Zapier."
+        },
+        {
+          "q": "What happens after launch?",
+          "a": "Launch is the start, not the end. Your plan includes monitoring, error handling, model updates and continuous tuning based on real conversations. You get a monthly report with hard numbers and a call to decide what the agent should learn next."
+        }
+      ]
+    },
+    "finalCta": {
+      "heading": "Find out what 30 hours a week feels like",
+      "subheading": "Book a free ops audit. In 45 minutes we'll show you exactly which process to automate first — and what it's costing you not to.",
+      "cta": "Book my free audit"
+    },
+    "contact": {
+      "heading": "Tell us what's eating your week",
+      "intro": "Fill this in and we'll reply within one business day with honest first thoughts — not a sales script.",
+      "form": {
+        "name": "Your name",
+        "email": "Work email",
+        "company": "Company",
+        "interest": "What do you want to automate?",
+        "interestOptions": [
+          "Sales & lead generation",
+          "Customer support",
+          "Reception & bookings",
+          "Content & marketing",
+          "Something else"
+        ],
+        "message": "Tell us about your process (optional)",
+        "submit": "Send message",
+        "sending": "Sending..."
+      },
+      "successTitle": "Got it!",
+      "successMessage": "Thanks — we've received your message and will get back to you within one business day.",
+      "errorMessage": "Something went wrong sending your message. Please try again or email us directly.",
+      "privacyNote": "We use your data only to reply to you — no lists, no spam. Questions? ralcaraz.canals@gmail.com"
+    },
+    "footer": {
+      "blurb": "50 Labs designs, builds and operates custom AI agents that give businesses their hours back.",
+      "directEmailLabel": "Prefer email? Write to us directly:",
+      "email": "ralcaraz.canals@gmail.com",
+      "rights": "© 2026 50 Labs",
+      "madeIn": "Barcelona · Remote worldwide"
+    }
+  },
+  "es": {
+    "nav": {
+      "items": [
+        {
+          "label": "Servicios",
+          "href": "#services"
+        },
+        {
+          "label": "Proceso",
+          "href": "#process"
+        },
+        {
+          "label": "Casos",
+          "href": "#cases"
+        },
+        {
+          "label": "Precios",
+          "href": "#pricing"
+        },
+        {
+          "label": "FAQ",
+          "href": "#faq"
+        },
+        {
+          "label": "Contacto",
+          "href": "#contact"
+        }
+      ],
+      "cta": "Reserva una llamada"
+    },
+    "hero": {
+      "eyebrow": "Agentes de IA construidos y operados para ti",
+      "headline": "Agentes que hacen el trabajo. {{Tú te quedas el margen.}}",
+      "subheadline": "Construimos agentes de IA que responden cada mensaje, cualifican cada lead y hacen el trabajo repetitivo que tu equipo odia. Tú decides. Ellos ejecutan.",
+      "primaryCta": "Pide tu auditoría gratuita",
+      "secondaryCta": "Mira cómo funciona",
+      "stats": [
+        {
+          "value": "+30 h",
+          "label": "ahorradas por equipo cada semana"
+        },
+        {
+          "value": "< 60 s",
+          "label": "de respuesta a cualquier lead, 24/7"
+        },
+        {
+          "value": "< 30 días",
+          "label": "del kickoff al agente en producción"
+        }
+      ]
+    },
+    "problem": {
+      "heading": "La operativa manual se está comiendo tu margen",
+      "intro": "La mayoría de equipos no pierde ventas por tener peor producto, sino por responder tarde, hacer dos seguimientos en vez de cinco y ahogarse en tareas administrativas. Esto es lo que cambia.",
+      "before": [
+        "Las consultas nuevas se quedan sin responder hasta que alguien encuentra un hueco",
+        "El seguimiento depende de que alguien se acuerde",
+        "Soporte responde las mismas 20 preguntas en bucle",
+        "Los datos viven en bandejas de entrada, no en tu CRM"
+      ],
+      "after": [
+        "Cada lead recibe una respuesta útil en menos de un minuto",
+        "Las secuencias de seguimiento se ejecutan solas, siempre",
+        "Los agentes resuelven lo rutinario; las personas, lo difícil",
+        "Cada interacción queda registrada, etiquetada y sincronizada"
+      ]
+    },
+    "services": {
+      "heading": "Seis agentes. Un objetivo: devolverte horas.",
+      "intro": "Cada agente aprende de tus conversaciones reales y suena como tu equipo desde el primer día. Nada de chatbots genéricos con tu logo encima.",
+      "agents": [
+        {
+          "name": "Cazador",
+          "tagline": "Agente de ventas outbound",
+          "description": "Cazador encuentra prospectos que se parecen a tus mejores clientes y abre conversaciones a escala. Prospección personalizada, no spam masivo.",
+          "bullets": [
+            "Investiga y enriquece listas de prospectos",
+            "Redacta primeros contactos y seguimientos personalizados",
+            "Agenda reuniones directamente en tu calendario"
+          ]
+        },
+        {
+          "name": "Criba",
+          "tagline": "Agente de cualificación de leads",
+          "description": "Criba habla con cada lead entrante en el momento en que llega y lo puntúa según tus criterios. Tu equipo comercial solo ve los que merecen su tiempo.",
+          "bullets": [
+            "Respuesta instantánea en web, WhatsApp y email",
+            "Hace tus preguntas de cualificación y puntúa las respuestas",
+            "Entrega los leads calientes a tu equipo con toda la conversación adjunta"
+          ]
+        },
+        {
+          "name": "Resuelve",
+          "tagline": "Agente de atención al cliente",
+          "description": "Resuelve contesta las preguntas que tu equipo repite todo el día: pedidos, devoluciones, facturas, dudas de uso. Lo delicado lo escala con el hilo completo adjunto.",
+          "bullets": [
+            "Entrenado con tu documentación, políticas e histórico",
+            "Gestiona el 60-80% de los tickets de principio a fin",
+            "Sabe cuándo un caso necesita a una persona y lo pasa en el momento justo"
+          ]
+        },
+        {
+          "name": "Conserje",
+          "tagline": "Agente de recepción y citas",
+          "description": "Conserje descuelga cada llamada y mensaje, reserva citas y persigue las ausencias. Se acabaron el buzón de voz y los huecos vacíos.",
+          "bullets": [
+            "Atiende llamadas y WhatsApp 24/7",
+            "Agenda, reprograma y confirma citas",
+            "Envía recordatorios que de verdad reducen las ausencias"
+          ]
+        },
+        {
+          "name": "Pluma",
+          "tagline": "Agente de contenido",
+          "description": "Pluma convierte tu conocimiento en un flujo constante de posts, newsletters y textos de producto con tu voz. Tú apruebas; él publica.",
+          "bullets": [
+            "Redacta posts, emails y artículos con tu marca",
+            "Reutiliza una idea en todos los canales",
+            "Mantiene el calendario de publicación en marcha cada semana"
+          ]
+        },
+        {
+          "name": "Engranaje",
+          "tagline": "Agente de operaciones y back office",
+          "description": "Engranaje hace el trabajo invisible: entrada de datos, reclamación de facturas, informes, limpieza del CRM. Lo que nadie quiere asumir, asumido.",
+          "bullets": [
+            "Mueve datos entre tus herramientas sin errores",
+            "Reclama facturas impagadas y documentación pendiente",
+            "Genera informes semanales con datos en vivo, en automático"
+          ]
+        }
+      ]
+    },
+    "process": {
+      "heading": "De la auditoría al agente en producción en menos de 30 días",
+      "intro": "Nada de proyectos de consultoría de seis meses. Encontramos el proceso con más palanca, lo automatizamos y lo demostramos con números.",
+      "steps": [
+        {
+          "title": "1. Auditoría",
+          "description": "Mapeamos tus flujos de trabajo y encontramos por dónde se te escapan horas y leads. Te llevas una lista priorizada de qué automatizar primero — gratis y sin compromiso."
+        },
+        {
+          "title": "2. Diseño y construcción",
+          "description": "Entrenamos el agente con ejemplos reales de tu negocio y lo sometemos a meses de conversaciones pasadas antes de que hable con un solo cliente."
+        },
+        {
+          "title": "3. Despliegue",
+          "description": "El agente sale a producción conectado a tus canales y a tu CRM, con reglas de traspaso a personas y salvaguardas desde el primer día. La mayoría sale en menos de un mes."
+        },
+        {
+          "title": "4. Medición y optimización",
+          "description": "Tienes un panel con números de verdad: conversaciones, conversiones, horas ahorradas. Lo revisamos contigo cada mes y seguimos afinando."
+        }
+      ]
+    },
+    "integrations": {
+      "heading": "Hecho para encajar en tu stack",
+      "intro": "No hay que cambiar nada. Tus agentes trabajan dentro de tu stack actual desde el primer día.",
+      "tools": [
+        "WhatsApp",
+        "Gmail",
+        "Slack",
+        "HubSpot",
+        "Salesforce",
+        "Shopify",
+        "Stripe",
+        "Google Calendar",
+        "Notion",
+        "Airtable",
+        "Instagram",
+        "LinkedIn",
+        "Zapier",
+        "Make",
+        "Google Sheets",
+        "Outlook"
+      ],
+      "closing": "y muchas más"
+    },
+    "cases": {
+      "heading": "Equipos reales, resultados medibles",
+      "intro": "Sectores distintos, mismo patrón: menos conversaciones perdidas, más negocio cerrado.",
+      "studies": [
+        {
+          "company": "Grupo Denta Nova",
+          "sector": "Clínicas dentales · 4 centros",
+          "challenge": "Recepción perdía cerca de un tercio de las llamadas en horas punta, y las ausencias dejaban sillones vacíos todos los días.",
+          "solution": "Un agente de recepción y citas que atiende llamadas y WhatsApp 24/7, más un flujo automático de recordatorios y recuperación de citas.",
+          "results": [
+            {
+              "value": "97%",
+              "label": "de llamadas y mensajes atendidos"
+            },
+            {
+              "value": "−37%",
+              "label": "de ausencias en el primer trimestre"
+            },
+            {
+              "value": "19 h/sem",
+              "label": "de recepción recuperadas"
+            }
+          ]
+        },
+        {
+          "company": "Llobregat Homes",
+          "sector": "Agencia inmobiliaria",
+          "challenge": "Los leads de los portales llegaban a cualquier hora pero los agentes respondían a la mañana siguiente — y un comprador que espera toda una noche rara vez sigue disponible.",
+          "solution": "Un agente de cualificación que responde en segundos, cualifica presupuesto y plazos, y agenda visitas directamente en el calendario de cada comercial.",
+          "results": [
+            {
+              "value": "+34%",
+              "label": "de visitas agendadas al mes"
+            },
+            {
+              "value": "2,6×",
+              "label": "más leads cualificados por comercial"
+            },
+            {
+              "value": "4 h → 45 s",
+              "label": "de tiempo medio de primera respuesta"
+            }
+          ]
+        },
+        {
+          "company": "Vela Studio",
+          "sector": "Moda online",
+          "challenge": "Un equipo de soporte de dos personas estaba enterrado en dudas de pedidos, tallas y devoluciones, con respuestas de más de 24 horas en temporada de rebajas.",
+          "solution": "Un agente de soporte entrenado con su catálogo y sus políticas, que gestiona los tickets rutinarios de principio a fin y escala los casos raros a su equipo con todo el histórico adjunto.",
+          "results": [
+            {
+              "value": "73%",
+              "label": "de tickets resueltos sin intervención humana"
+            },
+            {
+              "value": "< 3 min",
+              "label": "de tiempo medio de respuesta"
+            },
+            {
+              "value": "4,7/5",
+              "label": "de satisfacción tras la resolución"
+            }
+          ]
+        }
+      ]
+    },
+    "pricing": {
+      "heading": "Precios simples. ROI serio.",
+      "intro": "Una cuota mensual que cubre construcción, hosting, monitorización e iteración. Si un agente no se paga solo, hemos construido el agente equivocado.",
+      "tiers": [
+        {
+          "name": "Starter",
+          "price": "890 €",
+          "period": "/mes",
+          "setupNote": "Puesta en marcha desde 1.200 €",
+          "description": "Un agente, un proceso de alto impacto. La forma más rápida de comprobar lo que la IA puede hacer por ti.",
+          "features": [
+            "1 agente de IA a medida",
+            "Hasta 3 integraciones con tus herramientas",
+            "Reglas de traspaso a personas incluidas",
+            "Informe mensual de rendimiento",
+            "Soporte por email, respuesta en 24 h",
+            "En producción en 2–3 semanas"
+          ],
+          "cta": "Empieza con un agente",
+          "highlighted": "false"
+        },
+        {
+          "name": "Growth",
+          "price": "2.100 €",
+          "period": "/mes",
+          "setupNote": "Setup único desde 3.000 €",
+          "description": "Hasta tres agentes trabajando juntos en ventas, soporte y operaciones. Nuestro plan más popular.",
+          "features": [
+            "Hasta 3 agentes de IA",
+            "Integraciones ilimitadas",
+            "Memoria compartida entre agentes",
+            "Panel en vivo + llamada mensual de estrategia",
+            "Soporte prioritario, respuesta en 4 h",
+            "Optimización continua incluida"
+          ],
+          "cta": "Escala con Growth",
+          "highlighted": "true"
+        },
+        {
+          "name": "Enterprise",
+          "price": "Hablamos",
+          "period": "",
+          "setupNote": "Alcance y SLA a medida",
+          "description": "Flotas de agentes, infraestructura a medida, hosting on-premise o dedicado en la UE y un ingeniero asignado.",
+          "features": [
+            "Agentes y flujos ilimitados",
+            "Ingeniero de soluciones dedicado",
+            "SLAs y garantías de disponibilidad a medida",
+            "Revisión avanzada de seguridad y cumplimiento",
+            "Despliegue on-premise o en nube privada",
+            "Revisiones ejecutivas trimestrales"
+          ],
+          "cta": "Hablemos",
+          "highlighted": "false"
+        }
+      ],
+      "footnote": "Sin permanencia. Cancela cualquier mes. El setup cubre descubrimiento, construcción y pruebas — presupuestado antes de empezar, nunca después."
+    },
+    "faq": {
+      "heading": "Preguntas, respondidas sin rodeos",
+      "items": [
+        {
+          "q": "¿Qué es exactamente un agente de IA?",
+          "a": "Software que hace un trabajo, no que solo responde a un prompt. Un agente lee el contexto, toma decisiones dentro de las reglas que tú marcas y actúa en tus herramientas: responde a un lead, agenda una reunión, actualiza tu CRM. Piensa en él como un compañero digital con un rol concreto y bien definido."
+        },
+        {
+          "q": "¿Cuánto tarda en estar en producción?",
+          "a": "La mayoría de agentes sale en producción en menos de 30 días. La primera semana es descubrimiento y acceso a datos, la segunda y la tercera son construcción y pruebas contra conversaciones históricas reales, y después desplegamos con salvaguardas activadas. Los montajes multi-agente complejos pueden llevar de 6 a 8 semanas."
+        },
+        {
+          "q": "¿Qué necesitáis de mi equipo?",
+          "a": "Nada técnico. La parte tecnológica es nuestra de principio a fin: la construimos, la alojamos, la vigilamos y la mejoramos. De ti solo necesitamos a la persona que mejor conoce el proceso: dos o tres horas durante la puesta en marcha y una revisión corta al mes."
+        },
+        {
+          "q": "¿Y si el agente se equivoca?",
+          "a": "Todos los agentes salen con umbrales de confianza y reglas de escalado: cualquier cosa ambigua, delicada o de alto valor pasa a una persona con la conversación completa adjunta. Además, el primer mes revisamos transcripciones cada semana y afinamos el agente antes de que los casos raros se conviertan en patrones."
+        },
+        {
+          "q": "¿Cómo gestionáis la seguridad de datos y el RGPD?",
+          "a": "Todo se procesa y se guarda dentro de la UE con cifrado de extremo a extremo. Firmamos un contrato de encargado de tratamiento (DPA) con cada cliente, recogemos solo lo que cada flujo necesita y tus datos nunca alimentan modelos ajenos. Bajo petición, trabajamos con hosting de modelos dedicado en la UE."
+        },
+        {
+          "q": "¿Con qué herramientas funciona?",
+          "a": "Con cualquiera que tenga API — y eso cubre casi todo: WhatsApp, Gmail, Outlook, Slack, HubSpot, Salesforce, Shopify, Stripe, Notion, Airtable, Google Sheets y cientos más. Si una herramienta no tiene API, normalmente podemos conectarla a través de Make o Zapier."
+        },
+        {
+          "q": "¿Qué pasa después del lanzamiento?",
+          "a": "El lanzamiento es el principio, no el final. Tu plan incluye monitorización, gestión de errores, actualizaciones de modelo y ajuste continuo basado en conversaciones reales. Cada mes recibes un informe con números de verdad y una llamada para decidir qué debe aprender el agente a continuación."
+        }
+      ]
+    },
+    "finalCta": {
+      "heading": "Recupera 30 horas a la semana. Tú decides qué haces con ellas.",
+      "subheading": "Reserva una auditoría gratuita. En 45 minutos te enseñamos exactamente qué proceso automatizar primero — y cuánto te está costando no hacerlo.",
+      "cta": "Quiero mi auditoría gratis"
+    },
+    "contact": {
+      "heading": "Cuéntanos qué se está comiendo tu semana",
+      "intro": "Rellena esto y te respondemos en un día laborable con una primera opinión honesta — no con un guion de ventas.",
+      "form": {
+        "name": "Tu nombre",
+        "email": "Email de trabajo",
+        "company": "Empresa",
+        "interest": "¿Qué quieres automatizar?",
+        "interestOptions": [
+          "Ventas y captación de leads",
+          "Atención al cliente",
+          "Recepción y citas",
+          "Contenido y marketing",
+          "Otra cosa"
+        ],
+        "message": "Cuéntanos tu proceso (opcional)",
+        "submit": "Enviar mensaje",
+        "sending": "Enviando..."
+      },
+      "successTitle": "¡Recibido!",
+      "successMessage": "Gracias — hemos recibido tu mensaje y te responderemos en un día laborable.",
+      "errorMessage": "Algo ha fallado al enviar tu mensaje. Inténtalo de nuevo o escríbenos directamente por email.",
+      "privacyNote": "Usamos tus datos solo para responderte — ni listas ni spam. ¿Dudas? ralcaraz.canals@gmail.com"
+    },
+    "footer": {
+      "blurb": "50 Labs diseña, construye y opera agentes de IA a medida que devuelven sus horas a los negocios.",
+      "directEmailLabel": "¿Prefieres el email? Escríbenos directamente:",
+      "email": "ralcaraz.canals@gmail.com",
+      "rights": "© 2026 50 Labs",
+      "madeIn": "Barcelona · Remoto para todo el mundo"
+    }
+  }
+};
+
+/* ==================== UI STRINGS (design-system labels, both languages) ==================== */
+const UI = {
+  en: {
+    skip: "Skip to content",
+    logoSuffix: "Agents & Automations",
+    aria: {
+      nav: "Main navigation",
+      langGroup: "Language",
+      langEN: "English version",
+      langES: "Spanish version",
+      menuOpen: "Open menu",
+      menuClose: "Close menu"
+    },
+    kickers: {
+      problem: "01 — The problem",
+      services: "02 — What we build",
+      process: "03 — The method",
+      integrations: "04 — The stack",
+      cases: "05 — Case files",
+      pricing: "06 — Pricing",
+      faq: "07 — FAQ",
+      contact: "08 — Contact"
+    },
+    before: "Without agents",
+    after: "With agents",
+    receipt: {
+      header: "Work order Nº 0050 — Lead intake agent",
+      rows: [
+        "lead captured — web form",
+        "enriched — company data",
+        "qualified — score 87/100",
+        "meeting booked — Tue 10:00",
+        "CRM updated — HubSpot"
+      ],
+      hoursLabel: "Human hours spent",
+      hoursValue: "0.0",
+      stamp: "Done"
+    },
+    metrics: [
+      "+3× outreach volume",
+      "45 s first reply",
+      "−70% ticket load",
+      "−37% no-shows",
+      "5× content output",
+      "12 h/wk admin saved"
+    ],
+    liveLegend: "Green dot — live in client projects today",
+    stampRim: "50 LABS · BARCELONA · MMXXVI ·",
+    stampReceived: "Received",
+    caseChallenge: "Challenge",
+    caseSolution: "Solution",
+    popular: "Most popular",
+    form: {
+      kicker: "Intake — 02 min",
+      select: "Choose an option",
+      consent: "I agree to be contacted about my request.",
+      required: "This field is required",
+      email: "Enter a valid email address",
+      consentErr: "— please tick the box to continue",
+      mailto: "Email us instead"
+    }
+  },
+  es: {
+    skip: "Saltar al contenido",
+    logoSuffix: "Agentes y Automatizaciones",
+    aria: {
+      nav: "Navegación principal",
+      langGroup: "Idioma",
+      langEN: "Versión en inglés",
+      langES: "Versión en español",
+      menuOpen: "Abrir menú",
+      menuClose: "Cerrar menú"
+    },
+    kickers: {
+      problem: "01 — El problema",
+      services: "02 — Qué construimos",
+      process: "03 — El método",
+      integrations: "04 — El stack",
+      cases: "05 — Casos",
+      pricing: "06 — Precios",
+      faq: "07 — FAQ",
+      contact: "08 — Contacto"
+    },
+    before: "Sin agentes",
+    after: "Con agentes",
+    receipt: {
+      header: "Orden de trabajo Nº 0050 — Agente de leads",
+      rows: [
+        "lead captado — formulario web",
+        "enriquecido — datos de empresa",
+        "cualificado — score 87/100",
+        "reunión reservada — mar 10:00",
+        "CRM actualizado — HubSpot"
+      ],
+      hoursLabel: "Horas humanas empleadas",
+      hoursValue: "0,0",
+      stamp: "Hecho"
+    },
+    metrics: [
+      "+3× volumen de prospección",
+      "45 s de primera respuesta",
+      "−70% de carga de tickets",
+      "−37% de ausencias",
+      "5× más contenido",
+      "12 h/sem de papeleo ahorradas"
+    ],
+    liveLegend: "Punto verde — en producción con clientes hoy",
+    stampRim: "50 LABS · BARCELONA · MMXXVI ·",
+    stampReceived: "Recibido",
+    caseChallenge: "Reto",
+    caseSolution: "Solución",
+    popular: "El más popular",
+    form: {
+      kicker: "Formulario — 02 min",
+      select: "Elige una opción",
+      consent: "Acepto que 50 Labs me escriba sobre mi solicitud.",
+      required: "Este campo es obligatorio",
+      email: "Introduce un email válido",
+      consentErr: "— marca la casilla para continuar",
+      mailto: "Escríbenos por email"
+    }
+  }
+};
+
+/* ==================== I18N ENGINE ==================== */
+let lang = 'en';
+const LIVE_TOOLS = ["WhatsApp","Gmail","Slack","HubSpot","Stripe","Google Calendar","Notion","Google Sheets"];
+
+function resolve(path){
+  let src = CONTENT[lang], p = path;
+  if (p.startsWith('ui:')) { src = UI[lang]; p = p.slice(3); }
+  return p.split('.').reduce((o,k)=> (o == null ? o : o[k]), src);
+}
+
+function renderRich(el){
+  const raw = resolve(el.dataset.i18nRich);
+  if (typeof raw !== 'string') return;
+  el.textContent = '';
+  const re = /\{\{(.+?)\}\}/g;
+  let last = 0, m;
+  while ((m = re.exec(raw)) !== null){
+    if (m.index > last) el.appendChild(document.createTextNode(raw.slice(last, m.index)));
+    const em = document.createElement('em');
+    em.className = 'mark';
+    em.appendChild(document.createTextNode(m[1]));
+    const svgNS = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(svgNS,'svg');
+    svg.setAttribute('viewBox','0 0 100 8');
+    svg.setAttribute('preserveAspectRatio','none');
+    svg.setAttribute('aria-hidden','true');
+    const path = document.createElementNS(svgNS,'path');
+    path.setAttribute('d','M2 5 Q 14 2, 27 4.6 T 52 4.4 T 76 5 T 98 3.6');
+    svg.appendChild(path);
+    em.appendChild(svg);
+    el.appendChild(em);
+    last = re.lastIndex;
+  }
+  if (last < raw.length) el.appendChild(document.createTextNode(raw.slice(last)));
+}
+
+function renderChips(){
+  const row = document.getElementById('chipRow');
+  row.textContent = '';
+  const tools = CONTENT[lang].integrations.tools;
+  tools.forEach(t => {
+    const s = document.createElement('span');
+    s.className = 'chip' + (LIVE_TOOLS.includes(t) ? ' live' : '');
+    s.textContent = t;
+    row.appendChild(s);
+  });
+  const more = document.createElement('span');
+  more.className = 'chip more';
+  more.textContent = CONTENT[lang].integrations.closing;
+  row.appendChild(more);
+}
+
+function applyI18n(){
+  document.documentElement.lang = lang;
+  document.title = CONTENT.meta[lang].title;
+  const desc = CONTENT.meta[lang].description;
+  document.querySelector('meta[name="description"]').setAttribute('content', desc);
+  document.querySelector('meta[property="og:title"]').setAttribute('content', CONTENT.meta[lang].title);
+  document.querySelector('meta[property="og:description"]').setAttribute('content', desc);
+  document.querySelector('meta[name="twitter:title"]').setAttribute('content', CONTENT.meta[lang].title);
+  document.querySelector('meta[name="twitter:description"]').setAttribute('content', desc);
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const v = resolve(el.dataset.i18n);
+    if (typeof v !== 'string') return;
+    if (el.id === 'submitLabel' && document.getElementById('submitBtn').disabled) { el.textContent = resolve('contact.form.sending'); return; }
+    el.textContent = v;
+  });
+  document.querySelectorAll('[data-i18n-rich]').forEach(renderRich);
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const v = resolve(el.dataset.i18nPlaceholder);
+    if (typeof v === 'string') el.setAttribute('placeholder', v);
+  });
+  document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+    const v = resolve(el.dataset.i18nAria);
+    if (typeof v === 'string') el.setAttribute('aria-label', v);
+  });
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.lang === lang);
+    b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
+  });
+  renderChips();
+  cancelTicks();
+}
+
+function setLang(l, persist){
+  lang = l;
+  if (persist) { try { localStorage.setItem('lang50', l); } catch(e){} }
+  applyI18n();
+}
+
+/* initial language: ?lang > localStorage > browser */
+(function initLang(){
+  const qp = new URLSearchParams(location.search).get('lang');
+  let stored = null;
+  try { stored = localStorage.getItem('lang50'); } catch(e){}
+  const browser = ((navigator.language || 'en').toLowerCase().startsWith('es')) ? 'es' : 'en';
+  if (qp === 'en' || qp === 'es') lang = qp;
+  else if (stored === 'en' || stored === 'es') lang = stored;
+  else lang = browser;
+})();
+
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => setLang(btn.dataset.lang, true));
+});
+
+/* ==================== MOTION HELPERS ==================== */
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const activeRafs = new Set();
+function cancelTicks(){
+  activeRafs.forEach(id => cancelAnimationFrame(id));
+  activeRafs.clear();
+  /* restore final strings for anything mid-animation */
+  document.querySelectorAll('.tick[data-i18n],.tickdown[data-i18n]').forEach(el => {
+    const v = resolve(el.dataset.i18n);
+    if (typeof v === 'string') el.textContent = v;
+  });
+}
+
+/* till-counter: animate the first numeral of the element's text in stepped jumps */
+function animateTick(el){
+  if (reducedMotion) return;
+  const final = el.textContent;
+  const m = final.match(/\d+(?:[.,]\d+)?/);
+  if (!m) return;
+  const raw = m[0];
+  const sep = raw.includes(',') ? ',' : '.';
+  const decMatch = raw.match(/[.,](\d+)$/);
+  const decimals = decMatch ? decMatch[1].length : 0;
+  const target = parseFloat(raw.replace(',', '.'));
+  const pre = final.slice(0, m.index);
+  const post = final.slice(m.index + raw.length);
+  const steps = 12, dur = 850;
+  let start = null;
+  function frame(ts){
+    if (start === null) start = ts;
+    const p = Math.min(1, (ts - start) / dur);
+    const k = Math.floor(p * steps) / steps;
+    const val = (target * k).toFixed(decimals).replace('.', sep);
+    el.textContent = pre + val + post;
+    if (p < 1){
+      const id = requestAnimationFrame(frame);
+      activeRafs.add(id);
+    } else {
+      el.textContent = final;
+    }
+  }
+  const id = requestAnimationFrame(frame);
+  activeRafs.add(id);
+}
+
+/* receipt hours tick-down: 9.9 → 0.0 */
+function animateHoursDown(){
+  if (reducedMotion) return;
+  const el = document.getElementById('hoursTick');
+  const final = resolve('ui:receipt.hoursValue') || '0.0';
+  const sep = final.includes(',') ? ',' : '.';
+  const steps = 11, dur = 900;
+  let start = null;
+  function frame(ts){
+    if (start === null) start = ts;
+    const p = Math.min(1, (ts - start) / dur);
+    const k = Math.floor(p * steps) / steps;
+    const val = (9.9 * (1 - k)).toFixed(1).replace('.', sep);
+    el.textContent = val;
+    if (p < 1){
+      const id = requestAnimationFrame(frame);
+      activeRafs.add(id);
+    } else {
+      el.textContent = final;
+    }
+  }
+  const id = requestAnimationFrame(frame);
+  activeRafs.add(id);
+}
+
+/* ==================== BOOT ==================== */
+applyI18n();
+setTimeout(animateHoursDown, 2100); /* after the last receipt row prints */
+
+/* reveal + counters via IntersectionObserver */
+if (!reducedMotion && 'IntersectionObserver' in window){
+  const revealIO = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting){ e.target.classList.add('in'); revealIO.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach(el => revealIO.observe(el));
+
+  const tickIO = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting){ animateTick(e.target); tickIO.unobserve(e.target); }
+    });
+  }, { threshold: 0.4 });
+  document.querySelectorAll('.tick').forEach(el => tickIO.observe(el));
+} else {
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+}
+
+/* ==================== NAV: scroll spy ==================== */
+const spyIds = ['services','process','cases','pricing','faq','contact'];
+if ('IntersectionObserver' in window){
+  const spyIO = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting){
+        document.querySelectorAll('.nav-links a').forEach(a => {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  spyIds.forEach(id => { const s = document.getElementById(id); if (s) spyIO.observe(s); });
+}
+
+/* ==================== MOBILE MENU ==================== */
+const burger = document.querySelector('.hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+function setMenu(open){
+  burger.setAttribute('aria-expanded', String(open));
+  const v = resolve(open ? 'ui:aria.menuClose' : 'ui:aria.menuOpen');
+  if (typeof v === 'string') burger.setAttribute('aria-label', v);
+  mobileMenu.classList.toggle('open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+burger.addEventListener('click', () => setMenu(burger.getAttribute('aria-expanded') !== 'true'));
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && mobileMenu.classList.contains('open')) setMenu(false); });
+const mqDesktop = window.matchMedia('(min-width: 861px)');
+mqDesktop.addEventListener('change', e => { if (e.matches && mobileMenu.classList.contains('open')) setMenu(false); });
+
+/* ==================== FAQ (one open at a time) ==================== */
+const faqItems = Array.from(document.querySelectorAll('#faqList .faq-item'));
+function setFaq(item, open){
+  item.classList.toggle('open', open);
+  const btn = item.querySelector('.faq-q');
+  btn.setAttribute('aria-expanded', String(open));
+}
+faqItems.forEach(item => {
+  item.querySelector('.faq-q').addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    faqItems.forEach(i => setFaq(i, false));
+    if (!isOpen) setFaq(item, true);
+  });
+});
+if (faqItems.length) setFaq(faqItems[0], true);
+
+/* ==================== CONTACT FORM ==================== */
+const form = document.getElementById('contactForm');
+const submitBtn = document.getElementById('submitBtn');
+const submitLabel = document.getElementById('submitLabel');
+const formError = document.getElementById('formError');
+const formSuccess = document.getElementById('formSuccess');
+
+function markInvalid(fieldId, invalid){
+  document.getElementById(fieldId).classList.toggle('invalid', invalid);
+}
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  if (submitBtn.disabled) return;
+  formError.hidden = true;
+  const name = document.getElementById('in-name').value.trim();
+  const email = document.getElementById('in-email').value.trim();
+  const company = document.getElementById('in-company').value.trim();
+  const interestSel = document.getElementById('in-interest');
+  const message = document.getElementById('in-message').value.trim();
+  const consent = document.getElementById('in-consent').checked;
+  const honey = document.getElementById('in-honey').value;
+
+  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  let bad = false;
+  markInvalid('f-name', !name); if (!name) bad = true;
+  markInvalid('f-email', !emailOk); if (!emailOk) bad = true;
+  markInvalid('f-company', !company); if (!company) bad = true;
+  markInvalid('f-interest', !interestSel.value); if (!interestSel.value) bad = true;
+  const consentErr = document.getElementById('consentErr');
+  consentErr.hidden = consent;
+  document.getElementById('f-consent').classList.toggle('invalid', !consent);
+  if (!consent) bad = true;
+  if (bad) return;
+
+  const interest = resolve('contact.form.interestOptions.' + interestSel.value) || '';
+
+  submitBtn.disabled = true;
+  submitLabel.textContent = resolve('contact.form.sending');
+
+  try {
+    const res = await fetch('https://formsubmit.co/ajax/ralcaraz.canals@gmail.com', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        company: company,
+        interest: interest,
+        message: message,
+        _subject: lang === 'es' ? '50 Labs — nuevo contacto web' : '50 Labs — new website enquiry',
+        _template: 'table',
+        _captcha: 'false',
+        _honey: honey
+      })
+    });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    form.hidden = true;
+    document.querySelector('.form-kicker').hidden = true;
+    formSuccess.hidden = false;
+  } catch (err) {
+    formError.hidden = false;
+    submitBtn.disabled = false;
+    submitLabel.textContent = resolve('contact.form.submit');
+  }
+});
+</script>
+</body>
+</html>
