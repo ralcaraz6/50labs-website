@@ -1,12 +1,12 @@
 {
   "meta": {
     "en": {
-      "title": "50 Labs — Custom AI Agents for Your Business",
-      "description": "AI agents that answer customers, qualify leads and run your back office. Live in under 30 days."
+      "title": "50 Labs — AI applied to your company's data",
+      "description": "Systems that work overnight: every morning your team gets its numbers and the opportunities the AI spots with your rules."
     },
     "es": {
-      "title": "50 Labs — Agentes de IA a medida para tu negocio",
-      "description": "Agentes de IA que atienden clientes, cualifican leads y mueven tu back office. En producción en menos de 30 días."
+      "title": "50 Labs — IA aplicada a los datos de tu empresa",
+      "description": "Sistemas que trabajan de noche: cada mañana tu equipo recibe sus números y las oportunidades que la IA detecta con tus reglas."
     }
   },
   "en": {
@@ -17,26 +17,27 @@
       "pricing": "Pricing",
       "faq": "FAQ",
       "contact": "Contact",
-      "cta": "Book a call"
+      "cta": "Book a call",
+      "demo": "Demo"
     },
     "hero": {
-      "eyebrow": "AI agents, built for you",
-      "headline": "Agents that do the work. {{You keep the margin.}}",
-      "sub": "They answer, qualify and follow up. You decide; they do the grind.",
-      "cta1": "Get a free audit",
-      "cta2": "See how it works",
+      "eyebrow": "AI applied to your data",
+      "headline": "Systems that work overnight. {{You decide in the morning.}}",
+      "sub": "Every morning your team gets its numbers and the opportunities the AI has spotted using your rules. Nobody has to prepare a thing.",
+      "cta1": "See the system in 15 minutes",
+      "cta2": "See the demo",
       "stats": [
         {
-          "value": "30+ h",
-          "label": "saved weekly per team"
+          "value": "7:00",
+          "label": "daily briefing in production for an investment fund"
         },
         {
-          "value": "< 60 s",
-          "label": "to answer any lead"
+          "value": "10+",
+          "label": "years in data — Rogelio Alcaraz, senior data analyst"
         },
         {
-          "value": "< 30 days",
-          "label": "from kickoff to live"
+          "value": "BCN",
+          "label": "Barcelona · remote worldwide"
         }
       ]
     },
@@ -45,22 +46,58 @@
       "beforeLabel": "Before",
       "afterLabel": "With agents",
       "before": [
-        "Leads wait hours for replies",
-        "Follow-ups depend on memory",
-        "Same 20 questions on loop",
+        "Numbers get built by hand every Monday",
+        "Follow-ups depend on someone remembering",
+        "Nobody looks at margin until month-end",
         "Data stuck in inboxes"
       ],
       "after": [
+        "The briefing shows up by itself at 7:00",
+        "The AI flags the day something drifts",
         "Every lead answered in seconds",
-        "Follow-ups run themselves",
-        "Routine tickets solved solo",
         "Everything synced to your CRM"
       ]
     },
     "services": {
-      "heading": "Six agents. Hours back.",
-      "sub": "Trained on your real conversations. They sound like your team.",
+      "heading": "What we build",
+      "sub": "First, the data systems that set us apart. Then the agents that run the day-to-day.",
       "agents": [
+        {
+          "name": "Sunrise",
+          "tag": "Daily 7:00 briefing",
+          "chips": [
+            "KPIs vs target",
+            "Alerts that matter",
+            "3 suggested actions"
+          ]
+        },
+        {
+          "name": "Radar",
+          "tag": "Opportunity radar",
+          "chips": [
+            "Reads your data daily",
+            "Your rules, not ours",
+            "Instant heads-up"
+          ]
+        },
+        {
+          "name": "Resolve",
+          "tag": "Customer support",
+          "chips": [
+            "Knows your docs",
+            "Routine tickets, handled",
+            "Smart escalation"
+          ]
+        },
+        {
+          "name": "Concierge",
+          "tag": "Reception & bookings",
+          "chips": [
+            "Answers 24/7",
+            "Books appointments",
+            "Cuts no-shows"
+          ]
+        },
         {
           "name": "Scout",
           "tag": "Outbound sales",
@@ -77,24 +114,6 @@
             "Instant replies",
             "Scores leads",
             "Hot handoffs"
-          ]
-        },
-        {
-          "name": "Resolve",
-          "tag": "Customer support",
-          "chips": [
-            "Knows your docs",
-            "80% of tickets",
-            "Smart escalation"
-          ]
-        },
-        {
-          "name": "Concierge",
-          "tag": "Reception & bookings",
-          "chips": [
-            "Answers 24/7",
-            "Books appointments",
-            "Cuts no-shows"
           ]
         },
         {
@@ -122,11 +141,11 @@
       "steps": [
         {
           "title": "Audit",
-          "line": "We find your biggest leak. Free."
+          "line": "A short call to find your biggest time or margin leak."
         },
         {
           "title": "Build",
-          "line": "Trained on your real conversations, stress-tested."
+          "line": "Trained on your real data and conversations, stress-tested before launch."
         },
         {
           "title": "Deploy",
@@ -140,61 +159,62 @@
     },
     "integrations": {
       "heading": "Fits your stack",
-      "sub": "WhatsApp, Gmail, HubSpot, Shopify and 100+ more."
+      "sub": "WhatsApp, Gmail, HubSpot, Shopify and many more."
     },
     "cases": {
-      "heading": "Real results",
+      "heading": "Real cases",
+      "note": "Real cases; the demo is labelled as such. When a client prefers not to be named, we respect that.",
       "studies": [
         {
-          "company": "Denta Nova Group",
-          "sector": "Dental clinics",
-          "heroValue": "−37%",
-          "heroLabel": "no-shows in one quarter",
+          "company": "Investment fund",
+          "sector": "Investing · confidential",
+          "heroValue": "7:00",
+          "heroLabel": "daily briefing in production",
           "minis": [
             {
-              "value": "97%",
-              "label": "calls & messages answered"
+              "value": "0 min",
+              "label": "of manual prep every morning"
             },
             {
-              "value": "19 h/wk",
-              "label": "front-desk time saved"
+              "value": "2026",
+              "label": "in production since June"
             }
           ],
-          "line": "24/7 reception agent on calls and WhatsApp, plus automated reminders."
+          "line": "Every morning the partners get their portfolio performance and the opportunities the AI spots using their own rules."
         },
         {
-          "company": "Llobregat Homes",
-          "sector": "Real estate",
-          "heroValue": "+34%",
-          "heroLabel": "viewings booked monthly",
+          "company": "Comercial Atlas, S.L.",
+          "sector": "Demo company",
+          "heroValue": "Demo",
+          "heroLabel": "public, with synthetic data",
           "minis": [
             {
-              "value": "2.6×",
-              "label": "qualified leads per agent"
+              "value": "KPIs",
+              "label": "vs target every morning"
             },
             {
-              "value": "4 h → 45 s",
-              "label": "first-response time"
+              "value": "3",
+              "label": "suggested actions a day"
             }
           ],
-          "line": "Qualification agent that replies in seconds and books viewings itself."
+          "line": "Our demo — clearly labelled: the full briefing running on sample data. Ask for it and see it in 15 minutes."
         },
         {
-          "company": "Vela Studio",
-          "sector": "Online fashion",
-          "heroValue": "73%",
-          "heroLabel": "tickets resolved, no human",
+          "company": "New cases underway",
+          "sector": "SMBs · Spain",
+          "heroValue": "→",
+          "heroLabel": "projects being built right now",
           "minis": [
             {
-              "value": "< 3 min",
-              "label": "median response time"
+              "value": "ES/EN",
+              "label": "teams in two languages"
             },
             {
-              "value": "4.7/5",
-              "label": "customer satisfaction"
+              "value": "30 days",
+              "label": "target to production"
             }
           ],
-          "line": "Support agent trained on their catalog; edge cases escalate with context."
+          "line": "We publish each case when the client signs off. This slot fills itself."
         }
       ]
     },
@@ -255,8 +275,8 @@
           "a": "Software that does a job, not just answers. It acts across your tools, within rules you set."
         },
         {
-          "q": "How fast is it live?",
-          "a": "Most agents launch in under 30 days. Complex setups take 6–8 weeks."
+          "q": "How long until it's live?",
+          "a": "Our target: production in under 30 days. Complex integrations can take 6 to 8 weeks."
         },
         {
           "q": "What do you need from us?",
@@ -281,9 +301,9 @@
       ]
     },
     "finalCta": {
-      "heading": "Find out what 30 hours back feels like",
-      "sub": "Free 45-minute audit. We show you what to automate first.",
-      "cta": "Book my free audit"
+      "heading": "Fifteen minutes and you see it running",
+      "sub": "We show you the system live with sample data. If it fits, we talk about your case.",
+      "cta": "See the system in 15 minutes"
     },
     "contact": {
       "heading": "Tell us what hurts",
@@ -294,10 +314,11 @@
         "company": "Company",
         "interest": "What do you want to automate?",
         "interestOptions": [
+          "Daily briefing & data",
           "Sales & leads",
           "Customer support",
           "Reception & bookings",
-          "Content & marketing",
+          "Content",
           "Something else"
         ],
         "message": "Your process (optional)",
@@ -310,11 +331,59 @@
       "privacyNote": "Your data is only used to reply. Questions? ralcaraz.canals@gmail.com"
     },
     "footer": {
-      "line": "Custom AI agents, built and operated.",
+      "line": "Data-first AI for SMBs. Built and run from Barcelona.",
       "emailLabel": "Prefer email?",
       "email": "ralcaraz.canals@gmail.com",
       "rights": "© 2026 50 Labs",
-      "madeIn": "Barcelona · Remote worldwide"
+      "madeIn": "Barcelona · Remote worldwide",
+      "operated": "50 Labs is a brand by Rogelio Alcaraz",
+      "legalNotice": "Legal notice",
+      "privacy": "Privacy & cookies"
+    },
+    "demo": {
+      "heading": "The email that lands every morning",
+      "sub": "No dashboards nobody opens: one 7:00 email with what matters and what to do about it.",
+      "email": {
+        "from": "50 Labs · Daily briefing",
+        "subject": "Briefing — Tuesday, 7:00",
+        "kpisTitle": "Yesterday's numbers",
+        "kpis": [
+          {
+            "label": "Sales",
+            "value": "€12,480",
+            "delta": "+9% vs target"
+          },
+          {
+            "label": "Orders",
+            "value": "142",
+            "delta": "−4% vs last week"
+          },
+          {
+            "label": "Gross margin",
+            "value": "31.2%",
+            "delta": "on target"
+          }
+        ],
+        "alertsTitle": "Alerts",
+        "alerts": [
+          "Stock for SKU A-140 below 2 weeks",
+          "3 invoices due this week (€4,310)"
+        ],
+        "actionsTitle": "3 suggested actions",
+        "actions": [
+          "Restock A-140 before Thursday",
+          "Call the 2 customers with stalled orders",
+          "Review pack B pricing: demand +18% two weeks running"
+        ]
+      },
+      "note": "Data from a demo company (Comercial Atlas, S.L.). With your data it looks the same — with your numbers."
+    },
+    "about": {
+      "heading": "There's a person behind this, not a template",
+      "name": "Rogelio Alcaraz",
+      "role": "Founder, 50 Labs",
+      "cred": "Senior data analyst with 10+ years in data, currently at a European platform with millions of users.",
+      "quote": "I build for SMBs the data systems big companies take for granted: every morning, the business tells you how it's doing and where the next opportunity is."
     }
   },
   "es": {
@@ -325,26 +394,27 @@
       "pricing": "Precios",
       "faq": "FAQ",
       "contact": "Contacto",
-      "cta": "Reserva una llamada"
+      "cta": "Reserva una llamada",
+      "demo": "Demo"
     },
     "hero": {
-      "eyebrow": "Agentes de IA, hechos para ti",
-      "headline": "Agentes que hacen el trabajo. {{Tú te quedas el margen.}}",
-      "sub": "Responden, cualifican y hacen el seguimiento. Tú decides; ellos ejecutan.",
-      "cta1": "Pide tu auditoría gratis",
-      "cta2": "Mira cómo funciona",
+      "eyebrow": "IA aplicada a tus datos",
+      "headline": "Sistemas que trabajan de noche. {{Tú decides por la mañana.}}",
+      "sub": "Cada mañana, tu equipo recibe sus números y las oportunidades que la IA ha detectado con tus reglas. Sin que nadie prepare nada.",
+      "cta1": "Ver el sistema en 15 minutos",
+      "cta2": "Ver la demo",
       "stats": [
         {
-          "value": "+30 h",
-          "label": "ahorradas por equipo y semana"
+          "value": "7:00",
+          "label": "briefing diario en producción para un fondo de inversión"
         },
         {
-          "value": "< 60 s",
-          "label": "de respuesta a cada lead"
+          "value": "10+",
+          "label": "años en datos — Rogelio Alcaraz, senior data analyst"
         },
         {
-          "value": "< 30 días",
-          "label": "del kickoff a producción"
+          "value": "BCN",
+          "label": "Barcelona · en remoto para todo el mundo"
         }
       ]
     },
@@ -353,22 +423,58 @@
       "beforeLabel": "Antes",
       "afterLabel": "Con agentes",
       "before": [
-        "Leads esperando horas",
-        "Seguimiento a base de memoria",
-        "Las mismas 20 preguntas",
-        "Datos atrapados en el email"
+        "Los números se preparan a mano cada lunes",
+        "El seguimiento depende de que alguien se acuerde",
+        "Nadie mira el margen hasta fin de mes",
+        "Los datos, atrapados en el email"
       ],
       "after": [
+        "El briefing llega solo a las 7:00",
+        "La IA avisa el día que algo se desvía",
         "Cada lead respondido en segundos",
-        "Seguimientos en piloto automático",
-        "Tickets rutinarios resueltos solos",
         "Todo sincronizado en tu CRM"
       ]
     },
     "services": {
-      "heading": "Seis agentes. Horas devueltas.",
-      "sub": "Entrenados con tus conversaciones reales. Suenan como tu equipo.",
+      "heading": "Qué construimos",
+      "sub": "Primero, los sistemas de datos que nos diferencian. Después, los agentes que ejecutan el día a día.",
       "agents": [
+        {
+          "name": "Alba",
+          "tag": "Briefing diario a las 7:00",
+          "chips": [
+            "KPIs vs objetivo",
+            "Alertas que importan",
+            "3 acciones sugeridas"
+          ]
+        },
+        {
+          "name": "Radar",
+          "tag": "Radar de oportunidades",
+          "chips": [
+            "Lee tus datos a diario",
+            "Tus reglas, no las nuestras",
+            "Aviso al instante"
+          ]
+        },
+        {
+          "name": "Resuelve",
+          "tag": "Atención al cliente",
+          "chips": [
+            "Conoce tu documentación",
+            "Tickets rutinarios, resueltos",
+            "Escalado inteligente"
+          ]
+        },
+        {
+          "name": "Conserje",
+          "tag": "Recepción y citas",
+          "chips": [
+            "Atiende 24/7",
+            "Agenda citas",
+            "Menos citas perdidas"
+          ]
+        },
         {
           "name": "Cazador",
           "tag": "Ventas outbound",
@@ -384,25 +490,7 @@
           "chips": [
             "Respuesta instantánea",
             "Puntúa leads",
-            "Traspaso en caliente"
-          ]
-        },
-        {
-          "name": "Resuelve",
-          "tag": "Atención al cliente",
-          "chips": [
-            "Conoce tu documentación",
-            "80% de tickets",
-            "Escalado inteligente"
-          ]
-        },
-        {
-          "name": "Conserje",
-          "tag": "Recepción y citas",
-          "chips": [
-            "Atiende 24/7",
-            "Agenda citas",
-            "Menos ausencias"
+            "Lead pasado en caliente"
           ]
         },
         {
@@ -430,11 +518,11 @@
       "steps": [
         {
           "title": "Auditoría",
-          "line": "Encontramos tu mayor fuga. Gratis."
+          "line": "Una llamada corta para encontrar tu mayor fuga de tiempo o de margen."
         },
         {
           "title": "Construcción",
-          "line": "Entrenado con tus conversaciones reales y puesto a prueba."
+          "line": "Entrenado con tus datos y conversaciones reales, y puesto a prueba antes de salir."
         },
         {
           "title": "Despliegue",
@@ -448,61 +536,62 @@
     },
     "integrations": {
       "heading": "Encaja en tu stack",
-      "sub": "WhatsApp, Gmail, HubSpot, Shopify y 100+ más."
+      "sub": "WhatsApp, Gmail, HubSpot, Shopify y muchas más."
     },
     "cases": {
-      "heading": "Resultados reales",
+      "heading": "Casos reales",
+      "note": "Casos reales; la demo está señalada como tal. Cuando un cliente prefiere no aparecer con nombre, lo respetamos.",
       "studies": [
         {
-          "company": "Grupo Denta Nova",
-          "sector": "Clínicas dentales",
-          "heroValue": "−37%",
-          "heroLabel": "de ausencias en un trimestre",
+          "company": "Fondo de inversión",
+          "sector": "Inversión · confidencial",
+          "heroValue": "7:00",
+          "heroLabel": "briefing diario en producción",
           "minis": [
             {
-              "value": "97%",
-              "label": "de llamadas y mensajes atendidos"
+              "value": "0 min",
+              "label": "de preparación manual cada mañana"
             },
             {
-              "value": "19 h/sem",
-              "label": "de recepción recuperadas"
+              "value": "2026",
+              "label": "en producción desde junio"
             }
           ],
-          "line": "Agente de recepción 24/7 en llamadas y WhatsApp, con recordatorios automáticos."
+          "line": "Cada mañana, los socios reciben el rendimiento de su cartera y las oportunidades que la IA detecta con sus propias reglas."
         },
         {
-          "company": "Llobregat Homes",
-          "sector": "Inmobiliaria",
-          "heroValue": "+34%",
-          "heroLabel": "de visitas al mes",
+          "company": "Comercial Atlas, S.L.",
+          "sector": "Empresa de demostración",
+          "heroValue": "Demo",
+          "heroLabel": "pública, con datos sintéticos",
           "minis": [
             {
-              "value": "2,6×",
-              "label": "leads cualificados por comercial"
+              "value": "KPIs",
+              "label": "frente a objetivo cada mañana"
             },
             {
-              "value": "4 h → 45 s",
-              "label": "de primera respuesta"
+              "value": "3",
+              "label": "acciones sugeridas al día"
             }
           ],
-          "line": "Agente de cualificación que responde en segundos y agenda visitas solo."
+          "line": "Nuestra demo, y lo decimos claro: el briefing completo funcionando con datos de ejemplo. Pídela y la ves en 15 minutos."
         },
         {
-          "company": "Vela Studio",
-          "sector": "Moda online",
-          "heroValue": "73%",
-          "heroLabel": "de tickets resueltos solos",
+          "company": "Nuevos casos en curso",
+          "sector": "Pymes · España",
+          "heroValue": "→",
+          "heroLabel": "proyectos en construcción ahora mismo",
           "minis": [
             {
-              "value": "< 3 min",
-              "label": "de tiempo medio de respuesta"
+              "value": "ES/EN",
+              "label": "equipos en dos idiomas"
             },
             {
-              "value": "4,7/5",
-              "label": "de satisfacción"
+              "value": "30 días",
+              "label": "objetivo de puesta en producción"
             }
           ],
-          "line": "Agente de soporte entrenado con su catálogo; los casos límite escalan con contexto."
+          "line": "Publicamos cada caso cuando el cliente lo autoriza. Este hueco se llena solo."
         }
       ]
     },
@@ -563,8 +652,8 @@
           "a": "Software que hace un trabajo, no solo responde. Actúa en tus herramientas, dentro de tus reglas."
         },
         {
-          "q": "¿Cuándo está en producción?",
-          "a": "La mayoría, en menos de 30 días. Los montajes complejos, en 6–8 semanas."
+          "q": "¿Cuánto tarda en estar en producción?",
+          "a": "Nuestro objetivo: producción en menos de 30 días. Las integraciones complejas pueden llevar de 6 a 8 semanas."
         },
         {
           "q": "¿Qué necesitáis de nosotros?",
@@ -589,9 +678,9 @@
       ]
     },
     "finalCta": {
-      "heading": "Descubre qué se siente con 30 horas más",
-      "sub": "Auditoría gratuita de 45 minutos. Te decimos qué automatizar primero.",
-      "cta": "Quiero mi auditoría"
+      "heading": "Quince minutos y lo ves funcionando",
+      "sub": "Te enseñamos el sistema en directo con datos de ejemplo. Si encaja, hablamos de tu caso.",
+      "cta": "Ver el sistema en 15 minutos"
     },
     "contact": {
       "heading": "Cuéntanos qué te frena",
@@ -602,27 +691,76 @@
         "company": "Empresa",
         "interest": "¿Qué quieres automatizar?",
         "interestOptions": [
+          "Briefing diario y datos",
           "Ventas y leads",
           "Atención al cliente",
           "Recepción y citas",
-          "Contenido y marketing",
+          "Contenido",
           "Otra cosa"
         ],
         "message": "Tu proceso (opcional)",
         "submit": "Enviar",
         "sending": "Enviando..."
       },
-      "successTitle": "¡Recibido!",
+      "successTitle": "Recibido",
       "successMessage": "Gracias — te respondemos en un día laborable.",
       "errorMessage": "Algo ha fallado. Inténtalo de nuevo o escríbenos.",
       "privacyNote": "Tus datos, solo para responderte. ¿Dudas? ralcaraz.canals@gmail.com"
     },
     "footer": {
-      "line": "Agentes de IA a medida, construidos y operados.",
+      "line": "IA aplicada a los datos, para pymes. Hecho y gestionado desde Barcelona.",
       "emailLabel": "¿Prefieres email?",
       "email": "ralcaraz.canals@gmail.com",
       "rights": "© 2026 50 Labs",
-      "madeIn": "Barcelona · En remoto, en todo el mundo"
+      "madeIn": "Barcelona · En remoto, en todo el mundo",
+      "operated": "50 Labs es una marca de Rogelio Alcaraz",
+      "legalNotice": "Aviso legal",
+      "privacy": "Privacidad y cookies"
+    },
+    "demo": {
+      "heading": "El email que llega cada mañana",
+      "sub": "Sin dashboards que nadie abre: un correo a las 7:00 con lo que importa y lo que conviene hacer.",
+      "email": {
+        "from": "50 Labs · Briefing diario",
+        "subject": "Briefing — martes, 7:00",
+        "kpisTitle": "Tus números de ayer",
+        "kpis": [
+          {
+            "label": "Ventas",
+            "value": "12.480 €",
+            "delta": "+9% vs objetivo"
+          },
+          {
+            "label": "Pedidos",
+            "value": "142",
+            "delta": "−4% vs semana pasada"
+          },
+          {
+            "label": "Margen bruto",
+            "value": "31,2%",
+            "delta": "en objetivo"
+          }
+        ],
+        "alertsTitle": "Alertas",
+        "alerts": [
+          "Stock de la referencia A-140 por debajo de 2 semanas",
+          "3 facturas vencen esta semana (4.310 €)"
+        ],
+        "actionsTitle": "3 acciones sugeridas",
+        "actions": [
+          "Reponer A-140 antes del jueves",
+          "Llamar a los 2 clientes con pedidos parados",
+          "Revisar el precio del pack B: demanda +18% dos semanas seguidas"
+        ]
+      },
+      "note": "Datos de una empresa de demostración (Comercial Atlas, S.L.). Con tus datos se ve igual: con tus números."
+    },
+    "about": {
+      "heading": "Detrás hay una persona, no una web de plantilla",
+      "name": "Rogelio Alcaraz",
+      "role": "Fundador de 50 Labs",
+      "cred": "Senior data analyst con más de 10 años en datos, actualmente en una plataforma europea con millones de usuarios.",
+      "quote": "Construyo para las pymes los sistemas de datos que las grandes empresas dan por sentado: que cada mañana el negocio te diga cómo va y dónde está la siguiente oportunidad."
     }
   }
 }

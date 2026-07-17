@@ -1,20 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>50 Labs — Custom AI Agents for Your Business</title>
+<title>50 Labs — IA aplicada a los datos de tu empresa</title>
 <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
-<meta name="description" content="AI agents that answer customers, qualify leads and run your back office. Live in under 30 days.">
+<meta name="description" content="Sistemas que trabajan de noche: cada mañana tu equipo recibe sus números y las oportunidades que la IA detecta con tus reglas.">
 <meta property="og:type" content="website">
-<meta property="og:locale" content="en_US">
-<meta property="og:locale:alternate" content="es_ES">
-<meta property="og:title" content="50 Labs — Custom AI Agents for Your Business">
-<meta property="og:description" content="AI agents that answer customers, qualify leads and run your back office. Live in under 30 days.">
+<meta property="og:url" content="https://ralcaraz6.github.io/50labs-website/">
+<meta property="og:image" content="https://ralcaraz6.github.io/50labs-website/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://ralcaraz6.github.io/50labs-website/og-image.png">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="50 Labs — IA aplicada a los datos de tu empresa">
+<meta property="og:description" content="Sistemas que trabajan de noche: cada mañana tu equipo recibe sus números y las oportunidades que la IA detecta con tus reglas.">
 <meta property="og:site_name" content="50 Labs">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="50 Labs — Custom AI Agents for Your Business">
-<meta name="twitter:description" content="AI agents that answer customers, qualify leads and run your back office. Live in under 30 days.">
+<meta name="twitter:title" content="50 Labs — IA aplicada a los datos de tu empresa">
+<meta name="twitter:description" content="Sistemas que trabajan de noche: cada mañana tu equipo recibe sus números y las oportunidades que la IA detecta con tus reglas.">
 <meta name="theme-color" content="#FCFBF7">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2034%2034'%3E%3Crect%20width='34'%20height='34'%20rx='3'%20fill='%23211D18'/%3E%3Cpath%20d='M12%207v18.25h21'%20stroke='%23F6F1E5'%20stroke-width='3.5'%20fill='none'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -136,6 +141,7 @@ h2{font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1.12;font-weight:700;letter-
 .agent-name{font-weight:600;font-size:18px}
 .agent-tag{color:var(--muted);font-size:14px;margin:2px 0 14px}
 .agent-chips{display:flex;flex-wrap:wrap;gap:7px}
+.agent-card.featured{border-top:3px solid var(--sienna)}
 
 /* ============ PROCESS ============ */
 .process-band{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin-top:48px;position:relative}
@@ -233,6 +239,49 @@ h2{font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1.12;font-weight:700;letter-
 .footer-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:46px;padding-top:20px;border-top:1px solid var(--line-soft);font:500 12px/1.6 var(--mono);color:var(--muted)}
 
 /* ============ MOTION ============ */
+/* ============ DEMO EMAIL ============ */
+.email-card{max-width:660px;margin:44px auto 0;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.email-head{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;padding:15px 22px;border-bottom:1px solid var(--line)}
+.email-from{font:500 11px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.email-subject{font-weight:600;font-size:15px}
+.email-time{margin-left:auto;font:500 13px var(--mono);color:var(--sienna)}
+.email-body{padding:22px}
+.email-body .email-sec{font:500 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:20px 0 10px}
+.email-body .email-sec:first-child{margin-top:0}
+.kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.kpi{border:1px solid var(--line);border-radius:10px;padding:12px}
+.k-label{font-size:12px;color:var(--muted)}
+.k-value{font:500 clamp(1.15rem,2vw,1.45rem)/1.25 var(--mono);margin:2px 0}
+.k-delta{font-size:12.5px}
+.k-delta.up{color:#31513F}
+.k-delta.down{color:var(--sienna)}
+.k-delta.ok{color:var(--muted)}
+.alert-list{list-style:none;margin:0;padding:0}
+.alert-list li{display:flex;gap:10px;align-items:baseline;font-size:14px;padding:8px 0;border-top:1px solid var(--line)}
+.alert-list .dot{width:8px;height:8px;border-radius:50%;background:var(--sienna);flex:none}
+.action-list{margin:0;padding-left:20px;font-size:14px}
+.action-list li{padding:5px 0}
+.demo-note{max-width:660px;margin:14px auto 0;font-size:13px;color:var(--muted);text-align:center}
+
+/* ============ ABOUT ============ */
+.about-card{display:flex;gap:28px;align-items:flex-start;max-width:760px;margin-top:40px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:30px}
+.about-avatar{width:88px;height:88px;flex:none;border-radius:50%;background:var(--paper);border:1px solid var(--ink);display:flex;align-items:center;justify-content:center}
+.about-avatar span{font:500 26px var(--mono);color:var(--sienna)}
+.about-photo{width:88px;height:88px;flex:none;border-radius:50%;object-fit:cover;border:1px solid var(--ink)}
+.about-name{font-size:20px;font-weight:600}
+.about-role{font:500 12px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--sienna);margin:3px 0 12px}
+.about-cred{font-size:15px;margin-bottom:12px}
+.about-quote{font-size:15px;color:var(--muted);border-left:2px solid var(--sienna);padding-left:14px}
+
+/* ============ CASES NOTE + FOOTER LINKS ============ */
+.cases-note{margin-top:18px;font-size:13px;color:var(--muted)}
+.flink{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+.flink:hover{color:var(--ink)}
+@media (max-width:700px){
+  .kpi-row{grid-template-columns:1fr}
+  .about-card{flex-direction:column}
+}
+
 .reveal{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .55s ease}
 .reveal.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){
@@ -276,7 +325,7 @@ h2{font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1.12;font-weight:700;letter-
 </head>
 <body>
 <noscript><p style="margin:0;padding:14px 20px;background:#211D18;color:#F6F1E5;font-family:monospace;font-size:14px">This site needs JavaScript for the full experience. You can reach us directly at <a href="mailto:ralcaraz.canals@gmail.com" style="color:#F6F1E5">ralcaraz.canals@gmail.com</a> · Esta web necesita JavaScript; escríbenos a ese mismo email.</p></noscript>
-<a class="skip-link" href="#main" data-i18n="ui:skip">Skip to content</a>
+<a class="skip-link" href="#main" data-i18n="ui:skip">Saltar al contenido</a>
 
 <!-- ============ NAV ============ -->
 <header class="site-nav">
@@ -289,11 +338,12 @@ h2{font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1.12;font-weight:700;letter-
       <span class="logo-word">50 Labs</span>
     </a>
     <nav class="nav-links" data-i18n-aria="ui:aria.nav" aria-label="Main navigation">
-      <a href="#services" data-i18n="nav.services">Services</a>
-      <a href="#process" data-i18n="nav.process">Process</a>
-      <a href="#cases" data-i18n="nav.cases">Cases</a>
+      <a href="#demo" data-i18n="nav.demo">Demo</a>
+      <a href="#services" data-i18n="nav.services">Servicios</a>
+      <a href="#process" data-i18n="nav.process">Proceso</a>
+      <a href="#cases" data-i18n="nav.cases">Casos</a>
       <a href="#faq" data-i18n="nav.faq">FAQ</a>
-      <a href="#contact" data-i18n="nav.contact">Contact</a>
+      <a href="#contact" data-i18n="nav.contact">Contacto</a>
     </nav>
     <div class="nav-right">
       <div class="lang-toggle" role="group" data-i18n-aria="ui:aria.langGroup" aria-label="Language">
@@ -301,7 +351,7 @@ h2{font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1.12;font-weight:700;letter-
         <span class="sep" aria-hidden="true">/</span>
         <button type="button" class="lang-btn" data-lang="es" data-i18n-aria="ui:aria.langES">ES</button>
       </div>
-      <a class="btn btn-primary nav-cta" href="#contact"><span data-i18n="nav.cta">Book a call</span><span class="arrow" aria-hidden="true">→</span></a>
+      <a class="btn btn-primary nav-cta" href="#contact"><span data-i18n="nav.cta">Reserva una llamada</span><span class="arrow" aria-hidden="true">→</span></a>
       <button type="button" class="hamburger" aria-expanded="false" aria-controls="mobileMenu" data-i18n-aria="ui:aria.menuOpen" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
@@ -311,18 +361,19 @@ h2{font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1.12;font-weight:700;letter-
 
 <!-- mobile menu -->
 <div class="mobile-menu" id="mobileMenu">
-  <a class="mm-link" href="#services" data-i18n="nav.services">Services</a>
-  <a class="mm-link" href="#process" data-i18n="nav.process">Process</a>
-  <a class="mm-link" href="#cases" data-i18n="nav.cases">Cases</a>
+  <a class="mm-link" href="#demo" data-i18n="nav.demo">Demo</a>
+  <a class="mm-link" href="#services" data-i18n="nav.services">Servicios</a>
+  <a class="mm-link" href="#process" data-i18n="nav.process">Proceso</a>
+  <a class="mm-link" href="#cases" data-i18n="nav.cases">Casos</a>
   <a class="mm-link" href="#faq" data-i18n="nav.faq">FAQ</a>
-  <a class="mm-link" href="#contact" data-i18n="nav.contact">Contact</a>
+  <a class="mm-link" href="#contact" data-i18n="nav.contact">Contacto</a>
   <div class="mm-bottom">
     <div class="lang-toggle" role="group" data-i18n-aria="ui:aria.langGroup" aria-label="Language">
       <button type="button" class="lang-btn" data-lang="en" data-i18n-aria="ui:aria.langEN">EN</button>
       <span class="sep" aria-hidden="true">/</span>
       <button type="button" class="lang-btn" data-lang="es" data-i18n-aria="ui:aria.langES">ES</button>
     </div>
-    <a class="btn btn-primary" href="#contact"><span data-i18n="nav.cta">Book a call</span><span class="arrow" aria-hidden="true">→</span></a>
+    <a class="btn btn-primary" href="#contact"><span data-i18n="nav.cta">Reserva una llamada</span><span class="arrow" aria-hidden="true">→</span></a>
   </div>
 </div>
 
@@ -332,57 +383,107 @@ h2{font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1.12;font-weight:700;letter-
   <div class="container">
     <div class="hero-grid">
       <div>
-        <p class="eyebrow" data-i18n="hero.eyebrow">AI agents, built for you</p>
-        <h1 data-i18n-rich="hero.headline">Agents that do the work. <em class="mark">You keep the margin.</em></h1>
-        <p class="sub" data-i18n="hero.sub">They answer, qualify and follow up. You decide; they do the grind.</p>
+        <p class="eyebrow" data-i18n="hero.eyebrow">IA aplicada a tus datos</p>
+        <h1 data-i18n-rich="hero.headline">Sistemas que trabajan de noche. <em class="mark">Tú decides por la mañana.</em></h1>
+        <p class="sub" data-i18n="hero.sub">Cada mañana, tu equipo recibe sus números y las oportunidades que la IA ha detectado con tus reglas. Sin que nadie prepare nada.</p>
         <div class="hero-ctas">
-          <a class="btn btn-primary" href="#contact"><span data-i18n="hero.cta1">Get a free audit</span><span class="arrow" aria-hidden="true">→</span></a>
-          <a class="btn btn-ghost" href="#process"><span data-i18n="hero.cta2">See how it works</span></a>
+          <a class="btn btn-primary" href="#contact"><span data-i18n="hero.cta1">Ver el sistema en 15 minutos</span><span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost" href="#demo"><span data-i18n="hero.cta2">Ver la demo</span></a>
         </div>
       </div>
       <div class="reveal in">
-        <svg class="hero-bot" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 380" fill="none" role="img" aria-label="Robot assistant connected to WhatsApp, Gmail, Slack, HubSpot, Google Calendar and Stripe" data-i18n-aria="ui:aria.heroBot"><g stroke="#211D18" stroke-width="2" stroke-dasharray="4 5"><path d="M80 52 C140 60 170 100 212 130"/><path d="M80 190 C130 192 165 200 214 210"/><path d="M80 328 C130 322 160 296 200 272"/><path d="M440 52 C380 60 350 100 308 130"/><path d="M440 190 C390 192 355 200 306 210"/><path d="M440 328 C390 322 360 296 320 272"/></g><line x1="260" y1="94" x2="260" y2="112" stroke="#211D18" stroke-width="2"/><circle cx="260" cy="89" r="5" fill="#B5401C" stroke="#211D18" stroke-width="2"/><rect x="216" y="132" width="8" height="16" rx="3" fill="#F6F1E5" stroke="#211D18" stroke-width="2"/><rect x="296" y="132" width="8" height="16" rx="3" fill="#F6F1E5" stroke="#211D18" stroke-width="2"/><rect x="224" y="112" width="72" height="58" rx="14" fill="#FCFBF7" stroke="#211D18" stroke-width="2"/><circle cx="246" cy="138" r="4.5" fill="#211D18"/><circle cx="274" cy="138" r="4.5" fill="#211D18"/><path d="M250 152 Q260 159 270 152" stroke="#211D18" stroke-width="2" stroke-linecap="round"/><rect x="216" y="176" width="88" height="100" rx="16" fill="#F6F1E5" stroke="#211D18" stroke-width="2"/><rect x="238" y="192" width="44" height="28" rx="7" fill="#FCFBF7" stroke="#211D18" stroke-width="2"/><circle cx="248" cy="206" r="3" fill="#31513F"/><line x1="258" y1="202" x2="274" y2="202" stroke="#7C7264" stroke-width="2"/><line x1="258" y1="210" x2="270" y2="210" stroke="#7C7264" stroke-width="2"/><path d="M216 200 C196 206 186 220 182 236" stroke="#211D18" stroke-width="2"/><path d="M304 200 C324 206 334 218 338 230" stroke="#211D18" stroke-width="2"/><rect x="140" y="268" width="240" height="16" rx="6" fill="#F6F1E5" stroke="#211D18" stroke-width="2"/><line x1="160" y1="284" x2="160" y2="332" stroke="#211D18" stroke-width="2"/><line x1="360" y1="284" x2="360" y2="332" stroke="#211D18" stroke-width="2"/><rect x="146" y="255" width="36" height="6" rx="2" fill="#FCFBF7" stroke="#211D18" stroke-width="2"/><rect x="146" y="262" width="36" height="6" rx="2" fill="#FCFBF7" stroke="#211D18" stroke-width="2"/><rect x="318" y="240" width="48" height="28" rx="5" fill="#F6F1E5" stroke="#211D18" stroke-width="2"/><path d="M332 254 l7 7 l13 -13" stroke="#211D18" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="168" y="226" width="30" height="38" rx="3" fill="#FCFBF7" stroke="#211D18" stroke-width="2"/><line x1="174" y1="236" x2="192" y2="236" stroke="#7C7264" stroke-width="2"/><line x1="174" y1="244" x2="188" y2="244" stroke="#7C7264" stroke-width="2"/><circle cx="182" cy="240" r="5" fill="#FCFBF7" stroke="#211D18" stroke-width="2"/><circle cx="338" cy="234" r="5" fill="#FCFBF7" stroke="#211D18" stroke-width="2"/><g transform="translate(24,24)"><rect width="56" height="56" rx="12" fill="#F6F1E5" stroke="#211D18" stroke-width="2"/><g transform="translate(14,14) scale(1.1667)" fill="#211D18" opacity="0.8"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></g></g><g transform="translate(440,24)"><rect width="56" height="56" rx="12" fill="#F6F1E5" stroke="#211D18" stroke-width="2"/><g transform="translate(14,14) scale(1.1667)" fill="#211D18" opacity="0.8"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></g></g><g transform="translate(24,162)"><rect width="56" height="56" rx="12" fill="#F6F1E5" stroke="#211D18" stroke-width="2"/><g transform="translate(14,14) scale(1.1667)" fill="#211D18" opacity="0.8"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></g></g><g transform="translate(440,162)"><rect width="56" height="56" rx="12" fill="#F6F1E5" stroke="#211D18" stroke-width="2"/><g transform="translate(14,14) scale(1.1667)" fill="#211D18" opacity="0.8"><path d="M18.164 7.93V5.084a2.198 2.198 0 001.267-1.978v-.067A2.2 2.2 0 0017.238.845h-.067a2.2 2.2 0 00-2.193 2.193v.067a2.196 2.196 0 001.252 1.973l.013.006v2.852a6.22 6.22 0 00-2.969 1.31l.012-.01-7.828-6.095A2.497 2.497 0 104.3 4.656l-.012.006 7.697 5.991a6.176 6.176 0 00-1.038 3.446c0 1.343.425 2.588 1.147 3.607l-.013-.02-2.342 2.343a1.968 1.968 0 00-.58-.095h-.002a2.033 2.033 0 102.033 2.033 1.978 1.978 0 00-.1-.595l.005.014 2.317-2.317a6.247 6.247 0 104.782-11.134l-.036-.005zm-.964 9.378a3.206 3.206 0 113.215-3.207v.002a3.206 3.206 0 01-3.207 3.207z"/></g></g><g transform="translate(24,300)"><rect width="56" height="56" rx="12" fill="#F6F1E5" stroke="#211D18" stroke-width="2"/><g transform="translate(14,14) scale(1.1667)" fill="#211D18" opacity="0.8"><path d="M18.316 5.684H24v12.632h-5.684V5.684zM5.684 24h12.632v-5.684H5.684V24zM18.316 5.684V0H1.895A1.894 1.894 0 0 0 0 1.895v16.421h5.684V5.684h12.632zm-7.207 6.25v-.065c.272-.144.5-.349.687-.617s.279-.595.279-.982c0-.379-.099-.72-.3-1.025a2.05 2.05 0 0 0-.832-.714 2.703 2.703 0 0 0-1.197-.257c-.6 0-1.094.156-1.481.467-.386.311-.65.671-.793 1.078l1.085.452c.086-.249.224-.461.413-.633.189-.172.445-.257.767-.257.33 0 .602.088.816.264a.86.86 0 0 1 .322.703c0 .33-.12.589-.36.778-.24.19-.535.284-.886.284h-.567v1.085h.633c.407 0 .748.109 1.02.327.272.218.407.499.407.843 0 .336-.129.614-.387.832s-.565.327-.924.327c-.351 0-.651-.103-.897-.311-.248-.208-.422-.502-.521-.881l-1.096.452c.178.616.505 1.082.977 1.401.472.319.984.478 1.538.477a2.84 2.84 0 0 0 1.293-.291c.382-.193.684-.458.902-.794.218-.336.327-.72.327-1.149 0-.429-.115-.797-.344-1.105a2.067 2.067 0 0 0-.881-.689zm2.093-1.931l.602.913L15 10.045v5.744h1.187V8.446h-.827l-2.158 1.557zM22.105 0h-3.289v5.184H24V1.895A1.894 1.894 0 0 0 22.105 0zm-3.289 23.5l4.684-4.684h-4.684V23.5zM0 22.105C0 23.152.848 24 1.895 24h3.289v-5.184H0v3.289z"/></g></g><g transform="translate(440,300)"><rect width="56" height="56" rx="12" fill="#F6F1E5" stroke="#211D18" stroke-width="2"/><g transform="translate(14,14) scale(1.1667)" fill="#211D18" opacity="0.8"><path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C5.175 22.99 8.385 24 11.714 24c2.641 0 4.843-.624 6.328-1.813 1.664-1.305 2.525-3.236 2.525-5.732 0-4.128-2.524-5.851-6.594-7.305h.003z"/></g></g></svg>
+        <svg class="hero-bot" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 380" fill="none" role="img" aria-label="Robot asistente conectado a WhatsApp, Gmail, Slack, HubSpot, Google Calendar y Stripe" data-i18n-aria="ui:aria.heroBot"><g stroke="#211D18" stroke-width="2" stroke-dasharray="4 5"><path d="M80 52 C140 60 170 100 212 130"/><path d="M80 190 C130 192 165 200 214 210"/><path d="M80 328 C130 322 160 296 200 272"/><path d="M440 52 C380 60 350 100 308 130"/><path d="M440 190 C390 192 355 200 306 210"/><path d="M440 328 C390 322 360 296 320 272"/></g><line x1="260" y1="94" x2="260" y2="112" stroke="#211D18" stroke-width="2"/><circle cx="260" cy="89" r="5" fill="#B5401C" stroke="#211D18" stroke-width="2"/><rect x="216" y="132" width="8" height="16" rx="3" fill="#F6F1E5" stroke="#211D18" stroke-width="2"/><rect x="296" y="132" width="8" height="16" rx="3" fill="#F6F1E5" stroke="#211D18" stroke-width="2"/><rect x="224" y="112" width="72" height="58" rx="14" fill="#FCFBF7" stroke="#211D18" stroke-width="2"/><circle cx="246" cy="138" r="4.5" fill="#211D18"/><circle cx="274" cy="138" r="4.5" fill="#211D18"/><path d="M250 152 Q260 159 270 152" stroke="#211D18" stroke-width="2" stroke-linecap="round"/><rect x="216" y="176" width="88" height="100" rx="16" fill="#F6F1E5" stroke="#211D18" stroke-width="2"/><rect x="238" y="192" width="44" height="28" rx="7" fill="#FCFBF7" stroke="#211D18" stroke-width="2"/><circle cx="248" cy="206" r="3" fill="#31513F"/><line x1="258" y1="202" x2="274" y2="202" stroke="#7C7264" stroke-width="2"/><line x1="258" y1="210" x2="270" y2="210" stroke="#7C7264" stroke-width="2"/><path d="M216 200 C196 206 186 220 182 236" stroke="#211D18" stroke-width="2"/><path d="M304 200 C324 206 334 218 338 230" stroke="#211D18" stroke-width="2"/><rect x="140" y="268" width="240" height="16" rx="6" fill="#F6F1E5" stroke="#211D18" stroke-width="2"/><line x1="160" y1="284" x2="160" y2="332" stroke="#211D18" stroke-width="2"/><line x1="360" y1="284" x2="360" y2="332" stroke="#211D18" stroke-width="2"/><rect x="146" y="255" width="36" height="6" rx="2" fill="#FCFBF7" stroke="#211D18" stroke-width="2"/><rect x="146" y="262" width="36" height="6" rx="2" fill="#FCFBF7" stroke="#211D18" stroke-width="2"/><rect x="318" y="240" width="48" height="28" rx="5" fill="#F6F1E5" stroke="#211D18" stroke-width="2"/><path d="M332 254 l7 7 l13 -13" stroke="#211D18" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="168" y="226" width="30" height="38" rx="3" fill="#FCFBF7" stroke="#211D18" stroke-width="2"/><line x1="174" y1="236" x2="192" y2="236" stroke="#7C7264" stroke-width="2"/><line x1="174" y1="244" x2="188" y2="244" stroke="#7C7264" stroke-width="2"/><circle cx="182" cy="240" r="5" fill="#FCFBF7" stroke="#211D18" stroke-width="2"/><circle cx="338" cy="234" r="5" fill="#FCFBF7" stroke="#211D18" stroke-width="2"/><g transform="translate(24,24)"><rect width="56" height="56" rx="12" fill="#F6F1E5" stroke="#211D18" stroke-width="2"/><g transform="translate(14,14) scale(1.1667)" fill="#211D18" opacity="0.8"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></g></g><g transform="translate(440,24)"><rect width="56" height="56" rx="12" fill="#F6F1E5" stroke="#211D18" stroke-width="2"/><g transform="translate(14,14) scale(1.1667)" fill="#211D18" opacity="0.8"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></g></g><g transform="translate(24,162)"><rect width="56" height="56" rx="12" fill="#F6F1E5" stroke="#211D18" stroke-width="2"/><g transform="translate(14,14) scale(1.1667)" fill="#211D18" opacity="0.8"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></g></g><g transform="translate(440,162)"><rect width="56" height="56" rx="12" fill="#F6F1E5" stroke="#211D18" stroke-width="2"/><g transform="translate(14,14) scale(1.1667)" fill="#211D18" opacity="0.8"><path d="M18.164 7.93V5.084a2.198 2.198 0 001.267-1.978v-.067A2.2 2.2 0 0017.238.845h-.067a2.2 2.2 0 00-2.193 2.193v.067a2.196 2.196 0 001.252 1.973l.013.006v2.852a6.22 6.22 0 00-2.969 1.31l.012-.01-7.828-6.095A2.497 2.497 0 104.3 4.656l-.012.006 7.697 5.991a6.176 6.176 0 00-1.038 3.446c0 1.343.425 2.588 1.147 3.607l-.013-.02-2.342 2.343a1.968 1.968 0 00-.58-.095h-.002a2.033 2.033 0 102.033 2.033 1.978 1.978 0 00-.1-.595l.005.014 2.317-2.317a6.247 6.247 0 104.782-11.134l-.036-.005zm-.964 9.378a3.206 3.206 0 113.215-3.207v.002a3.206 3.206 0 01-3.207 3.207z"/></g></g><g transform="translate(24,300)"><rect width="56" height="56" rx="12" fill="#F6F1E5" stroke="#211D18" stroke-width="2"/><g transform="translate(14,14) scale(1.1667)" fill="#211D18" opacity="0.8"><path d="M18.316 5.684H24v12.632h-5.684V5.684zM5.684 24h12.632v-5.684H5.684V24zM18.316 5.684V0H1.895A1.894 1.894 0 0 0 0 1.895v16.421h5.684V5.684h12.632zm-7.207 6.25v-.065c.272-.144.5-.349.687-.617s.279-.595.279-.982c0-.379-.099-.72-.3-1.025a2.05 2.05 0 0 0-.832-.714 2.703 2.703 0 0 0-1.197-.257c-.6 0-1.094.156-1.481.467-.386.311-.65.671-.793 1.078l1.085.452c.086-.249.224-.461.413-.633.189-.172.445-.257.767-.257.33 0 .602.088.816.264a.86.86 0 0 1 .322.703c0 .33-.12.589-.36.778-.24.19-.535.284-.886.284h-.567v1.085h.633c.407 0 .748.109 1.02.327.272.218.407.499.407.843 0 .336-.129.614-.387.832s-.565.327-.924.327c-.351 0-.651-.103-.897-.311-.248-.208-.422-.502-.521-.881l-1.096.452c.178.616.505 1.082.977 1.401.472.319.984.478 1.538.477a2.84 2.84 0 0 0 1.293-.291c.382-.193.684-.458.902-.794.218-.336.327-.72.327-1.149 0-.429-.115-.797-.344-1.105a2.067 2.067 0 0 0-.881-.689zm2.093-1.931l.602.913L15 10.045v5.744h1.187V8.446h-.827l-2.158 1.557zM22.105 0h-3.289v5.184H24V1.895A1.894 1.894 0 0 0 22.105 0zm-3.289 23.5l4.684-4.684h-4.684V23.5zM0 22.105C0 23.152.848 24 1.895 24h3.289v-5.184H0v3.289z"/></g></g><g transform="translate(440,300)"><rect width="56" height="56" rx="12" fill="#F6F1E5" stroke="#211D18" stroke-width="2"/><g transform="translate(14,14) scale(1.1667)" fill="#211D18" opacity="0.8"><path d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C5.175 22.99 8.385 24 11.714 24c2.641 0 4.843-.624 6.328-1.813 1.664-1.305 2.525-3.236 2.525-5.732 0-4.128-2.524-5.851-6.594-7.305h.003z"/></g></g></svg>
       </div>
     </div>
     <div class="hero-stats reveal">
       <div class="stat">
-        <p class="v" data-i18n="hero.stats.0.value">30+ h</p>
-        <p class="l" data-i18n="hero.stats.0.label">saved weekly per team</p>
+        <p class="v" data-i18n="hero.stats.0.value">7:00</p>
+        <p class="l" data-i18n="hero.stats.0.label">briefing diario en producción para un fondo de inversión</p>
       </div>
       <div class="stat">
-        <p class="v" data-i18n="hero.stats.1.value">&lt; 60 s</p>
-        <p class="l" data-i18n="hero.stats.1.label">to answer any lead</p>
+        <p class="v" data-i18n="hero.stats.1.value">10+</p>
+        <p class="l" data-i18n="hero.stats.1.label">años en datos — Rogelio Alcaraz, senior data analyst</p>
       </div>
       <div class="stat">
-        <p class="v" data-i18n="hero.stats.2.value">&lt; 30 days</p>
-        <p class="l" data-i18n="hero.stats.2.label">from kickoff to live</p>
+        <p class="v" data-i18n="hero.stats.2.value">BCN</p>
+        <p class="l" data-i18n="hero.stats.2.label">Barcelona · en remoto para todo el mundo</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 2 · SHIFT ============ -->
+<!-- ============ DEMO ============ -->
+<section class="section anchor-target" id="demo">
+  <div class="container">
+    <p class="kicker" data-i18n="ui:kickers.demo">01 — La demo</p>
+    <h2 class="reveal" data-i18n="demo.heading">El email que llega cada mañana</h2>
+    <p class="sub reveal" data-i18n="demo.sub">Sin dashboards que nadie abre: un correo a las 7:00 con lo que importa y lo que conviene hacer.</p>
+    <div class="email-card reveal">
+      <div class="email-head">
+        <span class="email-from" data-i18n="demo.email.from">50 Labs · Briefing diario</span>
+        <span class="email-subject" data-i18n="demo.email.subject">Briefing — martes, 7:00</span>
+        <span class="email-time" aria-hidden="true">7:00</span>
+      </div>
+      <div class="email-body">
+        <p class="email-sec" data-i18n="demo.email.kpisTitle">Tus números de ayer</p>
+        <div class="kpi-row">
+          <div class="kpi">
+            <p class="k-label" data-i18n="demo.email.kpis.0.label">Ventas</p>
+            <p class="k-value" data-i18n="demo.email.kpis.0.value">12.480 €</p>
+            <p class="k-delta up" data-i18n="demo.email.kpis.0.delta">+9% vs objetivo</p>
+          </div>
+          <div class="kpi">
+            <p class="k-label" data-i18n="demo.email.kpis.1.label">Pedidos</p>
+            <p class="k-value" data-i18n="demo.email.kpis.1.value">142</p>
+            <p class="k-delta down" data-i18n="demo.email.kpis.1.delta">−4% vs semana pasada</p>
+          </div>
+          <div class="kpi">
+            <p class="k-label" data-i18n="demo.email.kpis.2.label">Margen bruto</p>
+            <p class="k-value" data-i18n="demo.email.kpis.2.value">31,2%</p>
+            <p class="k-delta ok" data-i18n="demo.email.kpis.2.delta">en objetivo</p>
+          </div>
+        </div>
+        <p class="email-sec" data-i18n="demo.email.alertsTitle">Alertas</p>
+        <ul class="alert-list">
+          <li><span class="dot" aria-hidden="true"></span><span data-i18n="demo.email.alerts.0">Stock de la referencia A-140 por debajo de 2 semanas</span></li>
+          <li><span class="dot" aria-hidden="true"></span><span data-i18n="demo.email.alerts.1">3 facturas vencen esta semana (4.310 €)</span></li>
+        </ul>
+        <p class="email-sec" data-i18n="demo.email.actionsTitle">3 acciones sugeridas</p>
+        <ol class="action-list">
+          <li data-i18n="demo.email.actions.0">Reponer A-140 antes del jueves</li>
+          <li data-i18n="demo.email.actions.1">Llamar a los 2 clientes con pedidos parados</li>
+          <li data-i18n="demo.email.actions.2">Revisar el precio del pack B: demanda +18% dos semanas seguidas</li>
+        </ol>
+      </div>
+    </div>
+    <p class="demo-note reveal" data-i18n="demo.note">Datos de una empresa de demostración (Comercial Atlas, S.L.). Con tus datos se ve igual: con tus números.</p>
+    <!-- Vídeo de 90s del briefing real: cuando exista, insertar aquí
+    <video class="demo-video" src="briefing.mp4" muted autoplay loop playsinline controls></video> -->
+  </div>
+</section>
+
+<!-- ============ SHIFT ============ -->
 <section class="section anchor-target" id="shift">
   <div class="container">
-    <p class="kicker" data-i18n="ui:kickers.shift">01 — The shift</p>
-    <h2 class="reveal" data-i18n="shift.heading">Manual ops eat margin</h2>
+    <p class="kicker" data-i18n="ui:kickers.shift">02 — El cambio</p>
+    <h2 class="reveal" data-i18n="shift.heading">Lo manual se come tu margen</h2>
     <div class="shift-grid reveal">
       <div class="shift-col before">
-        <p class="shift-label" data-i18n="shift.beforeLabel">Before</p>
+        <p class="shift-label" data-i18n="shift.beforeLabel">Antes</p>
         <ul>
-          <li><span class="ic" aria-hidden="true">✕</span><span data-i18n="shift.before.0">Leads wait hours for replies</span></li>
-          <li><span class="ic" aria-hidden="true">✕</span><span data-i18n="shift.before.1">Follow-ups depend on memory</span></li>
-          <li><span class="ic" aria-hidden="true">✕</span><span data-i18n="shift.before.2">Same 20 questions on loop</span></li>
-          <li><span class="ic" aria-hidden="true">✕</span><span data-i18n="shift.before.3">Data stuck in inboxes</span></li>
+          <li><span class="ic" aria-hidden="true">✕</span><span data-i18n="shift.before.0">Los números se preparan a mano cada lunes</span></li>
+          <li><span class="ic" aria-hidden="true">✕</span><span data-i18n="shift.before.1">El seguimiento depende de que alguien se acuerde</span></li>
+          <li><span class="ic" aria-hidden="true">✕</span><span data-i18n="shift.before.2">Nadie mira el margen hasta fin de mes</span></li>
+          <li><span class="ic" aria-hidden="true">✕</span><span data-i18n="shift.before.3">Los datos, atrapados en el email</span></li>
         </ul>
       </div>
       <div class="shift-col after">
-        <p class="shift-label" data-i18n="shift.afterLabel">With agents</p>
+        <p class="shift-label" data-i18n="shift.afterLabel">Con agentes</p>
         <ul>
-          <li><span class="ic" aria-hidden="true">✓</span><span data-i18n="shift.after.0">Every lead answered in seconds</span></li>
-          <li><span class="ic" aria-hidden="true">✓</span><span data-i18n="shift.after.1">Follow-ups run themselves</span></li>
-          <li><span class="ic" aria-hidden="true">✓</span><span data-i18n="shift.after.2">Routine tickets solved solo</span></li>
-          <li><span class="ic" aria-hidden="true">✓</span><span data-i18n="shift.after.3">Everything synced to your CRM</span></li>
+          <li><span class="ic" aria-hidden="true">✓</span><span data-i18n="shift.after.0">El briefing llega solo a las 7:00</span></li>
+          <li><span class="ic" aria-hidden="true">✓</span><span data-i18n="shift.after.1">La IA avisa el día que algo se desvía</span></li>
+          <li><span class="ic" aria-hidden="true">✓</span><span data-i18n="shift.after.2">Cada lead respondido en segundos</span></li>
+          <li><span class="ic" aria-hidden="true">✓</span><span data-i18n="shift.after.3">Todo sincronizado en tu CRM</span></li>
         </ul>
       </div>
     </div>
@@ -392,68 +493,88 @@ h2{font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1.12;font-weight:700;letter-
 <!-- ============ 3 · AGENTS ============ -->
 <section class="section anchor-target" id="services">
   <div class="container">
-    <p class="kicker" data-i18n="ui:kickers.services">02 — The agents</p>
-    <h2 class="reveal" data-i18n="services.heading">Six agents. Hours back.</h2>
-    <p class="sub reveal" data-i18n="services.sub">Trained on your real conversations. They sound like your team.</p>
+    <p class="kicker" data-i18n="ui:kickers.services">03 — Qué construimos</p>
+    <h2 class="reveal" data-i18n="services.heading">Qué construimos</h2>
+    <p class="sub reveal" data-i18n="services.sub">Primero, los sistemas de datos que nos diferencian. Después, los agentes que ejecutan el día a día.</p>
     <div class="agents-grid">
-      <div class="agent-card reveal">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none" aria-hidden="true"><line x1="60" y1="24" x2="60" y2="14" stroke="#211D18" stroke-width="2"/><circle cx="60" cy="10" r="4" fill="#B5401C" stroke="#211D18" stroke-width="2"/><path d="M68 4 q6 6 0 12" stroke="#211D18" stroke-width="2" stroke-linecap="round"/><path d="M74 0 q10 10 0 20" stroke="#211D18" stroke-width="2" stroke-linecap="round"/><rect x="32" y="24" width="56" height="46" rx="12" fill="#FCFBF7" stroke="#211D18" stroke-width="2"/><circle cx="72" cy="46" r="10" fill="#F6F1E5" stroke="#211D18" stroke-width="2"/><line x1="79" y1="53" x2="85" y2="59" stroke="#211D18" stroke-width="2" stroke-linecap="round"/><circle cx="48" cy="46" r="4" fill="#211D18"/><circle cx="72" cy="46" r="4" fill="#211D18"/><path d="M50 60 Q57 64 64 60" stroke="#211D18" stroke-width="2" stroke-linecap="round"/><rect x="34" y="76" width="52" height="34" rx="11" fill="#F6F1E5" stroke="#211D18" stroke-width="2"/><circle cx="60" cy="93" r="9" fill="#FCFBF7" stroke="#211D18" stroke-width="2"/><line x1="60" y1="93" x2="66" y2="88" stroke="#211D18" stroke-width="2" stroke-linecap="round"/><circle cx="60" cy="93" r="1.6" fill="#211D18"/></svg>
-        <h3 class="agent-name" data-i18n="services.agents.0.name">Scout</h3>
-        <p class="agent-tag" data-i18n="services.agents.0.tag">Outbound sales</p>
+      <div class="agent-card featured reveal">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none" aria-hidden="true"><line x1="60" y1="24" x2="60" y2="14" stroke="#211D18" stroke-width="2"/><circle cx="60" cy="10" r="4" fill="#B5401C" stroke="#211D18" stroke-width="2"/><circle cx="100" cy="18" r="6" fill="#F6F1E5" stroke="#211D18" stroke-width="2"/><line x1="100" y1="6" x2="100" y2="2" stroke="#211D18" stroke-width="2" stroke-linecap="round"/><line x1="90" y1="10" x2="87" y2="7" stroke="#211D18" stroke-width="2" stroke-linecap="round"/><line x1="110" y1="10" x2="113" y2="7" stroke="#211D18" stroke-width="2" stroke-linecap="round"/><rect x="32" y="24" width="56" height="46" rx="12" fill="#FCFBF7" stroke="#211D18" stroke-width="2"/><circle cx="48" cy="46" r="4" fill="#211D18"/><circle cx="72" cy="46" r="4" fill="#211D18"/><path d="M50 58 Q60 64 70 58" stroke="#211D18" stroke-width="2" stroke-linecap="round"/><rect x="34" y="76" width="52" height="34" rx="11" fill="#F6F1E5" stroke="#211D18" stroke-width="2"/><rect x="44" y="84" width="32" height="19" rx="3" fill="#FCFBF7" stroke="#211D18" stroke-width="2"/><path d="M44 86 L60 96 L76 86" stroke="#211D18" stroke-width="2" fill="none"/><circle cx="76" cy="84" r="4" fill="#B5401C" stroke="#211D18" stroke-width="1.5"/></svg>
+        <h3 class="agent-name" data-i18n="services.agents.0.name">Alba</h3>
+        <p class="agent-tag" data-i18n="services.agents.0.tag">Briefing diario a las 7:00</p>
         <div class="agent-chips">
-          <span class="chip" data-i18n="services.agents.0.chips.0">Prospect lists</span>
-          <span class="chip" data-i18n="services.agents.0.chips.1">Personal outreach</span>
-          <span class="chip" data-i18n="services.agents.0.chips.2">Meetings booked</span>
+          <span class="chip" data-i18n="services.agents.0.chips.0">KPIs vs objetivo</span>
+          <span class="chip" data-i18n="services.agents.0.chips.1">Alertas que importan</span>
+          <span class="chip" data-i18n="services.agents.0.chips.2">3 acciones sugeridas</span>
+        </div>
+      </div>
+      <div class="agent-card featured reveal">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none" aria-hidden="true"><line x1="60" y1="24" x2="60" y2="14" stroke="#211D18" stroke-width="2"/><circle cx="60" cy="10" r="4" fill="#B5401C" stroke="#211D18" stroke-width="2"/><rect x="32" y="24" width="56" height="46" rx="12" fill="#FCFBF7" stroke="#211D18" stroke-width="2"/><circle cx="48" cy="46" r="4" fill="#211D18"/><circle cx="72" cy="46" r="4" fill="#211D18"/><path d="M50 58 Q60 64 70 58" stroke="#211D18" stroke-width="2" stroke-linecap="round"/><rect x="34" y="76" width="52" height="34" rx="11" fill="#F6F1E5" stroke="#211D18" stroke-width="2"/><circle cx="60" cy="93" r="12" fill="#FCFBF7" stroke="#211D18" stroke-width="2"/><line x1="60" y1="93" x2="69" y2="86" stroke="#211D18" stroke-width="2" stroke-linecap="round"/><circle cx="54" cy="89" r="2.2" fill="#B5401C"/><path d="M78 84 q7 9 0 18" stroke="#31513F" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M85 80 q11 13 0 26" stroke="#31513F" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+        <h3 class="agent-name" data-i18n="services.agents.1.name">Radar</h3>
+        <p class="agent-tag" data-i18n="services.agents.1.tag">Radar de oportunidades</p>
+        <div class="agent-chips">
+          <span class="chip" data-i18n="services.agents.1.chips.0">Lee tus datos a diario</span>
+          <span class="chip" data-i18n="services.agents.1.chips.1">Tus reglas, no las nuestras</span>
+          <span class="chip" data-i18n="services.agents.1.chips.2">Aviso al instante</span>
         </div>
       </div>
       <div class="agent-card reveal">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none" aria-hidden="true"><line x1="60" y1="24" x2="60" y2="14" stroke="#211D18" stroke-width="2"/><circle cx="60" cy="10" r="4" fill="#F6F1E5" stroke="#211D18" stroke-width="2"/><rect x="32" y="24" width="56" height="46" rx="12" fill="#FCFBF7" stroke="#211D18" stroke-width="2"/><circle cx="48" cy="46" r="4" fill="#211D18"/><circle cx="72" cy="46" r="4" fill="#211D18"/><path d="M52 58 Q60 63 68 58" stroke="#211D18" stroke-width="2" stroke-linecap="round"/><path d="M32 76 L88 76 L68 96 L68 110 L52 110 L52 96 Z" fill="#F6F1E5" stroke="#211D18" stroke-width="2" stroke-linejoin="round"/><circle cx="50" cy="83" r="2.5" fill="#7C7264"/><circle cx="60" cy="83" r="2.5" fill="#7C7264"/><circle cx="70" cy="83" r="2.5" fill="#7C7264"/><circle cx="60" cy="116" r="3" fill="#B5401C"/></svg>
-        <h3 class="agent-name" data-i18n="services.agents.1.name">Sift</h3>
-        <p class="agent-tag" data-i18n="services.agents.1.tag">Lead qualification</p>
+        <svg aria-hidden="true" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120' fill='none'><path d='M32 44 A28 28 0 0 1 88 44' stroke='#211D18' stroke-width='2' fill='none'/><rect x='32' y='26' width='56' height='46' rx='12' fill='#FCFBF7' stroke='#211D18' stroke-width='2'/><circle cx='48' cy='48' r='4' fill='#211D18'/><circle cx='72' cy='48' r='4' fill='#211D18'/><path d='M52 60 Q60 65 68 60' stroke='#211D18' stroke-width='2' stroke-linecap='round'/><rect x='23' y='38' width='9' height='18' rx='4' fill='#F6F1E5' stroke='#211D18' stroke-width='2'/><rect x='88' y='38' width='9' height='18' rx='4' fill='#F6F1E5' stroke='#211D18' stroke-width='2'/><path d='M92 56 Q92 70 76 70' stroke='#211D18' stroke-width='2' fill='none'/><circle cx='73' cy='70' r='3.5' fill='#B5401C' stroke='#211D18' stroke-width='2'/><rect x='34' y='78' width='52' height='32' rx='11' fill='#F6F1E5' stroke='#211D18' stroke-width='2'/><circle cx='44' cy='88' r='2.5' fill='#31513F'/><line x1='52' y1='94' x2='68' y2='94' stroke='#7C7264' stroke-width='2'/><line x1='52' y1='101' x2='62' y2='101' stroke='#7C7264' stroke-width='2'/></svg>
+        <h3 class="agent-name" data-i18n="services.agents.2.name">Resuelve</h3>
+        <p class="agent-tag" data-i18n="services.agents.2.tag">Atención al cliente</p>
         <div class="agent-chips">
-          <span class="chip" data-i18n="services.agents.1.chips.0">Instant replies</span>
-          <span class="chip" data-i18n="services.agents.1.chips.1">Scores leads</span>
-          <span class="chip" data-i18n="services.agents.1.chips.2">Hot handoffs</span>
+          <span class="chip" data-i18n="services.agents.2.chips.0">Conoce tu documentación</span>
+          <span class="chip" data-i18n="services.agents.2.chips.1">Tickets rutinarios, resueltos</span>
+          <span class="chip" data-i18n="services.agents.2.chips.2">Escalado inteligente</span>
         </div>
       </div>
       <div class="agent-card reveal">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M32 44 A28 28 0 0 1 88 44" stroke="#211D18" stroke-width="2" fill="none"/><rect x="32" y="26" width="56" height="46" rx="12" fill="#FCFBF7" stroke="#211D18" stroke-width="2"/><circle cx="48" cy="48" r="4" fill="#211D18"/><circle cx="72" cy="48" r="4" fill="#211D18"/><path d="M52 60 Q60 65 68 60" stroke="#211D18" stroke-width="2" stroke-linecap="round"/><rect x="23" y="38" width="9" height="18" rx="4" fill="#F6F1E5" stroke="#211D18" stroke-width="2"/><rect x="88" y="38" width="9" height="18" rx="4" fill="#F6F1E5" stroke="#211D18" stroke-width="2"/><path d="M92 56 Q92 70 76 70" stroke="#211D18" stroke-width="2" fill="none"/><circle cx="73" cy="70" r="3.5" fill="#B5401C" stroke="#211D18" stroke-width="2"/><rect x="34" y="78" width="52" height="32" rx="11" fill="#F6F1E5" stroke="#211D18" stroke-width="2"/><circle cx="44" cy="88" r="2.5" fill="#31513F"/><line x1="52" y1="94" x2="68" y2="94" stroke="#7C7264" stroke-width="2"/><line x1="52" y1="101" x2="62" y2="101" stroke="#7C7264" stroke-width="2"/></svg>
-        <h3 class="agent-name" data-i18n="services.agents.2.name">Resolve</h3>
-        <p class="agent-tag" data-i18n="services.agents.2.tag">Customer support</p>
+        <svg aria-hidden="true" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120' fill='none'><line x1='60' y1='24' x2='60' y2='14' stroke='#211D18' stroke-width='2'/><circle cx='60' cy='10' r='4' fill='#F6F1E5' stroke='#211D18' stroke-width='2'/><rect x='32' y='24' width='56' height='46' rx='12' fill='#FCFBF7' stroke='#211D18' stroke-width='2'/><circle cx='48' cy='46' r='4' fill='#211D18'/><circle cx='72' cy='46' r='4' fill='#211D18'/><path d='M52 58 Q60 63 68 58' stroke='#211D18' stroke-width='2' stroke-linecap='round'/><rect x='34' y='76' width='52' height='36' rx='11' fill='#F6F1E5' stroke='#211D18' stroke-width='2'/><rect x='44' y='82' width='32' height='24' rx='4' fill='#FCFBF7' stroke='#211D18' stroke-width='2'/><line x1='44' y1='90' x2='76' y2='90' stroke='#211D18' stroke-width='2'/><line x1='52' y1='79' x2='52' y2='85' stroke='#211D18' stroke-width='2' stroke-linecap='round'/><line x1='68' y1='79' x2='68' y2='85' stroke='#211D18' stroke-width='2' stroke-linecap='round'/><circle cx='52' cy='96' r='1.8' fill='#7C7264'/><circle cx='60' cy='96' r='1.8' fill='#7C7264'/><circle cx='68' cy='96' r='1.8' fill='#7C7264'/><circle cx='52' cy='101' r='1.8' fill='#7C7264'/><circle cx='60' cy='101' r='1.8' fill='#7C7264'/><circle cx='68' cy='101' r='2.5' fill='#B5401C'/></svg>
+        <h3 class="agent-name" data-i18n="services.agents.3.name">Conserje</h3>
+        <p class="agent-tag" data-i18n="services.agents.3.tag">Recepción y citas</p>
         <div class="agent-chips">
-          <span class="chip" data-i18n="services.agents.2.chips.0">Knows your docs</span>
-          <span class="chip" data-i18n="services.agents.2.chips.1">80% of tickets</span>
-          <span class="chip" data-i18n="services.agents.2.chips.2">Smart escalation</span>
+          <span class="chip" data-i18n="services.agents.3.chips.0">Atiende 24/7</span>
+          <span class="chip" data-i18n="services.agents.3.chips.1">Agenda citas</span>
+          <span class="chip" data-i18n="services.agents.3.chips.2">Menos citas perdidas</span>
         </div>
       </div>
       <div class="agent-card reveal">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none" aria-hidden="true"><line x1="60" y1="24" x2="60" y2="14" stroke="#211D18" stroke-width="2"/><circle cx="60" cy="10" r="4" fill="#F6F1E5" stroke="#211D18" stroke-width="2"/><rect x="32" y="24" width="56" height="46" rx="12" fill="#FCFBF7" stroke="#211D18" stroke-width="2"/><circle cx="48" cy="46" r="4" fill="#211D18"/><circle cx="72" cy="46" r="4" fill="#211D18"/><path d="M52 58 Q60 63 68 58" stroke="#211D18" stroke-width="2" stroke-linecap="round"/><rect x="34" y="76" width="52" height="36" rx="11" fill="#F6F1E5" stroke="#211D18" stroke-width="2"/><rect x="44" y="82" width="32" height="24" rx="4" fill="#FCFBF7" stroke="#211D18" stroke-width="2"/><line x1="44" y1="90" x2="76" y2="90" stroke="#211D18" stroke-width="2"/><line x1="52" y1="79" x2="52" y2="85" stroke="#211D18" stroke-width="2" stroke-linecap="round"/><line x1="68" y1="79" x2="68" y2="85" stroke="#211D18" stroke-width="2" stroke-linecap="round"/><circle cx="52" cy="96" r="1.8" fill="#7C7264"/><circle cx="60" cy="96" r="1.8" fill="#7C7264"/><circle cx="68" cy="96" r="1.8" fill="#7C7264"/><circle cx="52" cy="101" r="1.8" fill="#7C7264"/><circle cx="60" cy="101" r="1.8" fill="#7C7264"/><circle cx="68" cy="101" r="2.5" fill="#B5401C"/></svg>
-        <h3 class="agent-name" data-i18n="services.agents.3.name">Concierge</h3>
-        <p class="agent-tag" data-i18n="services.agents.3.tag">Reception &amp; bookings</p>
+        <svg aria-hidden="true" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120' fill='none'><line x1='60' y1='24' x2='60' y2='14' stroke='#211D18' stroke-width='2'/><circle cx='60' cy='10' r='4' fill='#B5401C' stroke='#211D18' stroke-width='2'/><path d='M68 4 q6 6 0 12' stroke='#211D18' stroke-width='2' stroke-linecap='round'/><path d='M74 0 q10 10 0 20' stroke='#211D18' stroke-width='2' stroke-linecap='round'/><rect x='32' y='24' width='56' height='46' rx='12' fill='#FCFBF7' stroke='#211D18' stroke-width='2'/><circle cx='72' cy='46' r='10' fill='#F6F1E5' stroke='#211D18' stroke-width='2'/><line x1='79' y1='53' x2='85' y2='59' stroke='#211D18' stroke-width='2' stroke-linecap='round'/><circle cx='48' cy='46' r='4' fill='#211D18'/><circle cx='72' cy='46' r='4' fill='#211D18'/><path d='M50 60 Q57 64 64 60' stroke='#211D18' stroke-width='2' stroke-linecap='round'/><rect x='34' y='76' width='52' height='34' rx='11' fill='#F6F1E5' stroke='#211D18' stroke-width='2'/><circle cx='60' cy='93' r='9' fill='#FCFBF7' stroke='#211D18' stroke-width='2'/><line x1='60' y1='93' x2='66' y2='88' stroke='#211D18' stroke-width='2' stroke-linecap='round'/><circle cx='60' cy='93' r='1.6' fill='#211D18'/></svg>
+        <h3 class="agent-name" data-i18n="services.agents.4.name">Cazador</h3>
+        <p class="agent-tag" data-i18n="services.agents.4.tag">Ventas outbound</p>
         <div class="agent-chips">
-          <span class="chip" data-i18n="services.agents.3.chips.0">Answers 24/7</span>
-          <span class="chip" data-i18n="services.agents.3.chips.1">Books appointments</span>
-          <span class="chip" data-i18n="services.agents.3.chips.2">Cuts no-shows</span>
+          <span class="chip" data-i18n="services.agents.4.chips.0">Listas de prospectos</span>
+          <span class="chip" data-i18n="services.agents.4.chips.1">Contacto personalizado</span>
+          <span class="chip" data-i18n="services.agents.4.chips.2">Reuniones agendadas</span>
         </div>
       </div>
       <div class="agent-card reveal">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none" aria-hidden="true"><line x1="60" y1="24" x2="60" y2="14" stroke="#211D18" stroke-width="2"/><circle cx="60" cy="10" r="4" fill="#F6F1E5" stroke="#211D18" stroke-width="2"/><rect x="32" y="24" width="56" height="46" rx="12" fill="#FCFBF7" stroke="#211D18" stroke-width="2"/><circle cx="48" cy="46" r="4" fill="#211D18"/><circle cx="72" cy="46" r="4" fill="#211D18"/><path d="M52 58 Q60 63 68 58" stroke="#211D18" stroke-width="2" stroke-linecap="round"/><rect x="30" y="76" width="52" height="34" rx="11" fill="#F6F1E5" stroke="#211D18" stroke-width="2"/><path d="M82 84 Q98 88 99 98" stroke="#211D18" stroke-width="2" fill="none"/><line x1="95" y1="106" x2="109" y2="86" stroke="#211D18" stroke-width="2.5" stroke-linecap="round"/><path d="M95 106 l-5 7 l8 -2 Z" fill="#B5401C" stroke="#211D18" stroke-width="1.5" stroke-linejoin="round"/><circle cx="100" cy="99" r="4.5" fill="#FCFBF7" stroke="#211D18" stroke-width="2"/><path d="M26 117 Q50 110 86 115" stroke="#7C7264" stroke-width="2" stroke-dasharray="3 4" fill="none"/></svg>
-        <h3 class="agent-name" data-i18n="services.agents.4.name">Quill</h3>
-        <p class="agent-tag" data-i18n="services.agents.4.tag">Content in your voice</p>
+        <svg aria-hidden="true" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120' fill='none'><line x1='60' y1='24' x2='60' y2='14' stroke='#211D18' stroke-width='2'/><circle cx='60' cy='10' r='4' fill='#F6F1E5' stroke='#211D18' stroke-width='2'/><rect x='32' y='24' width='56' height='46' rx='12' fill='#FCFBF7' stroke='#211D18' stroke-width='2'/><circle cx='48' cy='46' r='4' fill='#211D18'/><circle cx='72' cy='46' r='4' fill='#211D18'/><path d='M52 58 Q60 63 68 58' stroke='#211D18' stroke-width='2' stroke-linecap='round'/><path d='M32 76 L88 76 L68 96 L68 110 L52 110 L52 96 Z' fill='#F6F1E5' stroke='#211D18' stroke-width='2' stroke-linejoin='round'/><circle cx='50' cy='83' r='2.5' fill='#7C7264'/><circle cx='60' cy='83' r='2.5' fill='#7C7264'/><circle cx='70' cy='83' r='2.5' fill='#7C7264'/><circle cx='60' cy='116' r='3' fill='#B5401C'/></svg>
+        <h3 class="agent-name" data-i18n="services.agents.5.name">Criba</h3>
+        <p class="agent-tag" data-i18n="services.agents.5.tag">Cualificación de leads</p>
         <div class="agent-chips">
-          <span class="chip" data-i18n="services.agents.4.chips.0">Posts &amp; emails</span>
-          <span class="chip" data-i18n="services.agents.4.chips.1">One idea, everywhere</span>
-          <span class="chip" data-i18n="services.agents.4.chips.2">Weekly calendar</span>
+          <span class="chip" data-i18n="services.agents.5.chips.0">Respuesta instantánea</span>
+          <span class="chip" data-i18n="services.agents.5.chips.1">Puntúa leads</span>
+          <span class="chip" data-i18n="services.agents.5.chips.2">Lead pasado en caliente</span>
         </div>
       </div>
       <div class="agent-card reveal">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none" aria-hidden="true"><line x1="60" y1="24" x2="60" y2="14" stroke="#211D18" stroke-width="2"/><circle cx="60" cy="10" r="4" fill="#F6F1E5" stroke="#211D18" stroke-width="2"/><rect x="32" y="24" width="56" height="46" rx="12" fill="#FCFBF7" stroke="#211D18" stroke-width="2"/><circle cx="48" cy="46" r="4" fill="#211D18"/><circle cx="72" cy="46" r="4" fill="#211D18"/><path d="M52 58 Q60 63 68 58" stroke="#211D18" stroke-width="2" stroke-linecap="round"/><rect x="34" y="76" width="52" height="32" rx="11" fill="#F6F1E5" stroke="#211D18" stroke-width="2"/><line x1="60" y1="80" x2="60" y2="84" stroke="#211D18" stroke-width="2"/><line x1="60" y1="100" x2="60" y2="104" stroke="#211D18" stroke-width="2"/><line x1="48" y1="92" x2="52" y2="92" stroke="#211D18" stroke-width="2"/><line x1="68" y1="92" x2="72" y2="92" stroke="#211D18" stroke-width="2"/><circle cx="60" cy="92" r="8" fill="#FCFBF7" stroke="#211D18" stroke-width="2"/><circle cx="60" cy="92" r="2" fill="#211D18"/><line x1="38" y1="115" x2="82" y2="115" stroke="#211D18" stroke-width="2" stroke-linecap="round"/><circle cx="46" cy="115" r="3.5" fill="#7C7264" stroke="#211D18" stroke-width="2"/><circle cx="56" cy="115" r="3.5" fill="#7C7264" stroke="#211D18" stroke-width="2"/><circle cx="72" cy="115" r="3.5" fill="#B5401C" stroke="#211D18" stroke-width="2"/></svg>
-        <h3 class="agent-name" data-i18n="services.agents.5.name">Ledger</h3>
-        <p class="agent-tag" data-i18n="services.agents.5.tag">Back office</p>
+        <svg aria-hidden="true" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120' fill='none'><line x1='60' y1='24' x2='60' y2='14' stroke='#211D18' stroke-width='2'/><circle cx='60' cy='10' r='4' fill='#F6F1E5' stroke='#211D18' stroke-width='2'/><rect x='32' y='24' width='56' height='46' rx='12' fill='#FCFBF7' stroke='#211D18' stroke-width='2'/><circle cx='48' cy='46' r='4' fill='#211D18'/><circle cx='72' cy='46' r='4' fill='#211D18'/><path d='M52 58 Q60 63 68 58' stroke='#211D18' stroke-width='2' stroke-linecap='round'/><rect x='30' y='76' width='52' height='34' rx='11' fill='#F6F1E5' stroke='#211D18' stroke-width='2'/><path d='M82 84 Q98 88 99 98' stroke='#211D18' stroke-width='2' fill='none'/><line x1='95' y1='106' x2='109' y2='86' stroke='#211D18' stroke-width='2.5' stroke-linecap='round'/><path d='M95 106 l-5 7 l8 -2 Z' fill='#B5401C' stroke='#211D18' stroke-width='1.5' stroke-linejoin='round'/><circle cx='100' cy='99' r='4.5' fill='#FCFBF7' stroke='#211D18' stroke-width='2'/><path d='M26 117 Q50 110 86 115' stroke='#7C7264' stroke-width='2' stroke-dasharray='3 4' fill='none'/></svg>
+        <h3 class="agent-name" data-i18n="services.agents.6.name">Pluma</h3>
+        <p class="agent-tag" data-i18n="services.agents.6.tag">Contenido con tu voz</p>
         <div class="agent-chips">
-          <span class="chip" data-i18n="services.agents.5.chips.0">Data entry</span>
-          <span class="chip" data-i18n="services.agents.5.chips.1">Invoice chasing</span>
-          <span class="chip" data-i18n="services.agents.5.chips.2">Auto reports</span>
+          <span class="chip" data-i18n="services.agents.6.chips.0">Posts y emails</span>
+          <span class="chip" data-i18n="services.agents.6.chips.1">Una idea, mil canales</span>
+          <span class="chip" data-i18n="services.agents.6.chips.2">Calendario semanal</span>
+        </div>
+      </div>
+      <div class="agent-card reveal">
+        <svg aria-hidden="true" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120' fill='none'><line x1='60' y1='24' x2='60' y2='14' stroke='#211D18' stroke-width='2'/><circle cx='60' cy='10' r='4' fill='#F6F1E5' stroke='#211D18' stroke-width='2'/><rect x='32' y='24' width='56' height='46' rx='12' fill='#FCFBF7' stroke='#211D18' stroke-width='2'/><circle cx='48' cy='46' r='4' fill='#211D18'/><circle cx='72' cy='46' r='4' fill='#211D18'/><path d='M52 58 Q60 63 68 58' stroke='#211D18' stroke-width='2' stroke-linecap='round'/><rect x='34' y='76' width='52' height='32' rx='11' fill='#F6F1E5' stroke='#211D18' stroke-width='2'/><line x1='60' y1='80' x2='60' y2='84' stroke='#211D18' stroke-width='2'/><line x1='60' y1='100' x2='60' y2='104' stroke='#211D18' stroke-width='2'/><line x1='48' y1='92' x2='52' y2='92' stroke='#211D18' stroke-width='2'/><line x1='68' y1='92' x2='72' y2='92' stroke='#211D18' stroke-width='2'/><circle cx='60' cy='92' r='8' fill='#FCFBF7' stroke='#211D18' stroke-width='2'/><circle cx='60' cy='92' r='2' fill='#211D18'/><line x1='38' y1='115' x2='82' y2='115' stroke='#211D18' stroke-width='2' stroke-linecap='round'/><circle cx='46' cy='115' r='3.5' fill='#7C7264' stroke='#211D18' stroke-width='2'/><circle cx='56' cy='115' r='3.5' fill='#7C7264' stroke='#211D18' stroke-width='2'/><circle cx='72' cy='115' r='3.5' fill='#B5401C' stroke='#211D18' stroke-width='2'/></svg>
+        <h3 class="agent-name" data-i18n="services.agents.7.name">Engranaje</h3>
+        <p class="agent-tag" data-i18n="services.agents.7.tag">Back office</p>
+        <div class="agent-chips">
+          <span class="chip" data-i18n="services.agents.7.chips.0">Entrada de datos</span>
+          <span class="chip" data-i18n="services.agents.7.chips.1">Reclama facturas</span>
+          <span class="chip" data-i18n="services.agents.7.chips.2">Informes automáticos</span>
         </div>
       </div>
     </div>
@@ -463,28 +584,28 @@ h2{font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1.12;font-weight:700;letter-
 <!-- ============ 4 · PROCESS ============ -->
 <section class="section anchor-target" id="process">
   <div class="container">
-    <p class="kicker" data-i18n="ui:kickers.process">03 — The method</p>
-    <h2 class="reveal" data-i18n="process.heading">Live in under 30 days</h2>
+    <p class="kicker" data-i18n="ui:kickers.process">04 — El método</p>
+    <h2 class="reveal" data-i18n="process.heading">En producción en menos de 30 días</h2>
     <div class="process-band">
       <div class="step reveal">
         <span class="num" aria-hidden="true">01</span>
-        <h3 data-i18n="process.steps.0.title">Audit</h3>
-        <p data-i18n="process.steps.0.line">We find your biggest leak. Free.</p>
+        <h3 data-i18n="process.steps.0.title">Auditoría</h3>
+        <p data-i18n="process.steps.0.line">Una llamada corta para encontrar tu mayor fuga de tiempo o de margen.</p>
       </div>
       <div class="step reveal">
         <span class="num" aria-hidden="true">02</span>
-        <h3 data-i18n="process.steps.1.title">Build</h3>
-        <p data-i18n="process.steps.1.line">Trained on your real conversations, stress-tested.</p>
+        <h3 data-i18n="process.steps.1.title">Construcción</h3>
+        <p data-i18n="process.steps.1.line">Entrenado con tus datos y conversaciones reales, y puesto a prueba antes de salir.</p>
       </div>
       <div class="step reveal">
         <span class="num" aria-hidden="true">03</span>
-        <h3 data-i18n="process.steps.2.title">Deploy</h3>
-        <p data-i18n="process.steps.2.line">Connected to your tools, guardrails on.</p>
+        <h3 data-i18n="process.steps.2.title">Despliegue</h3>
+        <p data-i18n="process.steps.2.line">Conectado a tus herramientas, con salvaguardas.</p>
       </div>
       <div class="step reveal">
         <span class="num" aria-hidden="true">04</span>
-        <h3 data-i18n="process.steps.3.title">Optimize</h3>
-        <p data-i18n="process.steps.3.line">Monthly numbers, monthly tuning.</p>
+        <h3 data-i18n="process.steps.3.title">Optimización</h3>
+        <p data-i18n="process.steps.3.line">Números cada mes, ajuste cada mes.</p>
       </div>
     </div>
   </div>
@@ -493,9 +614,9 @@ h2{font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1.12;font-weight:700;letter-
 <!-- ============ 5 · INTEGRATIONS ============ -->
 <section class="section anchor-target" id="integrations">
   <div class="container">
-    <p class="kicker" data-i18n="ui:kickers.integrations">04 — The stack</p>
-    <h2 class="reveal" data-i18n="integrations.heading">Fits your stack</h2>
-    <p class="sub reveal" data-i18n="integrations.sub">WhatsApp, Gmail, HubSpot, Shopify and 100+ more.</p>
+    <p class="kicker" data-i18n="ui:kickers.integrations">05 — El stack</p>
+    <h2 class="reveal" data-i18n="integrations.heading">Encaja en tu stack</h2>
+    <p class="sub reveal" data-i18n="integrations.sub">WhatsApp, Gmail, HubSpot, Shopify y muchas más.</p>
     <div class="logo-grid reveal">
       <div class="logo-card" data-name="WhatsApp"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><title>WhatsApp</title><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></div>
       <div class="logo-card" data-name="Gmail"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><title>Gmail</title><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg></div>
@@ -514,68 +635,70 @@ h2{font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1.12;font-weight:700;letter-
       <div class="logo-card" data-name="Google Sheets"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><title>Google Sheets</title><path d="M11.318 12.545H7.91v-1.909h3.41v1.91zM14.728 0v6h6l-6-6zm1.363 10.636h-3.41v1.91h3.41v-1.91zm0 3.273h-3.41v1.91h3.41v-1.91zM20.727 6.5v15.864c0 .904-.732 1.636-1.636 1.636H4.909a1.636 1.636 0 0 1-1.636-1.636V1.636C3.273.732 4.005 0 4.909 0h9.318v6.5h6.5zm-3.273 2.773H6.545v7.909h10.91v-7.91zm-6.136 4.636H7.91v1.91h3.41v-1.91z"/></svg></div>
       <div class="logo-card" data-name="Telegram"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><title>Telegram</title><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></div>
     </div>
-    <p class="more-chip reveal"><span class="chip" data-i18n="ui:moreChip">+ many more</span></p>
+    <p class="more-chip reveal"><span class="chip" data-i18n="ui:moreChip">y muchas más</span></p>
   </div>
 </section>
 
 <!-- ============ 6 · CASES ============ -->
 <section class="section anchor-target" id="cases">
   <div class="container">
-    <p class="kicker" data-i18n="ui:kickers.cases">05 — Results</p>
-    <h2 class="reveal" data-i18n="cases.heading">Real results</h2>
+    <p class="kicker" data-i18n="ui:kickers.cases">06 — Casos</p>
+    <h2 class="reveal" data-i18n="cases.heading">Casos reales</h2>
     <div class="cases-grid">
       <article class="case-card reveal">
-        <div><span class="chip" data-i18n="cases.studies.0.sector">Dental clinics</span></div>
-        <h3 class="case-company" data-i18n="cases.studies.0.company">Denta Nova Group</h3>
-        <p class="case-hero" data-i18n="cases.studies.0.heroValue">−37%</p>
-        <p class="case-hero-label" data-i18n="cases.studies.0.heroLabel">no-shows in one quarter</p>
+        <div><span class="chip" data-i18n="cases.studies.0.sector">Inversión · confidencial</span></div>
+        <h3 class="case-company" data-i18n="cases.studies.0.company">Fondo de inversión</h3>
+        <p class="case-hero" data-i18n="cases.studies.0.heroValue">7:00</p>
+        <p class="case-hero-label" data-i18n="cases.studies.0.heroLabel">briefing diario en producción</p>
         <div class="case-minis">
           <div class="mini">
-            <p class="v" data-i18n="cases.studies.0.minis.0.value">97%</p>
-            <p class="l" data-i18n="cases.studies.0.minis.0.label">calls &amp; messages answered</p>
+            <p class="v" data-i18n="cases.studies.0.minis.0.value">0 min</p>
+            <p class="l" data-i18n="cases.studies.0.minis.0.label">de preparación manual cada mañana</p>
           </div>
           <div class="mini">
-            <p class="v" data-i18n="cases.studies.0.minis.1.value">19 h/wk</p>
-            <p class="l" data-i18n="cases.studies.0.minis.1.label">front-desk time saved</p>
+            <p class="v" data-i18n="cases.studies.0.minis.1.value">2026</p>
+            <p class="l" data-i18n="cases.studies.0.minis.1.label">en producción desde junio</p>
           </div>
         </div>
-        <p class="case-line" data-i18n="cases.studies.0.line">24/7 reception agent on calls and WhatsApp, plus automated reminders.</p>
+        <p class="case-line" data-i18n="cases.studies.0.line">Cada mañana, los socios reciben el rendimiento de su cartera y las oportunidades que la IA detecta con sus propias reglas.</p>
       </article>
       <article class="case-card reveal">
-        <div><span class="chip" data-i18n="cases.studies.1.sector">Real estate</span></div>
-        <h3 class="case-company" data-i18n="cases.studies.1.company">Llobregat Homes</h3>
-        <p class="case-hero" data-i18n="cases.studies.1.heroValue">+34%</p>
-        <p class="case-hero-label" data-i18n="cases.studies.1.heroLabel">viewings booked monthly</p>
+        <div><span class="chip" data-i18n="cases.studies.1.sector">Empresa de demostración</span></div>
+        <h3 class="case-company" data-i18n="cases.studies.1.company">Comercial Atlas, S.L.</h3>
+        <p class="case-hero" data-i18n="cases.studies.1.heroValue">Demo</p>
+        <p class="case-hero-label" data-i18n="cases.studies.1.heroLabel">pública, con datos sintéticos</p>
         <div class="case-minis">
           <div class="mini">
-            <p class="v" data-i18n="cases.studies.1.minis.0.value">2.6×</p>
-            <p class="l" data-i18n="cases.studies.1.minis.0.label">qualified leads per agent</p>
+            <p class="v" data-i18n="cases.studies.1.minis.0.value">KPIs</p>
+            <p class="l" data-i18n="cases.studies.1.minis.0.label">frente a objetivo cada mañana</p>
           </div>
           <div class="mini">
-            <p class="v" data-i18n="cases.studies.1.minis.1.value">4 h → 45 s</p>
-            <p class="l" data-i18n="cases.studies.1.minis.1.label">first-response time</p>
+            <p class="v" data-i18n="cases.studies.1.minis.1.value">3</p>
+            <p class="l" data-i18n="cases.studies.1.minis.1.label">acciones sugeridas al día</p>
           </div>
         </div>
-        <p class="case-line" data-i18n="cases.studies.1.line">Qualification agent that replies in seconds and books viewings itself.</p>
+        <p class="case-line" data-i18n="cases.studies.1.line">Nuestra demo, y lo decimos claro: el briefing completo funcionando con datos de ejemplo. Pídela y la ves en 15 minutos.</p>
       </article>
       <article class="case-card reveal">
-        <div><span class="chip" data-i18n="cases.studies.2.sector">Online fashion</span></div>
-        <h3 class="case-company" data-i18n="cases.studies.2.company">Vela Studio</h3>
-        <p class="case-hero" data-i18n="cases.studies.2.heroValue">73%</p>
-        <p class="case-hero-label" data-i18n="cases.studies.2.heroLabel">tickets resolved, no human</p>
+        <div><span class="chip" data-i18n="cases.studies.2.sector">Pymes · España</span></div>
+        <h3 class="case-company" data-i18n="cases.studies.2.company">Nuevos casos en curso</h3>
+        <p class="case-hero" data-i18n="cases.studies.2.heroValue">→</p>
+        <p class="case-hero-label" data-i18n="cases.studies.2.heroLabel">proyectos en construcción ahora mismo</p>
         <div class="case-minis">
           <div class="mini">
-            <p class="v" data-i18n="cases.studies.2.minis.0.value">&lt; 3 min</p>
-            <p class="l" data-i18n="cases.studies.2.minis.0.label">median response time</p>
+            <p class="v" data-i18n="cases.studies.2.minis.0.value">ES/EN</p>
+            <p class="l" data-i18n="cases.studies.2.minis.0.label">equipos en dos idiomas</p>
           </div>
           <div class="mini">
-            <p class="v" data-i18n="cases.studies.2.minis.1.value">4.7/5</p>
-            <p class="l" data-i18n="cases.studies.2.minis.1.label">customer satisfaction</p>
+            <p class="v" data-i18n="cases.studies.2.minis.1.value">30 días</p>
+            <p class="l" data-i18n="cases.studies.2.minis.1.label">objetivo de puesta en producción</p>
           </div>
         </div>
-        <p class="case-line" data-i18n="cases.studies.2.line">Support agent trained on their catalog; edge cases escalate with context.</p>
+        <p class="case-line" data-i18n="cases.studies.2.line">Publicamos cada caso cuando el cliente lo autoriza. Este hueco se llena solo.</p>
       </article>
+      <!-- Plantilla de caso: duplicar un <article class="case-card"> y añadir los textos en CONTENT (es/en) con datos verificados y autorización del cliente. -->
     </div>
+    <p class="cases-note reveal" data-i18n="cases.note">Casos reales; la demo está señalada como tal. Cuando un cliente prefiere no aparecer con nombre, lo respetamos.</p>
   </div>
 </section>
 
@@ -584,36 +707,36 @@ h2{font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1.12;font-weight:700;letter-
 <!-- ============ 8 · FAQ ============ -->
 <section class="section anchor-target" id="faq">
   <div class="container">
-    <p class="kicker" data-i18n="ui:kickers.faq">06 — FAQ</p>
-    <h2 class="reveal" data-i18n="faq.heading">Quick answers</h2>
+    <p class="kicker" data-i18n="ui:kickers.faq">07 — FAQ</p>
+    <h2 class="reveal" data-i18n="faq.heading">Respuestas rápidas</h2>
     <div class="faq-list" id="faqList">
       <div class="faq-item">
-        <button type="button" class="faq-q" aria-expanded="false"><span data-i18n="faq.items.0.q">What is an AI agent?</span><span class="plus" aria-hidden="true">+</span></button>
-        <p class="faq-a" data-i18n="faq.items.0.a">Software that does a job, not just answers. It acts across your tools, within rules you set.</p>
+        <button type="button" class="faq-q" aria-expanded="false"><span data-i18n="faq.items.0.q">¿Qué es un agente de IA?</span><span class="plus" aria-hidden="true">+</span></button>
+        <p class="faq-a" data-i18n="faq.items.0.a">Software que hace un trabajo, no solo responde. Actúa en tus herramientas, dentro de tus reglas.</p>
       </div>
       <div class="faq-item">
-        <button type="button" class="faq-q" aria-expanded="false"><span data-i18n="faq.items.1.q">How fast is it live?</span><span class="plus" aria-hidden="true">+</span></button>
-        <p class="faq-a" data-i18n="faq.items.1.a">Most agents launch in under 30 days. Complex setups take 6–8 weeks.</p>
+        <button type="button" class="faq-q" aria-expanded="false"><span data-i18n="faq.items.1.q">¿Cuánto tarda en estar en producción?</span><span class="plus" aria-hidden="true">+</span></button>
+        <p class="faq-a" data-i18n="faq.items.1.a">Nuestro objetivo: producción en menos de 30 días. Las integraciones complejas pueden llevar de 6 a 8 semanas.</p>
       </div>
       <div class="faq-item">
-        <button type="button" class="faq-q" aria-expanded="false"><span data-i18n="faq.items.2.q">What do you need from us?</span><span class="plus" aria-hidden="true">+</span></button>
-        <p class="faq-a" data-i18n="faq.items.2.a">Nothing technical. Just a few hours from whoever knows the process best.</p>
+        <button type="button" class="faq-q" aria-expanded="false"><span data-i18n="faq.items.2.q">¿Qué necesitáis de nosotros?</span><span class="plus" aria-hidden="true">+</span></button>
+        <p class="faq-a" data-i18n="faq.items.2.a">Nada técnico. Solo unas horas de quien mejor conoce el proceso.</p>
       </div>
       <div class="faq-item">
-        <button type="button" class="faq-q" aria-expanded="false"><span data-i18n="faq.items.3.q">What if it makes a mistake?</span><span class="plus" aria-hidden="true">+</span></button>
-        <p class="faq-a" data-i18n="faq.items.3.a">Anything ambiguous or sensitive goes to a human, full conversation attached.</p>
+        <button type="button" class="faq-q" aria-expanded="false"><span data-i18n="faq.items.3.q">¿Y si se equivoca?</span><span class="plus" aria-hidden="true">+</span></button>
+        <p class="faq-a" data-i18n="faq.items.3.a">Lo ambiguo o delicado pasa a una persona, con la conversación completa.</p>
       </div>
       <div class="faq-item">
-        <button type="button" class="faq-q" aria-expanded="false"><span data-i18n="faq.items.4.q">GDPR and data security?</span><span class="plus" aria-hidden="true">+</span></button>
-        <p class="faq-a" data-i18n="faq.items.4.a">Everything stays in the EU, encrypted. We sign a DPA with every client.</p>
+        <button type="button" class="faq-q" aria-expanded="false"><span data-i18n="faq.items.4.q">¿RGPD y seguridad de datos?</span><span class="plus" aria-hidden="true">+</span></button>
+        <p class="faq-a" data-i18n="faq.items.4.a">Todo se queda en la UE, cifrado. Firmamos un DPA con cada cliente.</p>
       </div>
       <div class="faq-item">
-        <button type="button" class="faq-q" aria-expanded="false"><span data-i18n="faq.items.5.q">Does it work with my tools?</span><span class="plus" aria-hidden="true">+</span></button>
-        <p class="faq-a" data-i18n="faq.items.5.a">Anything with an API — that's almost everything. No API? We bridge it.</p>
+        <button type="button" class="faq-q" aria-expanded="false"><span data-i18n="faq.items.5.q">¿Funciona con mis herramientas?</span><span class="plus" aria-hidden="true">+</span></button>
+        <p class="faq-a" data-i18n="faq.items.5.a">Con cualquiera que tenga API — casi todas. ¿Sin API? La conectamos igual.</p>
       </div>
       <div class="faq-item">
-        <button type="button" class="faq-q" aria-expanded="false"><span data-i18n="faq.items.6.q">What happens after launch?</span><span class="plus" aria-hidden="true">+</span></button>
-        <p class="faq-a" data-i18n="faq.items.6.a">Monitoring, tuning and a monthly report with hard numbers. Launch is the start.</p>
+        <button type="button" class="faq-q" aria-expanded="false"><span data-i18n="faq.items.6.q">¿Y después del lanzamiento?</span><span class="plus" aria-hidden="true">+</span></button>
+        <p class="faq-a" data-i18n="faq.items.6.a">Monitorización, ajuste continuo e informe mensual con números. El lanzamiento es el principio.</p>
       </div>
     </div>
   </div>
@@ -622,54 +745,76 @@ h2{font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1.12;font-weight:700;letter-
 <!-- ============ 9 · FINAL CTA ============ -->
 <section class="section final-cta">
   <div class="container">
-    <h2 class="reveal" data-i18n="finalCta.heading">Find out what 30 hours back feels like</h2>
-    <p class="sub reveal" data-i18n="finalCta.sub">Free 45-minute audit. We show you what to automate first.</p>
-    <a class="btn btn-primary reveal" href="#contact"><span data-i18n="finalCta.cta">Book my free audit</span><span class="arrow" aria-hidden="true">→</span></a>
+    <h2 class="reveal" data-i18n="finalCta.heading">Quince minutos y lo ves funcionando</h2>
+    <p class="sub reveal" data-i18n="finalCta.sub">Te enseñamos el sistema en directo con datos de ejemplo. Si encaja, hablamos de tu caso.</p>
+    <a class="btn btn-primary reveal" href="#contact"><span data-i18n="finalCta.cta">Ver el sistema en 15 minutos</span><span class="arrow" aria-hidden="true">→</span></a>
+  </div>
+</section>
+
+<!-- ============ QUIÉN ESTÁ DETRÁS ============ -->
+<section class="section anchor-target" id="about">
+  <div class="container">
+    <p class="kicker" data-i18n="ui:kickers.about">08 — Quién está detrás</p>
+    <h2 class="reveal" data-i18n="about.heading">Detrás hay una persona, no una web de plantilla</h2>
+    <div class="about-card reveal">
+      <div class="about-avatar" aria-hidden="true"><span>RA</span></div>
+      <!-- Foto real: sustituir el div.about-avatar por
+           <img class="about-photo" src="rogelio.jpg" alt="Rogelio Alcaraz"> -->
+      <div class="about-body">
+        <h3 class="about-name" data-i18n="about.name">Rogelio Alcaraz</h3>
+        <p class="about-role" data-i18n="about.role">Fundador de 50 Labs</p>
+        <p class="about-cred" data-i18n="about.cred">Senior data analyst con más de 10 años en datos, actualmente en una plataforma europea con millones de usuarios.</p>
+        <p class="about-quote" data-i18n="about.quote">Construyo para las pymes los sistemas de datos que las grandes empresas dan por sentado: que cada mañana el negocio te diga cómo va y dónde está la siguiente oportunidad.</p>
+      </div>
+    </div>
+    <!-- Especialistas del equipo: componente previsto, activar con acuerdos firmados
+    <div class="team-grid" hidden></div> -->
   </div>
 </section>
 
 <!-- ============ 10 · CONTACT ============ -->
 <section class="section anchor-target" id="contact">
   <div class="container">
-    <p class="kicker" data-i18n="ui:kickers.contact">07 — Contact</p>
+    <p class="kicker" data-i18n="ui:kickers.contact">09 — Contacto</p>
     <div class="contact-grid">
       <div class="contact-info">
-        <h2 class="reveal" data-i18n="contact.heading">Tell us what hurts</h2>
-        <p class="sub reveal" data-i18n="contact.sub">We reply within one business day. No sales script.</p>
-        <p class="privacy-note reveal" data-i18n="contact.privacyNote">Your data is only used to reply. Questions? ralcaraz.canals@gmail.com</p>
+        <h2 class="reveal" data-i18n="contact.heading">Cuéntanos qué te frena</h2>
+        <p class="sub reveal" data-i18n="contact.sub">Respondemos en un día laborable. Sin guion de ventas.</p>
+        <p class="privacy-note reveal" data-i18n="contact.privacyNote">Tus datos, solo para responderte. ¿Dudas? ralcaraz.canals@gmail.com</p>
       </div>
       <div class="form-panel reveal">
-        <p class="form-kicker" data-i18n="ui:form.kicker">Intake — 2 min</p>
+        <p class="form-kicker" data-i18n="ui:form.kicker">Formulario — 2 min</p>
         <form id="contactForm" novalidate>
           <div class="field" id="f-name">
-            <label for="in-name" data-i18n="contact.form.name">Name</label>
+            <label for="in-name" data-i18n="contact.form.name">Nombre</label>
             <input type="text" id="in-name" name="name" autocomplete="name">
-            <p class="field-error" data-i18n="ui:form.required">This field is required</p>
+            <p class="field-error" data-i18n="ui:form.required">Este campo es obligatorio</p>
           </div>
           <div class="field" id="f-email">
-            <label for="in-email" data-i18n="contact.form.email">Work email</label>
+            <label for="in-email" data-i18n="contact.form.email">Email de trabajo</label>
             <input type="email" id="in-email" name="email" autocomplete="email">
-            <p class="field-error" data-i18n="ui:form.email">Enter a valid email address</p>
+            <p class="field-error" data-i18n="ui:form.email">Introduce un email válido</p>
           </div>
           <div class="field" id="f-company">
-            <label for="in-company" data-i18n="contact.form.company">Company</label>
+            <label for="in-company" data-i18n="contact.form.company">Empresa</label>
             <input type="text" id="in-company" name="company" autocomplete="organization">
-            <p class="field-error" data-i18n="ui:form.required">This field is required</p>
+            <p class="field-error" data-i18n="ui:form.required">Este campo es obligatorio</p>
           </div>
           <div class="field" id="f-interest">
-            <label for="in-interest" data-i18n="contact.form.interest">What do you want to automate?</label>
+            <label for="in-interest" data-i18n="contact.form.interest">¿Qué quieres automatizar?</label>
             <select id="in-interest" name="interest">
-              <option value="" data-i18n="ui:form.select">Choose an option</option>
-              <option value="0" data-i18n="contact.form.interestOptions.0">Sales &amp; leads</option>
-              <option value="1" data-i18n="contact.form.interestOptions.1">Customer support</option>
-              <option value="2" data-i18n="contact.form.interestOptions.2">Reception &amp; bookings</option>
-              <option value="3" data-i18n="contact.form.interestOptions.3">Content &amp; marketing</option>
-              <option value="4" data-i18n="contact.form.interestOptions.4">Something else</option>
+              <option value="" data-i18n="ui:form.select">Elige una opción</option>
+              <option value="0" data-i18n="contact.form.interestOptions.0">Briefing diario y datos</option>
+              <option value="1" data-i18n="contact.form.interestOptions.1">Ventas y leads</option>
+              <option value="2" data-i18n="contact.form.interestOptions.2">Atención al cliente</option>
+              <option value="3" data-i18n="contact.form.interestOptions.3">Recepción y citas</option>
+              <option value="4" data-i18n="contact.form.interestOptions.4">Contenido</option>
+              <option value="5" data-i18n="contact.form.interestOptions.5">Otra cosa</option>
             </select>
-            <p class="field-error" data-i18n="ui:form.required">This field is required</p>
+            <p class="field-error" data-i18n="ui:form.required">Este campo es obligatorio</p>
           </div>
           <div class="field" id="f-message">
-            <label for="in-message" data-i18n="contact.form.message">Your process (optional)</label>
+            <label for="in-message" data-i18n="contact.form.message">Tu proceso (opcional)</label>
             <textarea id="in-message" name="message"></textarea>
           </div>
           <div class="honeypot" aria-hidden="true">
@@ -677,18 +822,18 @@ h2{font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1.12;font-weight:700;letter-
           </div>
           <div class="consent" id="f-consent">
             <input type="checkbox" id="in-consent">
-            <label for="in-consent"><span data-i18n="ui:form.consent">I agree to be contacted about my request.</span> <span class="field-error" style="display:inline" hidden id="consentErr" data-i18n="ui:form.consentErr">— please tick the box to continue</span></label>
+            <label for="in-consent"><span data-i18n="ui:form.consent">Acepto que 50 Labs me escriba sobre mi solicitud.</span> <span class="field-error" style="display:inline" hidden id="consentErr" data-i18n="ui:form.consentErr">— marca la casilla para continuar</span></label>
           </div>
-          <button type="submit" class="btn btn-primary form-submit" id="submitBtn"><span id="submitLabel" data-i18n="contact.form.submit">Send</span><span class="arrow" aria-hidden="true">→</span></button>
+          <button type="submit" class="btn btn-primary form-submit" id="submitBtn"><span id="submitLabel" data-i18n="contact.form.submit">Enviar</span><span class="arrow" aria-hidden="true">→</span></button>
           <p class="form-error-box" id="formError" hidden>
-            <span data-i18n="contact.errorMessage">Something went wrong. Try again or email us.</span><br>
-            <a href="mailto:ralcaraz.canals@gmail.com" data-i18n="ui:form.mailto">Email us instead</a>
+            <span data-i18n="contact.errorMessage">Algo ha fallado. Inténtalo de nuevo o escríbenos.</span><br>
+            <a href="mailto:ralcaraz.canals@gmail.com" data-i18n="ui:form.mailto">Escríbenos por email</a>
           </p>
         </form>
         <div class="form-success" id="formSuccess" hidden>
           <div class="success-dot" aria-hidden="true">✓</div>
-          <h3 data-i18n="contact.successTitle">Got it!</h3>
-          <p data-i18n="contact.successMessage">Thanks — we'll get back to you within one business day.</p>
+          <h3 data-i18n="contact.successTitle">Recibido</h3>
+          <p data-i18n="contact.successMessage">Gracias — te respondemos en un día laborable.</p>
         </div>
       </div>
     </div>
@@ -708,16 +853,18 @@ h2{font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1.12;font-weight:700;letter-
           </svg>
           <span class="logo-word">50 Labs</span>
         </a>
-        <p data-i18n="footer.line">Custom AI agents, built and operated.</p>
+        <p data-i18n="footer.line">IA aplicada a los datos, para pymes. Hecho y gestionado desde Barcelona.</p>
       </div>
       <div class="footer-contact">
-        <p class="lbl" data-i18n="footer.emailLabel">Prefer email?</p>
+        <p class="lbl" data-i18n="footer.emailLabel">¿Prefieres email?</p>
         <a class="footer-mail" href="mailto:ralcaraz.canals@gmail.com" data-i18n="footer.email">ralcaraz.canals@gmail.com</a>
       </div>
     </div>
     <div class="footer-bottom">
       <span data-i18n="footer.rights">© 2026 50 Labs</span>
-      <span data-i18n="footer.madeIn">Barcelona · Remote worldwide</span>
+      <span data-i18n="footer.operated">50 Labs es una marca de Rogelio Alcaraz</span>
+      <span><a class="flink" href="legal.html" data-i18n="footer.legalNotice">Aviso legal</a> · <a class="flink" href="legal.html#privacidad" data-i18n="footer.privacy">Privacidad y cookies</a></span>
+      <span data-i18n="footer.madeIn">Barcelona · En remoto, en todo el mundo</span>
     </div>
   </div>
 </footer>
@@ -727,12 +874,12 @@ h2{font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1.12;font-weight:700;letter-
 const CONTENT = {
   "meta": {
     "en": {
-      "title": "50 Labs — Custom AI Agents for Your Business",
-      "description": "AI agents that answer customers, qualify leads and run your back office. Live in under 30 days."
+      "title": "50 Labs — AI applied to your company's data",
+      "description": "Systems that work overnight: every morning your team gets its numbers and the opportunities the AI spots with your rules."
     },
     "es": {
-      "title": "50 Labs — Agentes de IA a medida para tu negocio",
-      "description": "Agentes de IA que atienden clientes, cualifican leads y mueven tu back office. En producción en menos de 30 días."
+      "title": "50 Labs — IA aplicada a los datos de tu empresa",
+      "description": "Sistemas que trabajan de noche: cada mañana tu equipo recibe sus números y las oportunidades que la IA detecta con tus reglas."
     }
   },
   "en": {
@@ -743,26 +890,27 @@ const CONTENT = {
       "pricing": "Pricing",
       "faq": "FAQ",
       "contact": "Contact",
-      "cta": "Book a call"
+      "cta": "Book a call",
+      "demo": "Demo"
     },
     "hero": {
-      "eyebrow": "AI agents, built for you",
-      "headline": "Agents that do the work. {{You keep the margin.}}",
-      "sub": "They answer, qualify and follow up. You decide; they do the grind.",
-      "cta1": "Get a free audit",
-      "cta2": "See how it works",
+      "eyebrow": "AI applied to your data",
+      "headline": "Systems that work overnight. {{You decide in the morning.}}",
+      "sub": "Every morning your team gets its numbers and the opportunities the AI has spotted using your rules. Nobody has to prepare a thing.",
+      "cta1": "See the system in 15 minutes",
+      "cta2": "See the demo",
       "stats": [
         {
-          "value": "30+ h",
-          "label": "saved weekly per team"
+          "value": "7:00",
+          "label": "daily briefing in production for an investment fund"
         },
         {
-          "value": "< 60 s",
-          "label": "to answer any lead"
+          "value": "10+",
+          "label": "years in data — Rogelio Alcaraz, senior data analyst"
         },
         {
-          "value": "< 30 days",
-          "label": "from kickoff to live"
+          "value": "BCN",
+          "label": "Barcelona · remote worldwide"
         }
       ]
     },
@@ -771,22 +919,58 @@ const CONTENT = {
       "beforeLabel": "Before",
       "afterLabel": "With agents",
       "before": [
-        "Leads wait hours for replies",
-        "Follow-ups depend on memory",
-        "Same 20 questions on loop",
+        "Numbers get built by hand every Monday",
+        "Follow-ups depend on someone remembering",
+        "Nobody looks at margin until month-end",
         "Data stuck in inboxes"
       ],
       "after": [
+        "The briefing shows up by itself at 7:00",
+        "The AI flags the day something drifts",
         "Every lead answered in seconds",
-        "Follow-ups run themselves",
-        "Routine tickets solved solo",
         "Everything synced to your CRM"
       ]
     },
     "services": {
-      "heading": "Six agents. Hours back.",
-      "sub": "Trained on your real conversations. They sound like your team.",
+      "heading": "What we build",
+      "sub": "First, the data systems that set us apart. Then the agents that run the day-to-day.",
       "agents": [
+        {
+          "name": "Sunrise",
+          "tag": "Daily 7:00 briefing",
+          "chips": [
+            "KPIs vs target",
+            "Alerts that matter",
+            "3 suggested actions"
+          ]
+        },
+        {
+          "name": "Radar",
+          "tag": "Opportunity radar",
+          "chips": [
+            "Reads your data daily",
+            "Your rules, not ours",
+            "Instant heads-up"
+          ]
+        },
+        {
+          "name": "Resolve",
+          "tag": "Customer support",
+          "chips": [
+            "Knows your docs",
+            "Routine tickets, handled",
+            "Smart escalation"
+          ]
+        },
+        {
+          "name": "Concierge",
+          "tag": "Reception & bookings",
+          "chips": [
+            "Answers 24/7",
+            "Books appointments",
+            "Cuts no-shows"
+          ]
+        },
         {
           "name": "Scout",
           "tag": "Outbound sales",
@@ -803,24 +987,6 @@ const CONTENT = {
             "Instant replies",
             "Scores leads",
             "Hot handoffs"
-          ]
-        },
-        {
-          "name": "Resolve",
-          "tag": "Customer support",
-          "chips": [
-            "Knows your docs",
-            "80% of tickets",
-            "Smart escalation"
-          ]
-        },
-        {
-          "name": "Concierge",
-          "tag": "Reception & bookings",
-          "chips": [
-            "Answers 24/7",
-            "Books appointments",
-            "Cuts no-shows"
           ]
         },
         {
@@ -848,11 +1014,11 @@ const CONTENT = {
       "steps": [
         {
           "title": "Audit",
-          "line": "We find your biggest leak. Free."
+          "line": "A short call to find your biggest time or margin leak."
         },
         {
           "title": "Build",
-          "line": "Trained on your real conversations, stress-tested."
+          "line": "Trained on your real data and conversations, stress-tested before launch."
         },
         {
           "title": "Deploy",
@@ -866,61 +1032,62 @@ const CONTENT = {
     },
     "integrations": {
       "heading": "Fits your stack",
-      "sub": "WhatsApp, Gmail, HubSpot, Shopify and 100+ more."
+      "sub": "WhatsApp, Gmail, HubSpot, Shopify and many more."
     },
     "cases": {
-      "heading": "Real results",
+      "heading": "Real cases",
+      "note": "Real cases; the demo is labelled as such. When a client prefers not to be named, we respect that.",
       "studies": [
         {
-          "company": "Denta Nova Group",
-          "sector": "Dental clinics",
-          "heroValue": "−37%",
-          "heroLabel": "no-shows in one quarter",
+          "company": "Investment fund",
+          "sector": "Investing · confidential",
+          "heroValue": "7:00",
+          "heroLabel": "daily briefing in production",
           "minis": [
             {
-              "value": "97%",
-              "label": "calls & messages answered"
+              "value": "0 min",
+              "label": "of manual prep every morning"
             },
             {
-              "value": "19 h/wk",
-              "label": "front-desk time saved"
+              "value": "2026",
+              "label": "in production since June"
             }
           ],
-          "line": "24/7 reception agent on calls and WhatsApp, plus automated reminders."
+          "line": "Every morning the partners get their portfolio performance and the opportunities the AI spots using their own rules."
         },
         {
-          "company": "Llobregat Homes",
-          "sector": "Real estate",
-          "heroValue": "+34%",
-          "heroLabel": "viewings booked monthly",
+          "company": "Comercial Atlas, S.L.",
+          "sector": "Demo company",
+          "heroValue": "Demo",
+          "heroLabel": "public, with synthetic data",
           "minis": [
             {
-              "value": "2.6×",
-              "label": "qualified leads per agent"
+              "value": "KPIs",
+              "label": "vs target every morning"
             },
             {
-              "value": "4 h → 45 s",
-              "label": "first-response time"
+              "value": "3",
+              "label": "suggested actions a day"
             }
           ],
-          "line": "Qualification agent that replies in seconds and books viewings itself."
+          "line": "Our demo — clearly labelled: the full briefing running on sample data. Ask for it and see it in 15 minutes."
         },
         {
-          "company": "Vela Studio",
-          "sector": "Online fashion",
-          "heroValue": "73%",
-          "heroLabel": "tickets resolved, no human",
+          "company": "New cases underway",
+          "sector": "SMBs · Spain",
+          "heroValue": "→",
+          "heroLabel": "projects being built right now",
           "minis": [
             {
-              "value": "< 3 min",
-              "label": "median response time"
+              "value": "ES/EN",
+              "label": "teams in two languages"
             },
             {
-              "value": "4.7/5",
-              "label": "customer satisfaction"
+              "value": "30 days",
+              "label": "target to production"
             }
           ],
-          "line": "Support agent trained on their catalog; edge cases escalate with context."
+          "line": "We publish each case when the client signs off. This slot fills itself."
         }
       ]
     },
@@ -981,8 +1148,8 @@ const CONTENT = {
           "a": "Software that does a job, not just answers. It acts across your tools, within rules you set."
         },
         {
-          "q": "How fast is it live?",
-          "a": "Most agents launch in under 30 days. Complex setups take 6–8 weeks."
+          "q": "How long until it's live?",
+          "a": "Our target: production in under 30 days. Complex integrations can take 6 to 8 weeks."
         },
         {
           "q": "What do you need from us?",
@@ -1007,9 +1174,9 @@ const CONTENT = {
       ]
     },
     "finalCta": {
-      "heading": "Find out what 30 hours back feels like",
-      "sub": "Free 45-minute audit. We show you what to automate first.",
-      "cta": "Book my free audit"
+      "heading": "Fifteen minutes and you see it running",
+      "sub": "We show you the system live with sample data. If it fits, we talk about your case.",
+      "cta": "See the system in 15 minutes"
     },
     "contact": {
       "heading": "Tell us what hurts",
@@ -1020,10 +1187,11 @@ const CONTENT = {
         "company": "Company",
         "interest": "What do you want to automate?",
         "interestOptions": [
+          "Daily briefing & data",
           "Sales & leads",
           "Customer support",
           "Reception & bookings",
-          "Content & marketing",
+          "Content",
           "Something else"
         ],
         "message": "Your process (optional)",
@@ -1036,11 +1204,59 @@ const CONTENT = {
       "privacyNote": "Your data is only used to reply. Questions? ralcaraz.canals@gmail.com"
     },
     "footer": {
-      "line": "Custom AI agents, built and operated.",
+      "line": "Data-first AI for SMBs. Built and run from Barcelona.",
       "emailLabel": "Prefer email?",
       "email": "ralcaraz.canals@gmail.com",
       "rights": "© 2026 50 Labs",
-      "madeIn": "Barcelona · Remote worldwide"
+      "madeIn": "Barcelona · Remote worldwide",
+      "operated": "50 Labs is a brand by Rogelio Alcaraz",
+      "legalNotice": "Legal notice",
+      "privacy": "Privacy & cookies"
+    },
+    "demo": {
+      "heading": "The email that lands every morning",
+      "sub": "No dashboards nobody opens: one 7:00 email with what matters and what to do about it.",
+      "email": {
+        "from": "50 Labs · Daily briefing",
+        "subject": "Briefing — Tuesday, 7:00",
+        "kpisTitle": "Yesterday's numbers",
+        "kpis": [
+          {
+            "label": "Sales",
+            "value": "€12,480",
+            "delta": "+9% vs target"
+          },
+          {
+            "label": "Orders",
+            "value": "142",
+            "delta": "−4% vs last week"
+          },
+          {
+            "label": "Gross margin",
+            "value": "31.2%",
+            "delta": "on target"
+          }
+        ],
+        "alertsTitle": "Alerts",
+        "alerts": [
+          "Stock for SKU A-140 below 2 weeks",
+          "3 invoices due this week (€4,310)"
+        ],
+        "actionsTitle": "3 suggested actions",
+        "actions": [
+          "Restock A-140 before Thursday",
+          "Call the 2 customers with stalled orders",
+          "Review pack B pricing: demand +18% two weeks running"
+        ]
+      },
+      "note": "Data from a demo company (Comercial Atlas, S.L.). With your data it looks the same — with your numbers."
+    },
+    "about": {
+      "heading": "There's a person behind this, not a template",
+      "name": "Rogelio Alcaraz",
+      "role": "Founder, 50 Labs",
+      "cred": "Senior data analyst with 10+ years in data, currently at a European platform with millions of users.",
+      "quote": "I build for SMBs the data systems big companies take for granted: every morning, the business tells you how it's doing and where the next opportunity is."
     }
   },
   "es": {
@@ -1051,26 +1267,27 @@ const CONTENT = {
       "pricing": "Precios",
       "faq": "FAQ",
       "contact": "Contacto",
-      "cta": "Reserva una llamada"
+      "cta": "Reserva una llamada",
+      "demo": "Demo"
     },
     "hero": {
-      "eyebrow": "Agentes de IA, hechos para ti",
-      "headline": "Agentes que hacen el trabajo. {{Tú te quedas el margen.}}",
-      "sub": "Responden, cualifican y hacen el seguimiento. Tú decides; ellos ejecutan.",
-      "cta1": "Pide tu auditoría gratis",
-      "cta2": "Mira cómo funciona",
+      "eyebrow": "IA aplicada a tus datos",
+      "headline": "Sistemas que trabajan de noche. {{Tú decides por la mañana.}}",
+      "sub": "Cada mañana, tu equipo recibe sus números y las oportunidades que la IA ha detectado con tus reglas. Sin que nadie prepare nada.",
+      "cta1": "Ver el sistema en 15 minutos",
+      "cta2": "Ver la demo",
       "stats": [
         {
-          "value": "+30 h",
-          "label": "ahorradas por equipo y semana"
+          "value": "7:00",
+          "label": "briefing diario en producción para un fondo de inversión"
         },
         {
-          "value": "< 60 s",
-          "label": "de respuesta a cada lead"
+          "value": "10+",
+          "label": "años en datos — Rogelio Alcaraz, senior data analyst"
         },
         {
-          "value": "< 30 días",
-          "label": "del kickoff a producción"
+          "value": "BCN",
+          "label": "Barcelona · en remoto para todo el mundo"
         }
       ]
     },
@@ -1079,22 +1296,58 @@ const CONTENT = {
       "beforeLabel": "Antes",
       "afterLabel": "Con agentes",
       "before": [
-        "Leads esperando horas",
-        "Seguimiento a base de memoria",
-        "Las mismas 20 preguntas",
-        "Datos atrapados en el email"
+        "Los números se preparan a mano cada lunes",
+        "El seguimiento depende de que alguien se acuerde",
+        "Nadie mira el margen hasta fin de mes",
+        "Los datos, atrapados en el email"
       ],
       "after": [
+        "El briefing llega solo a las 7:00",
+        "La IA avisa el día que algo se desvía",
         "Cada lead respondido en segundos",
-        "Seguimientos en piloto automático",
-        "Tickets rutinarios resueltos solos",
         "Todo sincronizado en tu CRM"
       ]
     },
     "services": {
-      "heading": "Seis agentes. Horas devueltas.",
-      "sub": "Entrenados con tus conversaciones reales. Suenan como tu equipo.",
+      "heading": "Qué construimos",
+      "sub": "Primero, los sistemas de datos que nos diferencian. Después, los agentes que ejecutan el día a día.",
       "agents": [
+        {
+          "name": "Alba",
+          "tag": "Briefing diario a las 7:00",
+          "chips": [
+            "KPIs vs objetivo",
+            "Alertas que importan",
+            "3 acciones sugeridas"
+          ]
+        },
+        {
+          "name": "Radar",
+          "tag": "Radar de oportunidades",
+          "chips": [
+            "Lee tus datos a diario",
+            "Tus reglas, no las nuestras",
+            "Aviso al instante"
+          ]
+        },
+        {
+          "name": "Resuelve",
+          "tag": "Atención al cliente",
+          "chips": [
+            "Conoce tu documentación",
+            "Tickets rutinarios, resueltos",
+            "Escalado inteligente"
+          ]
+        },
+        {
+          "name": "Conserje",
+          "tag": "Recepción y citas",
+          "chips": [
+            "Atiende 24/7",
+            "Agenda citas",
+            "Menos citas perdidas"
+          ]
+        },
         {
           "name": "Cazador",
           "tag": "Ventas outbound",
@@ -1110,25 +1363,7 @@ const CONTENT = {
           "chips": [
             "Respuesta instantánea",
             "Puntúa leads",
-            "Traspaso en caliente"
-          ]
-        },
-        {
-          "name": "Resuelve",
-          "tag": "Atención al cliente",
-          "chips": [
-            "Conoce tu documentación",
-            "80% de tickets",
-            "Escalado inteligente"
-          ]
-        },
-        {
-          "name": "Conserje",
-          "tag": "Recepción y citas",
-          "chips": [
-            "Atiende 24/7",
-            "Agenda citas",
-            "Menos ausencias"
+            "Lead pasado en caliente"
           ]
         },
         {
@@ -1156,11 +1391,11 @@ const CONTENT = {
       "steps": [
         {
           "title": "Auditoría",
-          "line": "Encontramos tu mayor fuga. Gratis."
+          "line": "Una llamada corta para encontrar tu mayor fuga de tiempo o de margen."
         },
         {
           "title": "Construcción",
-          "line": "Entrenado con tus conversaciones reales y puesto a prueba."
+          "line": "Entrenado con tus datos y conversaciones reales, y puesto a prueba antes de salir."
         },
         {
           "title": "Despliegue",
@@ -1174,61 +1409,62 @@ const CONTENT = {
     },
     "integrations": {
       "heading": "Encaja en tu stack",
-      "sub": "WhatsApp, Gmail, HubSpot, Shopify y 100+ más."
+      "sub": "WhatsApp, Gmail, HubSpot, Shopify y muchas más."
     },
     "cases": {
-      "heading": "Resultados reales",
+      "heading": "Casos reales",
+      "note": "Casos reales; la demo está señalada como tal. Cuando un cliente prefiere no aparecer con nombre, lo respetamos.",
       "studies": [
         {
-          "company": "Grupo Denta Nova",
-          "sector": "Clínicas dentales",
-          "heroValue": "−37%",
-          "heroLabel": "de ausencias en un trimestre",
+          "company": "Fondo de inversión",
+          "sector": "Inversión · confidencial",
+          "heroValue": "7:00",
+          "heroLabel": "briefing diario en producción",
           "minis": [
             {
-              "value": "97%",
-              "label": "de llamadas y mensajes atendidos"
+              "value": "0 min",
+              "label": "de preparación manual cada mañana"
             },
             {
-              "value": "19 h/sem",
-              "label": "de recepción recuperadas"
+              "value": "2026",
+              "label": "en producción desde junio"
             }
           ],
-          "line": "Agente de recepción 24/7 en llamadas y WhatsApp, con recordatorios automáticos."
+          "line": "Cada mañana, los socios reciben el rendimiento de su cartera y las oportunidades que la IA detecta con sus propias reglas."
         },
         {
-          "company": "Llobregat Homes",
-          "sector": "Inmobiliaria",
-          "heroValue": "+34%",
-          "heroLabel": "de visitas al mes",
+          "company": "Comercial Atlas, S.L.",
+          "sector": "Empresa de demostración",
+          "heroValue": "Demo",
+          "heroLabel": "pública, con datos sintéticos",
           "minis": [
             {
-              "value": "2,6×",
-              "label": "leads cualificados por comercial"
+              "value": "KPIs",
+              "label": "frente a objetivo cada mañana"
             },
             {
-              "value": "4 h → 45 s",
-              "label": "de primera respuesta"
+              "value": "3",
+              "label": "acciones sugeridas al día"
             }
           ],
-          "line": "Agente de cualificación que responde en segundos y agenda visitas solo."
+          "line": "Nuestra demo, y lo decimos claro: el briefing completo funcionando con datos de ejemplo. Pídela y la ves en 15 minutos."
         },
         {
-          "company": "Vela Studio",
-          "sector": "Moda online",
-          "heroValue": "73%",
-          "heroLabel": "de tickets resueltos solos",
+          "company": "Nuevos casos en curso",
+          "sector": "Pymes · España",
+          "heroValue": "→",
+          "heroLabel": "proyectos en construcción ahora mismo",
           "minis": [
             {
-              "value": "< 3 min",
-              "label": "de tiempo medio de respuesta"
+              "value": "ES/EN",
+              "label": "equipos en dos idiomas"
             },
             {
-              "value": "4,7/5",
-              "label": "de satisfacción"
+              "value": "30 días",
+              "label": "objetivo de puesta en producción"
             }
           ],
-          "line": "Agente de soporte entrenado con su catálogo; los casos límite escalan con contexto."
+          "line": "Publicamos cada caso cuando el cliente lo autoriza. Este hueco se llena solo."
         }
       ]
     },
@@ -1289,8 +1525,8 @@ const CONTENT = {
           "a": "Software que hace un trabajo, no solo responde. Actúa en tus herramientas, dentro de tus reglas."
         },
         {
-          "q": "¿Cuándo está en producción?",
-          "a": "La mayoría, en menos de 30 días. Los montajes complejos, en 6–8 semanas."
+          "q": "¿Cuánto tarda en estar en producción?",
+          "a": "Nuestro objetivo: producción en menos de 30 días. Las integraciones complejas pueden llevar de 6 a 8 semanas."
         },
         {
           "q": "¿Qué necesitáis de nosotros?",
@@ -1315,9 +1551,9 @@ const CONTENT = {
       ]
     },
     "finalCta": {
-      "heading": "Descubre qué se siente con 30 horas más",
-      "sub": "Auditoría gratuita de 45 minutos. Te decimos qué automatizar primero.",
-      "cta": "Quiero mi auditoría"
+      "heading": "Quince minutos y lo ves funcionando",
+      "sub": "Te enseñamos el sistema en directo con datos de ejemplo. Si encaja, hablamos de tu caso.",
+      "cta": "Ver el sistema en 15 minutos"
     },
     "contact": {
       "heading": "Cuéntanos qué te frena",
@@ -1328,27 +1564,76 @@ const CONTENT = {
         "company": "Empresa",
         "interest": "¿Qué quieres automatizar?",
         "interestOptions": [
+          "Briefing diario y datos",
           "Ventas y leads",
           "Atención al cliente",
           "Recepción y citas",
-          "Contenido y marketing",
+          "Contenido",
           "Otra cosa"
         ],
         "message": "Tu proceso (opcional)",
         "submit": "Enviar",
         "sending": "Enviando..."
       },
-      "successTitle": "¡Recibido!",
+      "successTitle": "Recibido",
       "successMessage": "Gracias — te respondemos en un día laborable.",
       "errorMessage": "Algo ha fallado. Inténtalo de nuevo o escríbenos.",
       "privacyNote": "Tus datos, solo para responderte. ¿Dudas? ralcaraz.canals@gmail.com"
     },
     "footer": {
-      "line": "Agentes de IA a medida, construidos y operados.",
+      "line": "IA aplicada a los datos, para pymes. Hecho y gestionado desde Barcelona.",
       "emailLabel": "¿Prefieres email?",
       "email": "ralcaraz.canals@gmail.com",
       "rights": "© 2026 50 Labs",
-      "madeIn": "Barcelona · En remoto, en todo el mundo"
+      "madeIn": "Barcelona · En remoto, en todo el mundo",
+      "operated": "50 Labs es una marca de Rogelio Alcaraz",
+      "legalNotice": "Aviso legal",
+      "privacy": "Privacidad y cookies"
+    },
+    "demo": {
+      "heading": "El email que llega cada mañana",
+      "sub": "Sin dashboards que nadie abre: un correo a las 7:00 con lo que importa y lo que conviene hacer.",
+      "email": {
+        "from": "50 Labs · Briefing diario",
+        "subject": "Briefing — martes, 7:00",
+        "kpisTitle": "Tus números de ayer",
+        "kpis": [
+          {
+            "label": "Ventas",
+            "value": "12.480 €",
+            "delta": "+9% vs objetivo"
+          },
+          {
+            "label": "Pedidos",
+            "value": "142",
+            "delta": "−4% vs semana pasada"
+          },
+          {
+            "label": "Margen bruto",
+            "value": "31,2%",
+            "delta": "en objetivo"
+          }
+        ],
+        "alertsTitle": "Alertas",
+        "alerts": [
+          "Stock de la referencia A-140 por debajo de 2 semanas",
+          "3 facturas vencen esta semana (4.310 €)"
+        ],
+        "actionsTitle": "3 acciones sugeridas",
+        "actions": [
+          "Reponer A-140 antes del jueves",
+          "Llamar a los 2 clientes con pedidos parados",
+          "Revisar el precio del pack B: demanda +18% dos semanas seguidas"
+        ]
+      },
+      "note": "Datos de una empresa de demostración (Comercial Atlas, S.L.). Con tus datos se ve igual: con tus números."
+    },
+    "about": {
+      "heading": "Detrás hay una persona, no una web de plantilla",
+      "name": "Rogelio Alcaraz",
+      "role": "Fundador de 50 Labs",
+      "cred": "Senior data analyst con más de 10 años en datos, actualmente en una plataforma europea con millones de usuarios.",
+      "quote": "Construyo para las pymes los sistemas de datos que las grandes empresas dan por sentado: que cada mañana el negocio te diga cómo va y dónde está la siguiente oportunidad."
     }
   }
 };
@@ -1367,13 +1652,15 @@ const UI = {
       heroBot: "Robot assistant connected to WhatsApp, Gmail, Slack, HubSpot, Google Calendar and Stripe"
     },
     kickers: {
-      shift: "01 — The shift",
-      services: "02 — The agents",
-      process: "03 — The method",
-      integrations: "04 — The stack",
-      cases: "05 — Results",
-      faq: "06 — FAQ",
-      contact: "07 — Contact"
+      demo: "01 — The demo",
+      shift: "02 — The shift",
+      services: "03 — What we build",
+      process: "04 — The method",
+      integrations: "05 — The stack",
+      cases: "06 — Case files",
+      faq: "07 — FAQ",
+      about: "08 — Who's behind it",
+      contact: "09 — Contact"
     },
     moreChip: "+ many more",
     popular: "Most popular",
@@ -1399,13 +1686,15 @@ const UI = {
       heroBot: "Robot asistente conectado a WhatsApp, Gmail, Slack, HubSpot, Google Calendar y Stripe"
     },
     kickers: {
-      shift: "01 — El cambio",
-      services: "02 — Los agentes",
-      process: "03 — El método",
-      integrations: "04 — El stack",
-      cases: "05 — Resultados",
-      faq: "06 — FAQ",
-      contact: "07 — Contacto"
+      demo: "01 — La demo",
+      shift: "02 — El cambio",
+      services: "03 — Qué construimos",
+      process: "04 — El método",
+      integrations: "05 — El stack",
+      cases: "06 — Casos",
+      faq: "07 — FAQ",
+      about: "08 — Quién está detrás",
+      contact: "09 — Contacto"
     },
     moreChip: "y muchas más",
     popular: "El más popular",
@@ -1490,7 +1779,7 @@ function setLang(l, persist){
   const qp = new URLSearchParams(location.search).get('lang');
   let stored = null;
   try { stored = localStorage.getItem('lang50'); } catch(e){}
-  const browser = ((navigator.language || 'en').toLowerCase().startsWith('es')) ? 'es' : 'en';
+  const browser = 'es';
   if (qp === 'en' || qp === 'es') lang = qp;
   else if (stored === 'en' || stored === 'es') lang = stored;
   else lang = browser;

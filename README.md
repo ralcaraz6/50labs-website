@@ -9,12 +9,12 @@ Web comercial de **50 Labs**, agencia de agentes de IA y automatizaciones para e
 
 ## Características
 
-- **Diseño "The Ledger"**: crema/tinta/siena, tipografía Fraunces + Source Sans 3 + IBM Plex Mono, estética de imprenta (recibos, sellos, numerales)
-- **i18n**: detección de idioma del navegador, toggle EN/ES persistente (`localStorage`), `?lang=es|en` para forzar idioma
+- **Diseño "Ledger Light"**: papel cálido/tinta/siena, tipografía Sora + IBM Plex Mono, robots SVG originales y logos reales de herramientas
+- **i18n**: español por defecto, toggle EN/ES persistente (`localStorage`), `?lang=es|en` para forzar idioma
 - **Formulario de contacto**: envía a `ralcaraz.canals@gmail.com` vía [FormSubmit](https://formsubmit.co) (AJAX, honeypot anti-spam, validación cliente)
   - ⚠️ **Activación pendiente**: el primer envío real dispara un email de confirmación de FormSubmit a esa dirección — hay que hacer clic una vez para activar el buzón
-- Secciones: hero, problema (antes/después), 6 agentes, método (4 pasos), integraciones, 3 casos de estudio, precios (3 planes), FAQ, CTA final, contacto
-- Los casos de estudio, empresas y métricas son ilustrativos
+- Secciones: hero (datos y decisiones), demo del briefing, antes/después, 8 sistemas/agentes (Alba y Radar primero), método, integraciones, casos reales, FAQ, CTA, quién está detrás, contacto + legal.html
+- Casos: el del fondo de inversión es real (confidencial); "Comercial Atlas, S.L." es una empresa de demostración con datos sintéticos, señalada como tal. Regla del sitio: ningún dato inventado
 
 ## Ejecutar en local
 
