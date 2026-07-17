@@ -29,7 +29,7 @@
       "stats": [
         {
           "value": "7:00",
-          "label": "daily briefing in production for an investment fund"
+          "label": "AI system in production for an investment fund"
         },
         {
           "value": "10+",
@@ -46,15 +46,15 @@
       "beforeLabel": "Before",
       "afterLabel": "With agents",
       "before": [
-        "Numbers get built by hand every Monday",
         "Leads waiting hours for a reply",
-        "The same 20 questions on loop",
+        "The same questions on loop",
+        "Numbers built by hand every Monday",
         "Follow-ups depend on memory"
       ],
       "after": [
-        "The briefing shows up by itself every morning",
         "Every lead answered in seconds",
         "Routine tickets solved on their own",
+        "The briefing shows up by itself every morning",
         "Everything synced to your CRM"
       ]
     },
@@ -169,7 +169,7 @@
           "company": "Investment fund",
           "sector": "Investing · confidential",
           "heroValue": "7:00",
-          "heroLabel": "daily briefing in production",
+          "heroLabel": "AI system in production",
           "minis": [
             {
               "value": "0 min",
@@ -200,21 +200,21 @@
           "line": "Our demo — clearly labelled: the full briefing running on sample data. Ask for it and see it in 15 minutes."
         },
         {
-          "company": "New cases underway",
+          "company": "The next case",
           "sector": "SMBs · Spain",
           "heroValue": "→",
-          "heroLabel": "projects being built right now",
+          "heroLabel": "in build right now",
           "minis": [
             {
               "value": "ES/EN",
-              "label": "teams in two languages"
+              "label": "bilingual delivery"
             },
             {
               "value": "30 days",
               "label": "target to production"
             }
           ],
-          "line": "We publish each case when the client signs off. This slot fills itself."
+          "line": "We publish each case once the client signs off. This slot fills up soon."
         }
       ]
     },
@@ -314,10 +314,10 @@
         "company": "Company",
         "interest": "What do you want to automate?",
         "interestOptions": [
-          "Daily briefing & data",
           "Sales & leads",
           "Customer support",
           "Reception & bookings",
+          "Daily briefing & data",
           "Content",
           "Something else"
         ],
@@ -406,7 +406,7 @@
       "stats": [
         {
           "value": "7:00",
-          "label": "briefing diario en producción para un fondo de inversión"
+          "label": "sistema de IA en producción para un fondo de inversión"
         },
         {
           "value": "10+",
@@ -423,15 +423,15 @@
       "beforeLabel": "Antes",
       "afterLabel": "Con agentes",
       "before": [
-        "Los números se preparan a mano cada lunes",
         "Leads esperando horas una respuesta",
-        "Las mismas 20 preguntas en bucle",
+        "Las mismas preguntas de siempre en bucle",
+        "Los números se preparan a mano cada lunes",
         "El seguimiento depende de la memoria"
       ],
       "after": [
-        "El briefing llega solo cada mañana",
         "Cada lead respondido en segundos",
         "Tickets rutinarios resueltos solos",
+        "El briefing llega solo cada mañana",
         "Todo sincronizado en tu CRM"
       ]
     },
@@ -546,7 +546,7 @@
           "company": "Fondo de inversión",
           "sector": "Inversión · confidencial",
           "heroValue": "7:00",
-          "heroLabel": "briefing diario en producción",
+          "heroLabel": "sistema de IA en producción",
           "minis": [
             {
               "value": "0 min",
@@ -577,21 +577,21 @@
           "line": "Nuestra demo, y lo decimos claro: el briefing completo funcionando con datos de ejemplo. Pídela y la ves en 15 minutos."
         },
         {
-          "company": "Nuevos casos en curso",
+          "company": "El próximo caso",
           "sector": "Pymes · España",
           "heroValue": "→",
-          "heroLabel": "proyectos en construcción ahora mismo",
+          "heroLabel": "en construcción ahora mismo",
           "minis": [
             {
               "value": "ES/EN",
-              "label": "equipos en dos idiomas"
+              "label": "entrega bilingüe"
             },
             {
               "value": "30 días",
-              "label": "objetivo de puesta en producción"
+              "label": "objetivo a producción"
             }
           ],
-          "line": "Publicamos cada caso cuando el cliente lo autoriza. Este hueco se llena solo."
+          "line": "Publicamos cada caso cuando el cliente lo autoriza. Este hueco se llena pronto."
         }
       ]
     },
@@ -691,10 +691,10 @@
         "company": "Empresa",
         "interest": "¿Qué quieres automatizar?",
         "interestOptions": [
-          "Briefing diario y datos",
           "Ventas y leads",
           "Atención al cliente",
           "Recepción y citas",
+          "Briefing diario y datos",
           "Contenido",
           "Otra cosa"
         ],
