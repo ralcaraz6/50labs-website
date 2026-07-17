@@ -1,12 +1,12 @@
 {
   "meta": {
     "en": {
-      "title": "50 Labs — AI applied to your company's data",
-      "description": "Systems that work overnight: every morning your team gets its numbers and the opportunities the AI spots with your rules."
+      "title": "50 Labs — Custom AI development for your business",
+      "description": "Custom AI agents, automations and data systems: they serve your customers, save hours of work and tell you how the business is doing."
     },
     "es": {
-      "title": "50 Labs — IA aplicada a los datos de tu empresa",
-      "description": "Sistemas que trabajan de noche: cada mañana tu equipo recibe sus números y las oportunidades que la IA detecta con tus reglas."
+      "title": "50 Labs — Desarrollo de IA a medida para tu negocio",
+      "description": "Agentes de IA, automatizaciones y sistemas de datos a medida: atienden a tus clientes, ahorran horas de trabajo y te dicen cómo va el negocio."
     }
   },
   "en": {
@@ -21,9 +21,9 @@
       "demo": "Demo"
     },
     "hero": {
-      "eyebrow": "AI applied to your data",
-      "headline": "Systems that work overnight. {{You decide in the morning.}}",
-      "sub": "Every morning your team gets its numbers and the opportunities the AI has spotted using your rules. Nobody has to prepare a thing.",
+      "eyebrow": "Custom AI development",
+      "headline": "Custom AI that does the work. {{You keep the margin.}}",
+      "sub": "Agents that serve and sell, automations that save hours, and data systems that tell you how the business is doing. All custom-built, inside your tools.",
       "cta1": "See the system in 15 minutes",
       "cta2": "See the demo",
       "stats": [
@@ -47,37 +47,28 @@
       "afterLabel": "With agents",
       "before": [
         "Numbers get built by hand every Monday",
-        "Follow-ups depend on someone remembering",
-        "Nobody looks at margin until month-end",
-        "Data stuck in inboxes"
+        "Leads waiting hours for a reply",
+        "The same 20 questions on loop",
+        "Follow-ups depend on memory"
       ],
       "after": [
-        "The briefing shows up by itself at 7:00",
-        "The AI flags the day something drifts",
+        "The briefing shows up by itself every morning",
         "Every lead answered in seconds",
+        "Routine tickets solved on their own",
         "Everything synced to your CRM"
       ]
     },
     "services": {
       "heading": "What we build",
-      "sub": "First, the data systems that set us apart. Then the agents that run the day-to-day.",
+      "sub": "Eight systems ready to adapt to your business. All custom, all inside your tools.",
       "agents": [
         {
-          "name": "Sunrise",
-          "tag": "Daily 7:00 briefing",
+          "name": "Scout",
+          "tag": "Outbound sales",
           "chips": [
-            "KPIs vs target",
-            "Alerts that matter",
-            "3 suggested actions"
-          ]
-        },
-        {
-          "name": "Radar",
-          "tag": "Opportunity radar",
-          "chips": [
-            "Reads your data daily",
-            "Your rules, not ours",
-            "Instant heads-up"
+            "Prospect lists",
+            "Personal outreach",
+            "Meetings booked"
           ]
         },
         {
@@ -99,12 +90,21 @@
           ]
         },
         {
-          "name": "Scout",
-          "tag": "Outbound sales",
+          "name": "Sunrise",
+          "tag": "Daily 7:00 briefing",
           "chips": [
-            "Prospect lists",
-            "Personal outreach",
-            "Meetings booked"
+            "KPIs vs target",
+            "Alerts that matter",
+            "3 suggested actions"
+          ]
+        },
+        {
+          "name": "Radar",
+          "tag": "Opportunity radar",
+          "chips": [
+            "Reads your data daily",
+            "Your rules, not ours",
+            "Instant heads-up"
           ]
         },
         {
@@ -331,7 +331,7 @@
       "privacyNote": "Your data is only used to reply. Questions? ralcaraz.canals@gmail.com"
     },
     "footer": {
-      "line": "Data-first AI for SMBs. Built and run from Barcelona.",
+      "line": "Custom AI for SMBs. Built and run from Barcelona.",
       "emailLabel": "Prefer email?",
       "email": "ralcaraz.canals@gmail.com",
       "rights": "© 2026 50 Labs",
@@ -341,8 +341,8 @@
       "privacy": "Privacy & cookies"
     },
     "demo": {
-      "heading": "The email that lands every morning",
-      "sub": "No dashboards nobody opens: one 7:00 email with what matters and what to do about it.",
+      "heading": "One example: the email that lands every morning",
+      "sub": "One of the systems we build, the daily briefing: no dashboards nobody opens, one 7:00 email with what matters and what to do about it.",
       "email": {
         "from": "50 Labs · Daily briefing",
         "subject": "Briefing — Tuesday, 7:00",
@@ -383,7 +383,7 @@
       "name": "Rogelio Alcaraz",
       "role": "Founder, 50 Labs",
       "cred": "Senior data analyst with 10+ years in data, currently at a European platform with millions of users.",
-      "quote": "I build for SMBs the data systems big companies take for granted: every morning, the business tells you how it's doing and where the next opportunity is."
+      "quote": "I build for SMBs the AI big companies take for granted: systems that serve customers, automate work and tell you every morning how the business is doing."
     }
   },
   "es": {
@@ -398,9 +398,9 @@
       "demo": "Demo"
     },
     "hero": {
-      "eyebrow": "IA aplicada a tus datos",
-      "headline": "Sistemas que trabajan de noche. {{Tú decides por la mañana.}}",
-      "sub": "Cada mañana, tu equipo recibe sus números y las oportunidades que la IA ha detectado con tus reglas. Sin que nadie prepare nada.",
+      "eyebrow": "Desarrollo de IA a medida",
+      "headline": "IA a medida que hace el trabajo. {{Tú te quedas el margen.}}",
+      "sub": "Agentes que atienden y venden, automatizaciones que ahorran horas y sistemas de datos que te dicen cómo va el negocio. Todo a tu medida, en tus herramientas.",
       "cta1": "Ver el sistema en 15 minutos",
       "cta2": "Ver la demo",
       "stats": [
@@ -424,37 +424,28 @@
       "afterLabel": "Con agentes",
       "before": [
         "Los números se preparan a mano cada lunes",
-        "El seguimiento depende de que alguien se acuerde",
-        "Nadie mira el margen hasta fin de mes",
-        "Los datos, atrapados en el email"
+        "Leads esperando horas una respuesta",
+        "Las mismas 20 preguntas en bucle",
+        "El seguimiento depende de la memoria"
       ],
       "after": [
-        "El briefing llega solo a las 7:00",
-        "La IA avisa el día que algo se desvía",
+        "El briefing llega solo cada mañana",
         "Cada lead respondido en segundos",
+        "Tickets rutinarios resueltos solos",
         "Todo sincronizado en tu CRM"
       ]
     },
     "services": {
       "heading": "Qué construimos",
-      "sub": "Primero, los sistemas de datos que nos diferencian. Después, los agentes que ejecutan el día a día.",
+      "sub": "Ocho sistemas listos para adaptar a tu negocio. Todos a medida, todos en tus herramientas.",
       "agents": [
         {
-          "name": "Alba",
-          "tag": "Briefing diario a las 7:00",
+          "name": "Cazador",
+          "tag": "Ventas outbound",
           "chips": [
-            "KPIs vs objetivo",
-            "Alertas que importan",
-            "3 acciones sugeridas"
-          ]
-        },
-        {
-          "name": "Radar",
-          "tag": "Radar de oportunidades",
-          "chips": [
-            "Lee tus datos a diario",
-            "Tus reglas, no las nuestras",
-            "Aviso al instante"
+            "Listas de prospectos",
+            "Contacto personalizado",
+            "Reuniones agendadas"
           ]
         },
         {
@@ -476,12 +467,21 @@
           ]
         },
         {
-          "name": "Cazador",
-          "tag": "Ventas outbound",
+          "name": "Alba",
+          "tag": "Briefing diario a las 7:00",
           "chips": [
-            "Listas de prospectos",
-            "Contacto personalizado",
-            "Reuniones agendadas"
+            "KPIs vs objetivo",
+            "Alertas que importan",
+            "3 acciones sugeridas"
+          ]
+        },
+        {
+          "name": "Radar",
+          "tag": "Radar de oportunidades",
+          "chips": [
+            "Lee tus datos a diario",
+            "Tus reglas, no las nuestras",
+            "Aviso al instante"
           ]
         },
         {
@@ -708,7 +708,7 @@
       "privacyNote": "Tus datos, solo para responderte. ¿Dudas? ralcaraz.canals@gmail.com"
     },
     "footer": {
-      "line": "IA aplicada a los datos, para pymes. Hecho y gestionado desde Barcelona.",
+      "line": "IA a medida para pymes. Hecho y gestionado desde Barcelona.",
       "emailLabel": "¿Prefieres email?",
       "email": "ralcaraz.canals@gmail.com",
       "rights": "© 2026 50 Labs",
@@ -718,8 +718,8 @@
       "privacy": "Privacidad y cookies"
     },
     "demo": {
-      "heading": "El email que llega cada mañana",
-      "sub": "Sin dashboards que nadie abre: un correo a las 7:00 con lo que importa y lo que conviene hacer.",
+      "heading": "Un ejemplo: el email que llega cada mañana",
+      "sub": "Uno de los sistemas que construimos, el briefing diario: sin dashboards que nadie abre, un correo a las 7:00 con lo que importa y lo que conviene hacer.",
       "email": {
         "from": "50 Labs · Briefing diario",
         "subject": "Briefing — martes, 7:00",
@@ -760,7 +760,7 @@
       "name": "Rogelio Alcaraz",
       "role": "Fundador de 50 Labs",
       "cred": "Senior data analyst con más de 10 años en datos, actualmente en una plataforma europea con millones de usuarios.",
-      "quote": "Construyo para las pymes los sistemas de datos que las grandes empresas dan por sentado: que cada mañana el negocio te diga cómo va y dónde está la siguiente oportunidad."
+      "quote": "Construyo para las pymes la IA que las grandes empresas dan por sentada: sistemas que atienden, automatizan y te dicen cada mañana cómo va el negocio."
     }
   }
 }
